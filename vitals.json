@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T20:09:31Z",
+  "updated": "2026-02-04T20:14:31Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -12,7 +12,7 @@
       "copilot": 6,
       "local": 0,
       "opus": 0,
-      "sonnet": 0,
+      "sonnet": 1,
       "cooldowns": 2,
       "quotas": 2,
       "timers": {
@@ -34,7 +34,7 @@
         "copilot": 55,
         "local": 0,
         "opus": 0,
-        "sonnet": 0
+        "sonnet": 1
       },
       "reliability": "61.8"
     },
@@ -50,7 +50,7 @@
         "copilot": 55,
         "local": 0,
         "opus": 0,
-        "sonnet": 0
+        "sonnet": 1
       },
       "reliability": "61.8"
     }
@@ -76,121 +76,121 @@
       "copilot": 6,
       "local": 0,
       "opus": 0,
-      "sonnet": 0
+      "sonnet": 1
     }
   ],
   "pulse": [
     {
       "date": "2026-02-04",
+      "time": "12:09",
+      "project": "agent-status-board",
+      "hash": "089f1a2",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/089f1a2",
+      "summary": "data: focus pulse on code check-ins"
+    },
+    {
+      "date": "2026-02-04",
       "time": "12:06",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "ef83605",
-      "url": "https://github.com/benfoxsb/status/commit/ef83605",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/ef83605",
       "summary": "ui: unified layout with multi-project pulse columns"
     },
     {
       "date": "2026-02-04",
       "time": "12:06",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "b4eba86",
-      "url": "https://github.com/benfoxsb/status/commit/b4eba86",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/b4eba86",
       "summary": "data: focus pulse on code check-ins"
     },
     {
       "date": "2026-02-04",
       "time": "11:57",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "47acd34",
-      "url": "https://github.com/benfoxsb/status/commit/47acd34",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/47acd34",
       "summary": "ui: unified performance card and multi-project pulse grouping"
     },
     {
       "date": "2026-02-04",
       "time": "11:57",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "0691c77",
-      "url": "https://github.com/benfoxsb/status/commit/0691c77",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/0691c77",
       "summary": "data: integrate multi-project git pulse tracking"
     },
     {
       "date": "2026-02-04",
       "time": "11:54",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "85d804d",
-      "url": "https://github.com/benfoxsb/status/commit/85d804d",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/85d804d",
       "summary": "data: integrate multi-project git pulse tracking"
     },
     {
       "date": "2026-02-04",
       "time": "11:46",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "eccef35",
-      "url": "https://github.com/benfoxsb/status/commit/eccef35",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/eccef35",
       "summary": "ui: implement grouped multi-project pulse with expandable cards"
     },
     {
       "date": "2026-02-04",
       "time": "11:46",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "d677839",
-      "url": "https://github.com/benfoxsb/status/commit/d677839",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/d677839",
       "summary": "data: integrate multi-project git pulse tracking"
     },
     {
       "date": "2026-02-04",
       "time": "11:39",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "ec48483",
-      "url": "https://github.com/benfoxsb/status/commit/ec48483",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/ec48483",
       "summary": "data: integrate model failover path tracking"
     },
     {
       "date": "2026-02-04",
       "time": "11:32",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "eda9fac",
-      "url": "https://github.com/benfoxsb/status/commit/eda9fac",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/eda9fac",
       "summary": "ui: implement live failover pipeline and strategy tracking"
     },
     {
       "date": "2026-02-04",
       "time": "11:32",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "8ac61b2",
-      "url": "https://github.com/benfoxsb/status/commit/8ac61b2",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/8ac61b2",
       "summary": "data: integrate model failover path tracking"
     },
     {
       "date": "2026-02-04",
       "time": "11:27",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "f79804d",
-      "url": "https://github.com/benfoxsb/status/commit/f79804d",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/f79804d",
       "summary": "data: recover historical heatmap and integrate git-based pulse"
     },
     {
       "date": "2026-02-04",
       "time": "11:27",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "b76159b",
-      "url": "https://github.com/benfoxsb/status/commit/b76159b",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/b76159b",
       "summary": "data: recover historical heatmap and integrate git-based pulse"
     },
     {
       "date": "2026-02-04",
       "time": "11:25",
-      "project": "repo-status",
+      "project": "agent-status-board",
       "hash": "8b7d99d",
-      "url": "https://github.com/benfoxsb/status/commit/8b7d99d",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/8b7d99d",
       "summary": "data: recover historical heatmap and improve pulse summaries"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:24",
-      "project": "repo-status",
-      "hash": "447e31c",
-      "url": "https://github.com/benfoxsb/status/commit/447e31c",
-      "summary": "data: fix timestamps and heatmap gaps"
     },
     {
       "date": "2026-02-03",
@@ -385,7 +385,7 @@
       "success": {
         "10": "5",
         "11": "11",
-        "12": "2"
+        "12": "3"
       },
       "fail": {
         "11": "2"
