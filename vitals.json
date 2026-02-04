@@ -1,9 +1,18 @@
 {
-  "updated": "2026-02-04T18:58:33Z",
+  "updated": "2026-02-04T18:58:59Z",
   "windows": {
     "24h": {
-      "success": 4,
-      "fail": 0,
+      "date": "2026-02-04",
+      "success": 93,
+      "fail": 16,
+      "ag_flash": 77,
+      "ag_pro": 8,
+      "gcli_flash": 16,
+      "gcli_pro": 0,
+      "copilot": 6,
+      "local": 0,
+      "opus": 0,
+      "sonnet": 0,
       "cooldowns": 2,
       "quotas": 0,
       "timers": {
@@ -11,16 +20,6 @@
         "ag_quota": "0.0",
         "gcli_rl": "0.0",
         "gcli_quota": "0.0"
-      },
-      "usage": {
-        "ag_flash": 5,
-        "ag_pro": 0,
-        "gcli_flash": 0,
-        "gcli_pro": 0,
-        "copilot": 0,
-        "local": 0,
-        "opus": 0,
-        "sonnet": 0
       }
     },
     "7d": {
