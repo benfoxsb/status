@@ -1,13 +1,13 @@
 {
-  "updated": "2026-02-04T20:14:31Z",
+  "updated": "2026-02-04T20:14:47Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 93,
-      "fail": 16,
-      "ag_flash": 77,
-      "ag_pro": 8,
-      "gcli_flash": 16,
+      "success": 102,
+      "fail": 20,
+      "ag_flash": 82,
+      "ag_pro": 9,
+      "gcli_flash": 18,
       "gcli_pro": 0,
       "copilot": 6,
       "local": 0,
@@ -23,36 +23,36 @@
       }
     },
     "7d": {
-      "success": 285,
-      "fail": 176,
+      "success": 294,
+      "fail": 180,
       "days": 2,
       "usage": {
-        "ag_flash": 198,
-        "ag_pro": 21,
-        "gcli_flash": 16,
+        "ag_flash": 203,
+        "ag_pro": 22,
+        "gcli_flash": 18,
         "gcli_pro": 0,
         "copilot": 55,
         "local": 0,
         "opus": 0,
         "sonnet": 1
       },
-      "reliability": "61.8"
+      "reliability": "62.0"
     },
     "30d": {
-      "success": 285,
-      "fail": 176,
+      "success": 294,
+      "fail": 180,
       "days": 2,
       "usage": {
-        "ag_flash": 198,
-        "ag_pro": 21,
-        "gcli_flash": 16,
+        "ag_flash": 203,
+        "ag_pro": 22,
+        "gcli_flash": 18,
         "gcli_pro": 0,
         "copilot": 55,
         "local": 0,
         "opus": 0,
         "sonnet": 1
       },
-      "reliability": "61.8"
+      "reliability": "62.0"
     }
   },
   "history": [
@@ -67,11 +67,11 @@
     },
     {
       "date": "2026-02-04",
-      "success": 93,
-      "fail": 16,
-      "ag_flash": 77,
-      "ag_pro": 8,
-      "gcli_flash": 16,
+      "success": 102,
+      "fail": 20,
+      "ag_flash": 82,
+      "ag_pro": 9,
+      "gcli_flash": 18,
       "gcli_pro": 0,
       "copilot": 6,
       "local": 0,
@@ -80,6 +80,22 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "12:14",
+      "project": "agent-status-board",
+      "hash": "4f2c941",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/4f2c941",
+      "summary": "data: focus pulse on code check-ins"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "12:14",
+      "project": "agent-status-board",
+      "hash": "46aaab3",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/46aaab3",
+      "summary": "ui: fix heatmap alignment in Operational Hub"
+    },
     {
       "date": "2026-02-04",
       "time": "12:09",
@@ -175,22 +191,6 @@
       "hash": "f79804d",
       "url": "https://github.com/benfoxsb/agent-status-board/commit/f79804d",
       "summary": "data: recover historical heatmap and integrate git-based pulse"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:27",
-      "project": "agent-status-board",
-      "hash": "b76159b",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/b76159b",
-      "summary": "data: recover historical heatmap and integrate git-based pulse"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:25",
-      "project": "agent-status-board",
-      "hash": "8b7d99d",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/8b7d99d",
-      "summary": "data: recover historical heatmap and improve pulse summaries"
     },
     {
       "date": "2026-02-03",
