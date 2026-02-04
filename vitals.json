@@ -1,8 +1,19 @@
 {
-  "updated": "2026-02-04T05:48:37Z",
-  "metrics": {
-    "success": 163,
-    "fail": 158
-  },
-  "status": "active"
+  "updated": "2026-02-04T06:00:09Z",
+  "windows": {
+    "24h": {
+      "success": 164,
+      "fail": 158,
+      "cooldowns": 31,
+      "quotas": 17,
+      "usage": {
+        "flash": 93,
+        "pro": 12,
+        "copilot": 48,
+        "local": 0
+      }
+    },
+    "7d": { "status": "accumulating", "days": 1 },
+    "30d": { "status": "accumulating", "days": 1 }
+  }
 }
