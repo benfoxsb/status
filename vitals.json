@@ -1,8 +1,8 @@
 {
-  "updated": "2026-02-04T10:08:24Z",
+  "updated": "2026-02-04T10:15:56Z",
   "windows": {
     "24h": {
-      "success": 22,
+      "success": 24,
       "fail": 2,
       "cooldowns": 1,
       "quotas": 2,
@@ -29,32 +29,38 @@
         }
       ],
       "usage": {
-        "flash": 27,
+        "flash": 28,
         "pro": 3,
         "copilot": 1,
-        "local": 0
+        "local": 0,
+        "opus": 0,
+        "sonnet": 0
       }
     },
     "7d": {
-      "success": 214,
+      "success": 216,
       "fail": 162,
       "days": 2,
       "usage": {
-        "flash": 148,
+        "flash": 149,
         "pro": 16,
         "copilot": 50,
-        "local": 0
+        "local": 0,
+        "opus": 0,
+        "sonnet": 0
       }
     },
     "30d": {
-      "success": 214,
+      "success": 216,
       "fail": 162,
       "days": 2,
       "usage": {
-        "flash": 148,
+        "flash": 149,
         "pro": 16,
         "copilot": 50,
-        "local": 0
+        "local": 0,
+        "opus": 0,
+        "sonnet": 0
       }
     }
   },
@@ -70,12 +76,14 @@
     },
     {
       "date": "2026-02-04",
-      "success": 22,
+      "success": 24,
       "fail": 2,
-      "flash": 27,
+      "flash": 28,
       "pro": 3,
       "copilot": 1,
-      "local": 0
+      "local": 0,
+      "opus": 0,
+      "sonnet": 0
     }
   ],
   "pulse": [
@@ -111,25 +119,25 @@
     },
     {
       "date": "2026-02-04",
-      "time": "10:05",
+      "time": "10:14",
       "model": "gemini-3-pro-high",
       "summary": "Dashboard Upgrade:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:05",
+      "time": "10:14",
       "model": "gemini-3-pro-high",
       "summary": "Visual Alignment:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:05",
+      "time": "10:14",
       "model": "gemini-3-pro-high",
       "summary": "Data Engineering:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:05",
+      "time": "10:14",
       "model": "gemini-3-pro-high",
       "summary": "Tier 3 Verification:"
     }
@@ -206,7 +214,7 @@
       "success": {
         "08": "4",
         "09": "17",
-        "10": "1"
+        "10": "3"
       },
       "fail": {
         "09": "2"
