@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben Fox | System Status</title>
+    <title>Agent Fox | System Status</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -38,8 +38,9 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <div class="h-1 bg-slate-800 rounded-full overflow-hidden">
-                        <div id="bar-24h" class="h-full bg-emerald-500 w-0 transition-all duration-1000"></div>
+                    <div class="h-1.5 w-full bg-slate-800 rounded-full flex overflow-hidden">
+                        <div id="bar-success-24h" class="h-full bg-emerald-500 transition-all duration-1000" style="width: 0%"></div>
+                        <div id="bar-fail-24h" class="h-full bg-red-500 transition-all duration-1000" style="width: 0%"></div>
                     </div>
                     <p id="label-cooldowns" class="text-[8px] text-slate-500 mt-2 uppercase tracking-tighter">0 active cooldowns</p>
                 </div>
@@ -74,19 +75,19 @@
                 <div id="cooldown-timers" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     <div class="card p-4 rounded-2xl border-l-4 border-l-amber-500/50 bg-[#1a2035]">
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">AG Quota</p>
-                        <p class="text-xl font-black text-amber-400 leading-none mt-1"><span id="timer-ag-quota">--</span><span class="text-[8px] ml-1 opacity-60">DAYS</span></p>
+                        <p class="text-xl font-black text-amber-400 leading-none mt-1"><span id="timer-ag-quota">--</span><span id="unit-ag-quota" class="text-[8px] ml-1 opacity-60">DAYS</span></p>
                     </div>
                     <div class="card p-4 rounded-2xl border-l-4 border-l-amber-500/50 bg-[#1a2035]">
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">AG Rate Limit</p>
-                        <p class="text-xl font-black text-amber-400 leading-none mt-1"><span id="timer-ag-rl">--</span><span class="text-[8px] ml-1 opacity-60">DAYS</span></p>
+                        <p class="text-xl font-black text-amber-400 leading-none mt-1"><span id="timer-ag-rl">--</span><span id="unit-ag-rl" class="text-[8px] ml-1 opacity-60">DAYS</span></p>
                     </div>
                     <div class="card p-4 rounded-2xl border-l-4 border-l-blue-500/50 bg-[#1a2035]">
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">GCLI Quota</p>
-                        <p class="text-xl font-black text-blue-400 leading-none mt-1"><span id="timer-gcli-quota">--</span><span class="text-[8px] ml-1 opacity-60">DAYS</span></p>
+                        <p class="text-xl font-black text-blue-400 leading-none mt-1"><span id="timer-gcli-quota">--</span><span id="unit-gcli-quota" class="text-[8px] ml-1 opacity-60">DAYS</span></p>
                     </div>
                     <div class="card p-4 rounded-2xl border-l-4 border-l-blue-500/50 bg-[#1a2035]">
                         <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">GCLI Rate Limit</p>
-                        <p class="text-xl font-black text-blue-400 leading-none mt-1"><span id="timer-gcli-rl">--</span><span class="text-[8px] ml-1 opacity-60">DAYS</span></p>
+                        <p class="text-xl font-black text-blue-400 leading-none mt-1"><span id="timer-gcli-rl">--</span><span id="unit-gcli-rl" class="text-[8px] ml-1 opacity-60">DAYS</span></p>
                     </div>
                 </div>
 
@@ -111,7 +112,7 @@
 
         <footer class="mt-auto flex justify-between items-center px-2 py-4 border-t border-slate-900 shrink-0">
             <p class="text-slate-600 text-[10px] uppercase font-bold tracking-[0.2em]">Sync: <span id="last-update" class="text-slate-400">...</span></p>
-            <p class="text-slate-700 text-[10px]">&copy; 2026 Ben Fox Operational Unit</p>
+            <p class="text-slate-700 text-[10px]">&copy; 2026 Agent Fox Operational Unit</p>
         </footer>
     </div>
 
@@ -149,7 +150,10 @@
                 document.getElementById('label-cooldowns').innerText = `${w24.cooldowns || 0} active cooldowns`;
                 
                 const total24 = w24.success + w24.fail;
-                document.getElementById('bar-24h').style.width = total24 > 0 ? (w24.success / total24 * 100) + '%' : '0%';
+                if (total24 > 0) {
+                    document.getElementById('bar-success-24h').style.width = (w24.success / total24 * 100) + '%';
+                    document.getElementById('bar-fail-24h').style.width = (w24.fail / total24 * 100) + '%';
+                }
 
                 document.getElementById('reliability-7d').innerText = `${w7.reliability || '0.0'}%`;
                 document.getElementById('reliability-30d').innerText = `${w30.reliability || '0.0'}%`;
@@ -157,15 +161,18 @@
                 const t = w24.timers || {};
                 const setTimer = (id, val) => {
                     const el = document.getElementById(id);
+                    const unit = document.getElementById('unit-' + id.replace('timer-', ''));
                     if (!el) return;
                     if (!val || val === "0.0") {
                         el.innerText = "READY";
                         el.classList.remove('text-amber-400', 'text-blue-400', 'text-xl');
                         el.classList.add('text-emerald-400', 'text-sm', 'font-bold');
+                        if (unit) unit.classList.add('hidden');
                     } else {
                         el.innerText = val;
                         el.classList.add('text-xl');
-                        el.classList.remove('text-sm', 'text-emerald-400');
+                        el.classList.remove('text-sm', 'text-emerald-400', 'font-bold');
+                        if (unit) unit.classList.remove('hidden');
                     }
                 };
 
