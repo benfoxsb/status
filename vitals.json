@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T22:26:32Z",
+  "updated": "2026-02-04T22:41:48Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -14,10 +14,10 @@
       "opus": 0,
       "sonnet": 1,
       "cooldowns": 2,
-      "quotas": 6,
+      "quotas": 8,
       "timers": {
         "ag_rl": "0.0",
-        "ag_quota": "0.8",
+        "ag_quota": "0.9",
         "gcli_rl": "0.0",
         "gcli_quota": "0.0"
       }
@@ -80,6 +80,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "14:26",
+      "project": "benfoxsb.github.io",
+      "hash": "8deaaf8",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/8deaaf8",
+      "summary": "data: focus pulse on code check-ins",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "14:11",
@@ -195,15 +204,6 @@
       "hash": "6ca994b",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/6ca994b",
       "summary": "ui: update model prefixes and add pipeline tooltips",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "12:51",
-      "project": "benfoxsb.github.io",
-      "hash": "1d0bcb7",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/1d0bcb7",
-      "summary": "data: focus pulse on code check-ins",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -416,12 +416,13 @@
         "11": "11",
         "12": "19",
         "13": "10",
-        "14": "2"
+        "14": "7"
       },
       "fail": {
         "11": "2",
         "12": "4",
-        "13": "2"
+        "13": "2",
+        "14": "2"
       }
     }
   ],
