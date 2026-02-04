@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T23:17:51Z",
+  "updated": "2026-02-04T23:18:40Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -80,6 +80,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "15:17",
+      "project": "benfoxsb.github.io",
+      "hash": "dfe79b8",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/dfe79b8",
+      "summary": "data: role-based model icons and PST alignment",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "15:15",
@@ -195,15 +204,6 @@
       "hash": "7cb9954",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/7cb9954",
       "summary": "data: focus pulse on code check-ins",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "13:16",
-      "project": "benfoxsb.github.io",
-      "hash": "22413e7",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/22413e7",
-      "summary": "ui: unify model color mapping across all dashboard components",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -417,7 +417,7 @@
         "12": "19",
         "13": "10",
         "14": "13",
-        "15": "5"
+        "15": "6"
       },
       "fail": {
         "11": "2",
