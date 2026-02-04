@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T08:00:48Z",
+  "updated": "2026-02-04T08:07:38Z",
   "windows": {
     "24h": {
       "success": 0,
@@ -13,7 +13,39 @@
         "local": 0
       }
     },
-    "7d": { "status": "accumulating", "days": 1 },
-    "30d": { "status": "accumulating", "days": 1 }
-  }
+    "7d": {
+      "success": 0,
+      "fail": 0,
+      "days": 1,
+      "usage": {
+        "flash": 0,
+        "pro": 0,
+        "copilot": 0,
+        "local": 0
+      }
+    },
+    "30d": {
+      "success": 0,
+      "fail": 0,
+      "days": 1,
+      "usage": {
+        "flash": 0,
+        "pro": 0,
+        "copilot": 0,
+        "local": 0
+      }
+    }
+  },
+  "history": [
+    {
+      "date": "2026-02-04",
+      "success": 0,
+      "fail": 0,
+      "flash": 0,
+      "pro": 0,
+      "copilot": 0,
+      "local": 0
+    }
+  ],
+  "pulse": []
 }
