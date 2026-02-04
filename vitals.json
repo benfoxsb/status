@@ -1,8 +1,8 @@
 {
-  "updated": "2026-02-04T10:26:43Z",
+  "updated": "2026-02-04T10:38:33Z",
   "windows": {
     "24h": {
-      "success": 28,
+      "success": 33,
       "fail": 2,
       "cooldowns": 1,
       "quotas": 2,
@@ -29,8 +29,8 @@
         }
       ],
       "usage": {
-        "flash": 32,
-        "pro": 3,
+        "flash": 36,
+        "pro": 5,
         "copilot": 1,
         "local": 0,
         "opus": 0,
@@ -38,12 +38,12 @@
       }
     },
     "7d": {
-      "success": 220,
+      "success": 225,
       "fail": 162,
       "days": 2,
       "usage": {
-        "flash": 153,
-        "pro": 16,
+        "flash": 157,
+        "pro": 18,
         "copilot": 50,
         "local": 0,
         "opus": 0,
@@ -51,12 +51,12 @@
       }
     },
     "30d": {
-      "success": 220,
+      "success": 225,
       "fail": 162,
       "days": 2,
       "usage": {
-        "flash": 153,
-        "pro": 16,
+        "flash": 157,
+        "pro": 18,
         "copilot": 50,
         "local": 0,
         "opus": 0,
@@ -76,10 +76,10 @@
     },
     {
       "date": "2026-02-04",
-      "success": 28,
+      "success": 33,
       "fail": 2,
-      "flash": 32,
-      "pro": 3,
+      "flash": 36,
+      "pro": 5,
       "copilot": 1,
       "local": 0,
       "opus": 0,
@@ -119,25 +119,25 @@
     },
     {
       "date": "2026-02-04",
-      "time": "10:24",
+      "time": "10:36",
       "model": "gemini-3-pro-high",
       "summary": "Dashboard Upgrade:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:24",
+      "time": "10:36",
       "model": "gemini-3-pro-high",
       "summary": "Visual Alignment:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:24",
+      "time": "10:36",
       "model": "gemini-3-pro-high",
       "summary": "Data Engineering:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:24",
+      "time": "10:36",
       "model": "gemini-3-pro-high",
       "summary": "Tier 3 Verification:"
     }
@@ -214,7 +214,7 @@
       "success": {
         "08": "4",
         "09": "17",
-        "10": "7"
+        "10": "12"
       },
       "fail": {
         "09": "2"
