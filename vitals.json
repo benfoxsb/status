@@ -1,36 +1,21 @@
 {
-  "updated": "2026-02-04T17:08:18Z",
+  "updated": "2026-02-04T17:11:25Z",
   "windows": {
     "24h": {
-      "success": 87,
-      "fail": 14,
-      "cooldowns": 5,
-      "quotas": 10,
+      "success": 89,
+      "fail": 16,
+      "cooldowns": 6,
+      "quotas": 12,
       "timers": {
-        "rate_limit": "0.9",
-        "quota": "0.9"
+        "ag_rl": "0.0",
+        "ag_quota": "0.9",
+        "gcli_rl": "0.0",
+        "gcli_quota": "0.0"
       },
-      "cooldown_list": [
-        {
-          "name": "Claude Opus",
-          "status": "Ready",
-          "color": "text-emerald-400"
-        },
-        {
-          "name": "Claude Sonnet",
-          "status": "Ready",
-          "color": "text-emerald-400"
-        },
-        {
-          "name": "Gemini Pro",
-          "status": "4h wait",
-          "color": "text-amber-400"
-        }
-      ],
       "usage": {
-        "ag_flash": 71,
+        "ag_flash": 72,
         "ag_pro": 8,
-        "gcli_flash": 15,
+        "gcli_flash": 16,
         "gcli_pro": 0,
         "copilot": 6,
         "local": 0,
@@ -39,36 +24,36 @@
       }
     },
     "7d": {
-      "success": 279,
-      "fail": 174,
+      "success": 281,
+      "fail": 176,
       "days": 2,
       "usage": {
-        "ag_flash": 192,
+        "ag_flash": 193,
         "ag_pro": 21,
-        "gcli_flash": 15,
+        "gcli_flash": 16,
         "gcli_pro": 0,
         "copilot": 55,
         "local": 0,
         "opus": 0,
         "sonnet": 0
       },
-      "reliability": "61.5"
+      "reliability": "61.4"
     },
     "30d": {
-      "success": 279,
-      "fail": 174,
+      "success": 281,
+      "fail": 176,
       "days": 2,
       "usage": {
-        "ag_flash": 192,
+        "ag_flash": 193,
         "ag_pro": 21,
-        "gcli_flash": 15,
+        "gcli_flash": 16,
         "gcli_pro": 0,
         "copilot": 55,
         "local": 0,
         "opus": 0,
         "sonnet": 0
       },
-      "reliability": "61.5"
+      "reliability": "61.4"
     }
   },
   "history": [
@@ -83,11 +68,11 @@
     },
     {
       "date": "2026-02-04",
-      "success": 87,
-      "fail": 14,
-      "ag_flash": 71,
+      "success": 89,
+      "fail": 16,
+      "ag_flash": 72,
       "ag_pro": 8,
-      "gcli_flash": 15,
+      "gcli_flash": 16,
       "gcli_pro": 0,
       "copilot": 6,
       "local": 0,
@@ -128,25 +113,25 @@
     },
     {
       "date": "2026-02-04",
-      "time": "17:08",
+      "time": "17:10",
       "model": "AG-GEMINI-3-FLASH",
       "summary": "Dashboard Upgrade:"
     },
     {
       "date": "2026-02-04",
-      "time": "17:08",
+      "time": "17:10",
       "model": "AG-GEMINI-3-FLASH",
       "summary": "Visual Alignment:"
     },
     {
       "date": "2026-02-04",
-      "time": "17:08",
+      "time": "17:10",
       "model": "AG-GEMINI-3-FLASH",
       "summary": "Data Engineering:"
     },
     {
       "date": "2026-02-04",
-      "time": "17:08",
+      "time": "17:10",
       "model": "AG-GEMINI-3-FLASH",
       "summary": "Tier 3 Verification:"
     }
@@ -230,7 +215,7 @@
         "14": "6",
         "15": "6",
         "16": "7",
-        "17": "1"
+        "17": "3"
       },
       "fail": {
         "09": "2",
@@ -238,7 +223,8 @@
         "12": "2",
         "13": "2",
         "15": "4",
-        "16": "2"
+        "16": "2",
+        "17": "2"
       }
     }
   ]
