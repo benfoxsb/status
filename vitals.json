@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T21:11:56Z",
+  "updated": "2026-02-04T21:12:20Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -80,6 +80,24 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "13:12",
+      "project": "benfoxsb.github.io",
+      "hash": "52a362b",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/52a362b",
+      "summary": "ui: implement collapsible day grouping and model color coding for pulse",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "13:11",
+      "project": "benfoxsb.github.io",
+      "hash": "0d3cb0e",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/0d3cb0e",
+      "summary": "data: focus pulse on code check-ins",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "13:10",
@@ -186,24 +204,6 @@
       "hash": "83357e7",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/83357e7",
       "summary": "data: focus pulse on code check-ins",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "12:22",
-      "project": "benfoxsb.github.io",
-      "hash": "b4c6059",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/b4c6059",
-      "summary": "chore: remove redundant/failing workflow",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "12:21",
-      "project": "benfoxsb.github.io",
-      "hash": "40153a4",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/40153a4",
-      "summary": "fix: update data fetch URL to be relative",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
