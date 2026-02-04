@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T20:14:47Z",
+  "updated": "2026-02-04T20:16:31Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -80,6 +80,14 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "12:14",
+      "project": "agent-status-board",
+      "hash": "978e65e",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/978e65e",
+      "summary": "data: focus pulse on code check-ins"
+    },
     {
       "date": "2026-02-04",
       "time": "12:14",
@@ -183,14 +191,6 @@
       "hash": "8ac61b2",
       "url": "https://github.com/benfoxsb/agent-status-board/commit/8ac61b2",
       "summary": "data: integrate model failover path tracking"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:27",
-      "project": "agent-status-board",
-      "hash": "f79804d",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/f79804d",
-      "summary": "data: recover historical heatmap and integrate git-based pulse"
     },
     {
       "date": "2026-02-03",
@@ -388,7 +388,8 @@
         "12": "3"
       },
       "fail": {
-        "11": "2"
+        "11": "2",
+        "12": "2"
       }
     }
   ],
