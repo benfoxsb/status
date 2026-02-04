@@ -74,19 +74,19 @@
                 <!-- Cooldown Status Grid -->
                 <div id="cooldown-timers" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     <div class="card p-4 rounded-2xl border-l-4 border-l-amber-500/50 bg-[#1a2035]">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">AG Quota</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">AG Quota Reset</p>
                         <p class="text-xl font-black text-amber-400 leading-none mt-1"><span id="timer-ag-quota">--</span><span id="unit-ag-quota" class="text-[8px] ml-1 opacity-60">DAYS</span></p>
                     </div>
                     <div class="card p-4 rounded-2xl border-l-4 border-l-amber-500/50 bg-[#1a2035]">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">AG Rate Limit</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">AG Rate Limit Reset</p>
                         <p class="text-xl font-black text-amber-400 leading-none mt-1"><span id="timer-ag-rl">--</span><span id="unit-ag-rl" class="text-[8px] ml-1 opacity-60">DAYS</span></p>
                     </div>
                     <div class="card p-4 rounded-2xl border-l-4 border-l-blue-500/50 bg-[#1a2035]">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">GCLI Quota</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">GCLI Quota Reset</p>
                         <p class="text-xl font-black text-blue-400 leading-none mt-1"><span id="timer-gcli-quota">--</span><span id="unit-gcli-quota" class="text-[8px] ml-1 opacity-60">DAYS</span></p>
                     </div>
                     <div class="card p-4 rounded-2xl border-l-4 border-l-blue-500/50 bg-[#1a2035]">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">GCLI Rate Limit</p>
+                        <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">GCLI Rate Limit Reset</p>
                         <p class="text-xl font-black text-blue-400 leading-none mt-1"><span id="timer-gcli-rl">--</span><span id="unit-gcli-rl" class="text-[8px] ml-1 opacity-60">DAYS</span></p>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                     const unit = document.getElementById('unit-' + id.replace('timer-', ''));
                     if (!el) return;
                     if (!val || val === "0.0") {
-                        el.innerText = "READY";
+                        el.innerText = "HEALTHY";
                         el.classList.remove('text-amber-400', 'text-blue-400', 'text-xl');
                         el.classList.add('text-emerald-400', 'text-sm', 'font-bold');
                         if (unit) unit.classList.add('hidden');
@@ -207,7 +207,7 @@
                         else if (mKey.includes('PRO')) theme = { time: "text-purple-400", text: "text-purple-100/90", border: "border-purple-500/20" };
                         else if (mKey.includes('COPILOT')) theme = { time: "text-emerald-400", text: "text-emerald-100/90", border: "border-emerald-500/20" };
                         else if (mKey.includes('CLAUDE')) theme = { time: "text-rose-400", text: "text-rose-100/90", border: "border-rose-500/20" };
-                        return `${header}<div class="card p-3 rounded-xl border ${theme.border} flex flex-col sm:flex-row justify-between sm:items-center gap-2 group bg-[#1a2035]"><div class="flex items-center gap-3 w-full min-w-0"><div class="flex flex-col shrink-0"><span class="text-xs font-mono font-bold ${theme.time}">${item.time}</span><span class="text-[7px] font-black uppercase tracking-tighter ${theme.time} opacity-70 mt-0.5">${item.model.split('-').pop()}</span></div><span class="text-[11px] ${theme.text} font-medium truncate flex-1 min-w-0">${item.summary}</span></div><span class="self-end sm:self-auto text-[9px] font-black text-slate-600 bg-slate-900/50 px-2 py-0.5 rounded border border-slate-800 group-hover:text-blue-400 transition-colors uppercase tracking-tighter shrink-0">${item.model}</span></div>`;
+                        return `${header}<div class="card p-4 rounded-xl border ${theme.border} flex flex-col sm:flex-row justify-between sm:items-center gap-2 group bg-[#1a2035]"><div class="flex items-center gap-3 w-full min-w-0"><div class="flex flex-col shrink-0"><span class="text-xs font-mono font-bold ${theme.time}">${item.time}</span><span class="text-[8px] font-black uppercase tracking-tighter ${theme.time} opacity-70 mt-0.5">${item.model.split('-').pop()}</span></div><span class="text-sm ${theme.text} font-semibold truncate flex-1 min-w-0">${item.summary}</span></div><span class="self-end sm:self-auto text-[9px] font-black text-slate-600 bg-slate-900/50 px-2 py-0.5 rounded border border-slate-800 group-hover:text-blue-400 transition-colors uppercase tracking-tighter shrink-0">${item.model}</span></div>`;
                     }).join('');
                 }
                 document.getElementById('last-update').innerText = new Date(data.updated).toLocaleTimeString();
