@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T21:16:27Z",
+  "updated": "2026-02-04T21:25:19Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -14,7 +14,7 @@
       "opus": 0,
       "sonnet": 1,
       "cooldowns": 2,
-      "quotas": 4,
+      "quotas": 6,
       "timers": {
         "ag_rl": "0.0",
         "ag_quota": "0.9",
@@ -80,6 +80,24 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "13:16",
+      "project": "benfoxsb.github.io",
+      "hash": "e468c5a",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/e468c5a",
+      "summary": "data: focus pulse on code check-ins",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "13:16",
+      "project": "benfoxsb.github.io",
+      "hash": "22413e7",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/22413e7",
+      "summary": "ui: unify model color mapping across all dashboard components",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "13:12",
@@ -186,24 +204,6 @@
       "hash": "3089bbb",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/3089bbb",
       "summary": "data: focus pulse on code check-ins",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "12:34",
-      "project": "benfoxsb.github.io",
-      "hash": "724ab28",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/724ab28",
-      "summary": "fix: workflow path",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "12:33",
-      "project": "benfoxsb.github.io",
-      "hash": "ade646b",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/ade646b",
-      "summary": "feat: move dashboard to /site and configure root deployment",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -415,11 +415,12 @@
         "10": "5",
         "11": "11",
         "12": "19",
-        "13": "3"
+        "13": "5"
       },
       "fail": {
         "11": "2",
-        "12": "4"
+        "12": "4",
+        "13": "2"
       }
     }
   ],
