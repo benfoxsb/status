@@ -124,15 +124,32 @@
                 // 3. PULSE
                 const pulseContainer = document.getElementById('system-log');
                 if (data.pulse && data.pulse.length > 0) {
-                    pulseContainer.innerHTML = data.pulse.reverse().map(item => `
-                        <div class="card p-3 rounded-xl border-l-2 border-l-blue-500/50 flex justify-between items-center group">
-                            <div class="flex flex-col">
-                                <span class="text-[10px] text-slate-500 font-mono leading-none mb-1">${item.time}</span>
-                                <span class="text-[11px] text-slate-200 font-medium">Task Completed</span>
+                    let lastDate = "";
+                    const today = new Date().toISOString().split('T')[0];
+                    
+                    const sortedPulse = data.pulse.sort((a, b) => {
+                        if (a.date !== b.date) return b.date.localeCompare(a.date);
+                        return b.time.localeCompare(a.time);
+                    });
+                    
+                    pulseContainer.innerHTML = sortedPulse.map(item => {
+                        let header = "";
+                        if (item.date !== lastDate) {
+                            const label = item.date === today ? 'Today' : item.date;
+                            header = `<div class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.2em] mt-6 mb-2 ml-1">${label}</div>`;
+                            lastDate = item.date;
+                        }
+                        return `
+                            ${header}
+                            <div class="card p-3 rounded-xl border-l-2 border-l-blue-500/50 flex justify-between items-center group">
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] text-slate-500 font-mono leading-none mb-1">${item.time}</span>
+                                    <span class="text-[11px] text-slate-200 font-medium">Task Started</span>
+                                </div>
+                                <span class="text-[9px] font-bold text-slate-500 group-hover:text-blue-400 transition-colors uppercase">${item.model || 'AGENT'}</span>
                             </div>
-                            <span class="text-[9px] font-bold text-slate-500 group-hover:text-blue-400 transition-colors">${item.model || 'AGENT'}</span>
-                        </div>
-                    `).join('');
+                        `;
+                    }).join('');
                 }
 
                 document.getElementById('last-update').innerText = new Date(data.updated).toLocaleTimeString();
