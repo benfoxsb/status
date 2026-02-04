@@ -1,9 +1,9 @@
 {
-  "updated": "2026-02-04T18:08:59Z",
+  "updated": "2026-02-04T18:24:08Z",
   "windows": {
     "24h": {
-      "success": 100,
-      "fail": 16,
+      "success": 102,
+      "fail": 20,
       "cooldowns": 8,
       "quotas": 12,
       "timers": {
@@ -13,8 +13,8 @@
         "gcli_quota": "0.9"
       },
       "usage": {
-        "ag_flash": 81,
-        "ag_pro": 8,
+        "ag_flash": 82,
+        "ag_pro": 9,
         "gcli_flash": 18,
         "gcli_pro": 0,
         "copilot": 6,
@@ -24,12 +24,12 @@
       }
     },
     "7d": {
-      "success": 292,
-      "fail": 176,
+      "success": 294,
+      "fail": 180,
       "days": 2,
       "usage": {
-        "ag_flash": 202,
-        "ag_pro": 21,
+        "ag_flash": 203,
+        "ag_pro": 22,
         "gcli_flash": 18,
         "gcli_pro": 0,
         "copilot": 55,
@@ -37,15 +37,15 @@
         "opus": 0,
         "sonnet": 0
       },
-      "reliability": "62.3"
+      "reliability": "62.0"
     },
     "30d": {
-      "success": 292,
-      "fail": 176,
+      "success": 294,
+      "fail": 180,
       "days": 2,
       "usage": {
-        "ag_flash": 202,
-        "ag_pro": 21,
+        "ag_flash": 203,
+        "ag_pro": 22,
         "gcli_flash": 18,
         "gcli_pro": 0,
         "copilot": 55,
@@ -53,7 +53,7 @@
         "opus": 0,
         "sonnet": 0
       },
-      "reliability": "62.3"
+      "reliability": "62.0"
     }
   },
   "history": [
@@ -68,10 +68,10 @@
     },
     {
       "date": "2026-02-04",
-      "success": 100,
-      "fail": 16,
-      "ag_flash": 81,
-      "ag_pro": 8,
+      "success": 102,
+      "fail": 20,
+      "ag_flash": 82,
+      "ag_pro": 9,
       "gcli_flash": 18,
       "gcli_pro": 0,
       "copilot": 6,
@@ -113,25 +113,25 @@
     },
     {
       "date": "2026-02-04",
-      "time": "18:08",
+      "time": "18:24",
       "model": "AG-GEMINI-3-FLASH",
       "summary": "Dashboard Upgrade:"
     },
     {
       "date": "2026-02-04",
-      "time": "18:08",
+      "time": "18:24",
       "model": "AG-GEMINI-3-FLASH",
       "summary": "Visual Alignment:"
     },
     {
       "date": "2026-02-04",
-      "time": "18:08",
+      "time": "18:24",
       "model": "AG-GEMINI-3-FLASH",
       "summary": "Data Engineering:"
     },
     {
       "date": "2026-02-04",
-      "time": "18:08",
+      "time": "18:24",
       "model": "AG-GEMINI-3-FLASH",
       "summary": "Tier 3 Verification:"
     }
@@ -215,7 +215,8 @@
         "14": "6",
         "15": "6",
         "16": "7",
-        "17": "14"
+        "17": "14",
+        "18": "2"
       },
       "fail": {
         "09": "2",
@@ -224,7 +225,8 @@
         "13": "2",
         "15": "4",
         "16": "2",
-        "17": "2"
+        "17": "2",
+        "18": "4"
       }
     }
   ]
