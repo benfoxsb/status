@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T21:25:19Z",
+  "updated": "2026-02-04T21:40:37Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -17,7 +17,7 @@
       "quotas": 6,
       "timers": {
         "ag_rl": "0.0",
-        "ag_quota": "0.9",
+        "ag_quota": "0.8",
         "gcli_rl": "0.0",
         "gcli_quota": "0.0"
       }
@@ -80,6 +80,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "13:25",
+      "project": "benfoxsb.github.io",
+      "hash": "7cb9954",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/7cb9954",
+      "summary": "data: focus pulse on code check-ins",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "13:16",
@@ -186,15 +195,6 @@
       "hash": "f9ac521",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/f9ac521",
       "summary": "data: focus pulse on code check-ins",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "12:35",
-      "project": "benfoxsb.github.io",
-      "hash": "67aa62f",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/67aa62f",
-      "summary": "feat: move dashboard to root for direct benfoxsb.github.io serving",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -415,7 +415,7 @@
         "10": "5",
         "11": "11",
         "12": "19",
-        "13": "5"
+        "13": "6"
       },
       "fail": {
         "11": "2",
