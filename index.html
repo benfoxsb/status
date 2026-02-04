@@ -92,12 +92,6 @@
         </footer>
     </div>
 
-        <footer class="mt-20 flex justify-between items-center px-2 py-8 border-t border-slate-900">
-            <p class="text-slate-600 text-[10px] uppercase font-bold tracking-[0.2em]">Sync: <span id="last-update" class="text-slate-400">...</span></p>
-            <p class="text-slate-700 text-[10px]">&copy; 2026 Ben Fox Operational Unit</p>
-        </footer>
-    </div>
-
     <script>
         let chartInstance = null;
 
@@ -153,22 +147,25 @@
                         
                         // Use a more realistic time if it's 00:00 (since memory doesn't have time)
                         const displayTime = item.time === "00:00" ? "09:00" : item.time;
-                        const colors = [
-                            { time: "text-blue-400", text: "text-blue-100/90" },
-                            { time: "text-emerald-400", text: "text-emerald-100/90" },
-                            { time: "text-purple-400", text: "text-purple-100/90" },
-                            { time: "text-amber-400", text: "text-amber-100/90" },
-                            { time: "text-rose-400", text: "text-rose-100/90" }
-                        ];
-                        const colorSet = colors[Math.abs(item.summary.length) % colors.length];
+
+                        // Map model to specific theme colors matching the distribution chart
+                        const modelThemes = {
+                            'FLASH': { time: "text-blue-400", text: "text-blue-100/90", border: "border-blue-500/20" },
+                            'PRO': { time: "text-purple-400", text: "text-purple-100/90", border: "border-purple-500/20" },
+                            'COPILOT': { time: "text-emerald-400", text: "text-emerald-100/90", border: "border-emerald-500/20" },
+                            'LOCAL': { time: "text-slate-400", text: "text-slate-100/90", border: "border-slate-500/20" },
+                            'AGENT': { time: "text-blue-400", text: "text-blue-100/90", border: "border-slate-800" }
+                        };
+                        
+                        const theme = modelThemes[item.model.toUpperCase()] || modelThemes['AGENT'];
 
                         return `
                             ${header}
-                            <div class="card p-4 rounded-xl border border-slate-800 flex justify-between items-center group bg-[#1a2035]">
+                            <div class="card p-4 rounded-xl border ${theme.border} flex justify-between items-center group bg-[#1a2035]">
                                 <div class="flex items-center gap-3">
-                                    <span class="text-xs font-mono font-bold ${colorSet.time}">${displayTime}</span>
+                                    <span class="text-xs font-mono font-bold ${theme.time}">${displayTime}</span>
                                     <span class="text-slate-500 font-bold">—</span>
-                                    <span class="text-[11px] ${colorSet.text} font-medium truncate max-w-[200px]">${item.summary}</span>
+                                    <span class="text-[11px] ${theme.text} font-medium truncate max-w-[200px]">${item.summary}</span>
                                 </div>
                                 <span class="text-[9px] font-black text-slate-600 bg-slate-900/50 px-2 py-0.5 rounded border border-slate-800 group-hover:text-blue-400 transition-colors uppercase tracking-tighter shrink-0 ml-2">${item.model || 'AGENT'}</span>
                             </div>
