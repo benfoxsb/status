@@ -47,7 +47,13 @@
                 <p id="label-cooldowns" class="text-[9px] text-slate-500 mt-2">0 active cooldowns</p>
             </div>
             <div class="card p-4 rounded-2xl flex flex-col">
-                <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-3 tracking-widest text-blue-400">7D Pulse Heatmap</h3>
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest text-blue-400">7D Pulse Heatmap</h3>
+                    <div class="flex gap-3 text-[8px] font-bold">
+                        <div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> SUCCESS</div>
+                        <div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> FAIL</div>
+                    </div>
+                </div>
                 <div id="heatmap-container" class="grid grid-cols-7 gap-1 flex-grow">
                     <!-- Heatmap cells injected here -->
                 </div>
@@ -224,7 +230,10 @@
                             ${header}
                             <div class="card p-4 rounded-xl border ${theme.border} flex justify-between items-center group bg-[#1a2035]">
                                 <div class="flex items-center gap-3">
-                                    <span class="text-xs font-mono font-bold ${theme.time}">${displayTime}</span>
+                                    <div class="flex flex-col">
+                                        <span class="text-xs font-mono font-bold ${theme.time}">${displayTime}</span>
+                                        <span class="text-[7px] font-black uppercase tracking-tighter ${theme.time} opacity-70 mt-0.5">${item.model.split('-').slice(-1)[0]}</span>
+                                    </div>
                                     <span class="text-slate-500 font-bold">—</span>
                                     <span class="text-[11px] ${theme.text} font-medium truncate max-w-[200px]">${item.summary}</span>
                                 </div>
@@ -244,14 +253,17 @@
             const container = document.getElementById('heatmap-container');
             container.innerHTML = '';
             
+            // 7 Columns (Days) x 24 Rows (Hours)
             for (let day = 0; day < 7; day++) {
                 const dayData = heatmap[day] || { success: {}, fail: {} };
                 const dayCol = document.createElement('div');
                 dayCol.className = 'flex flex-col gap-0.5';
                 
                 for (let hour = 0; hour < 24; hour++) {
-                    const sCount = dayData.success[hour] || 0;
-                    const fCount = dayData.fail[hour] || 0;
+                    // Fix: JSON keys for hours are strings like "09" not numbers like 9
+                    const hrKey = hour.toString().padStart(2, '0');
+                    const sCount = parseInt(dayData.success[hrKey] || 0);
+                    const fCount = parseInt(dayData.fail[hrKey] || 0);
                     const cell = document.createElement('div');
                     
                     let colorClass = 'bg-slate-800/50';
@@ -259,7 +271,7 @@
                     else if (sCount > 0) colorClass = 'bg-emerald-400';
                     
                     cell.className = `w-full h-1 rounded-[1px] ${colorClass}`;
-                    cell.title = `${hour}:00 — Success: ${sCount}, Fail: ${fCount}`;
+                    cell.title = `${hrKey}:00 — Success: ${sCount}, Fail: ${fCount}`;
                     dayCol.appendChild(cell);
                 }
                 container.appendChild(dayCol);
