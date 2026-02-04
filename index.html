@@ -47,8 +47,8 @@
                 <p id="label-cooldowns" class="text-[9px] text-slate-500 mt-2">0 active cooldowns</p>
             </div>
             <div class="card p-4 rounded-2xl flex flex-col">
-                <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-2 tracking-widest text-blue-400">7D Pulse Heatmap</h3>
-                <div id="heatmap-container" class="grid grid-cols-7 gap-1 h-8">
+                <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-3 tracking-widest text-blue-400">7D Pulse Heatmap</h3>
+                <div id="heatmap-container" class="grid grid-cols-7 gap-1 flex-grow">
                     <!-- Heatmap cells injected here -->
                 </div>
             </div>
@@ -152,18 +152,23 @@
                         }
                         
                         // Use a more realistic time if it's 00:00 (since memory doesn't have time)
-                        const displayTime = item.time === "00:00" ? "Active" : item.time;
-                        let timeColor = "text-blue-400";
-                        if (parseInt(item.time.split(':')[0]) < 22) timeColor = "text-emerald-400";
-                        if (parseInt(item.time.split(':')[0]) < 20) timeColor = "text-yellow-400";
+                        const displayTime = item.time === "00:00" ? "09:00" : item.time;
+                        const colors = [
+                            { time: "text-blue-400", text: "text-blue-100/90" },
+                            { time: "text-emerald-400", text: "text-emerald-100/90" },
+                            { time: "text-purple-400", text: "text-purple-100/90" },
+                            { time: "text-amber-400", text: "text-amber-100/90" },
+                            { time: "text-rose-400", text: "text-rose-100/90" }
+                        ];
+                        const colorSet = colors[Math.abs(item.summary.length) % colors.length];
 
                         return `
                             ${header}
                             <div class="card p-4 rounded-xl border border-slate-800 flex justify-between items-center group bg-[#1a2035]">
                                 <div class="flex items-center gap-3">
-                                    <span class="text-xs font-mono font-bold ${timeColor}">${displayTime}</span>
+                                    <span class="text-xs font-mono font-bold ${colorSet.time}">${displayTime}</span>
                                     <span class="text-slate-500 font-bold">—</span>
-                                    <span class="text-[11px] text-slate-300 font-medium truncate max-w-[200px]">${item.summary}</span>
+                                    <span class="text-[11px] ${colorSet.text} font-medium truncate max-w-[200px]">${item.summary}</span>
                                 </div>
                                 <span class="text-[9px] font-black text-slate-600 bg-slate-900/50 px-2 py-0.5 rounded border border-slate-800 group-hover:text-blue-400 transition-colors uppercase tracking-tighter shrink-0 ml-2">${item.model || 'AGENT'}</span>
                             </div>
