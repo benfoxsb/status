@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T19:54:17Z",
+  "updated": "2026-02-04T19:57:31Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -82,6 +82,14 @@
   "pulse": [
     {
       "date": "2026-02-04",
+      "time": "11:54",
+      "project": "repo-status",
+      "hash": "85d804d",
+      "url": "https://github.com/benfoxsb/status/commit/85d804d",
+      "summary": "data: integrate multi-project git pulse tracking"
+    },
+    {
+      "date": "2026-02-04",
       "time": "11:46",
       "project": "repo-status",
       "hash": "eccef35",
@@ -143,14 +151,6 @@
       "hash": "8b7d99d",
       "url": "https://github.com/benfoxsb/status/commit/8b7d99d",
       "summary": "data: recover historical heatmap and improve pulse summaries"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:24",
-      "project": "repo-status",
-      "hash": "447e31c",
-      "url": "https://github.com/benfoxsb/status/commit/447e31c",
-      "summary": "data: fix timestamps and heatmap gaps"
     },
     {
       "date": "2026-02-03",
@@ -304,7 +304,7 @@
       "date": "2026-02-04",
       "success": {
         "10": "5",
-        "11": "9"
+        "11": "10"
       },
       "fail": {
         "11": "2"
