@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T20:16:31Z",
+  "updated": "2026-02-04T20:24:40Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -14,7 +14,7 @@
       "opus": 0,
       "sonnet": 1,
       "cooldowns": 2,
-      "quotas": 2,
+      "quotas": 4,
       "timers": {
         "ag_rl": "0.0",
         "ag_quota": "0.9",
@@ -80,6 +80,38 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "12:22",
+      "project": "agent-status-board",
+      "hash": "b4c6059",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/b4c6059",
+      "summary": "chore: remove redundant/failing workflow"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "12:21",
+      "project": "agent-status-board",
+      "hash": "40153a4",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/40153a4",
+      "summary": "fix: update data fetch URL to be relative"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "12:16",
+      "project": "agent-status-board",
+      "hash": "9c67df9",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/9c67df9",
+      "summary": "ui: high-density layout with project columns and unified performance hub"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "12:16",
+      "project": "agent-status-board",
+      "hash": "25b4008",
+      "url": "https://github.com/benfoxsb/agent-status-board/commit/25b4008",
+      "summary": "data: focus pulse on code check-ins"
+    },
     {
       "date": "2026-02-04",
       "time": "12:14",
@@ -159,38 +191,6 @@
       "hash": "eccef35",
       "url": "https://github.com/benfoxsb/agent-status-board/commit/eccef35",
       "summary": "ui: implement grouped multi-project pulse with expandable cards"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:46",
-      "project": "agent-status-board",
-      "hash": "d677839",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/d677839",
-      "summary": "data: integrate multi-project git pulse tracking"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:39",
-      "project": "agent-status-board",
-      "hash": "ec48483",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/ec48483",
-      "summary": "data: integrate model failover path tracking"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:32",
-      "project": "agent-status-board",
-      "hash": "eda9fac",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/eda9fac",
-      "summary": "ui: implement live failover pipeline and strategy tracking"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:32",
-      "project": "agent-status-board",
-      "hash": "8ac61b2",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/8ac61b2",
-      "summary": "data: integrate model failover path tracking"
     },
     {
       "date": "2026-02-03",
@@ -385,11 +385,11 @@
       "success": {
         "10": "5",
         "11": "11",
-        "12": "3"
+        "12": "11"
       },
       "fail": {
         "11": "2",
-        "12": "2"
+        "12": "4"
       }
     }
   ],
