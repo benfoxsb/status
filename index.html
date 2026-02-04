@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { background-color: #0b0f1a; color: #f1f5f9; font-family: 'Inter', sans-serif; overflow: hidden; }
+        body { background-color: #0b0f1a; color: #f1f5f9; font-family: 'Inter', sans-serif; }
         .card { background-color: #161b2c; border: 1px solid #2d334a; transition: transform 0.2s; }
         .card:hover { transform: translateY(-2px); }
         .pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
@@ -16,9 +16,9 @@
         ::-webkit-scrollbar { width: 0px; background: transparent; }
     </style>
 </head>
-<body class="p-4 md:p-8 h-screen">
-    <div class="max-w-6xl mx-auto h-full flex flex-col">
-        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 shrink-0">
+<body class="p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
             <div>
                 <div class="flex items-center gap-3 mb-2">
                     <h1 class="text-3xl font-bold text-white tracking-tight">Ben Fox Status</h1>
@@ -33,7 +33,7 @@
         </header>
 
         <!-- Stats Grid -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 shrink-0">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             <div class="card p-5 rounded-2xl">
                 <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-3 tracking-widest">Success (24h)</h3>
                 <p id="stat-success" class="text-3xl font-bold text-white leading-none">--</p>
@@ -48,7 +48,7 @@
             </div>
             <div class="card p-4 rounded-2xl flex flex-col">
                 <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-2 tracking-widest text-blue-400">7D Pulse Heatmap</h3>
-                <div id="heatmap-container" class="grid grid-cols-7 gap-1 h-full">
+                <div id="heatmap-container" class="grid grid-cols-7 gap-1 h-8">
                     <!-- Heatmap cells injected here -->
                 </div>
             </div>
@@ -58,11 +58,11 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 grow overflow-hidden pb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-8">
             <!-- Left: Model Distribution Chart -->
-            <div class="lg:col-span-2 space-y-8 flex flex-col h-full">
-                <div class="card p-6 rounded-3xl flex-grow flex flex-col">
-                    <div class="flex justify-between items-center mb-6 shrink-0">
+            <div class="lg:col-span-2">
+                <div class="card p-6 rounded-3xl h-[400px]">
+                    <div class="flex justify-between items-center mb-6">
                         <h2 class="text-lg font-bold text-white tracking-tight">Model Distribution (7D)</h2>
                         <div class="flex gap-4 text-[10px] font-bold">
                             <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> FLASH</div>
@@ -70,16 +70,16 @@
                             <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> COPILOT</div>
                         </div>
                     </div>
-                    <div class="grow w-full relative">
+                    <div class="h-[280px] w-full">
                         <canvas id="modelChart"></canvas>
                     </div>
                 </div>
             </div>
 
             <!-- Right: System Pulse -->
-            <div class="flex flex-col h-full overflow-hidden">
-                <h2 class="text-2xl font-bold text-white tracking-tight mb-6 shrink-0">Recent System Pulse</h2>
-                <div id="system-log" class="space-y-3 overflow-hidden pr-1">
+            <div>
+                <h2 class="text-2xl font-bold text-white tracking-tight mb-6 ml-1">Recent System Pulse</h2>
+                <div id="system-log" class="space-y-3 pr-1">
                     <!-- Items will be injected here -->
                     <div class="text-center py-10 text-slate-600 italic text-xs">Waiting for pulse data...</div>
                 </div>
@@ -139,7 +139,7 @@
                     const sortedPulse = data.pulse.sort((a, b) => {
                         if (a.date !== b.date) return b.date.localeCompare(a.date);
                         return b.time.localeCompare(a.time);
-                    }).slice(0, 8); // Keep it tight for zero-scroll
+                    }); // Removed slice to allow full list scroll
                     
                     pulseContainer.innerHTML = sortedPulse.map(item => {
                         let header = "";
