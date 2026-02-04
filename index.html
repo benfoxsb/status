@@ -10,8 +10,6 @@
         body { background-color: #0b0f1a; color: #f1f5f9; font-family: 'Inter', sans-serif; }
         .card { background-color: #161b2c; border: 1px solid #2d334a; transition: transform 0.2s; }
         .card:hover { transform: translateY(-2px); }
-        .pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
         .glass { background: rgba(22, 27, 44, 0.7); backdrop-filter: blur(10px); }
         ::-webkit-scrollbar { width: 0px; background: transparent; }
     </style>
@@ -30,29 +28,40 @@
 
         <!-- Stats Grid -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div class="card p-5 rounded-2xl">
-                <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-3 tracking-widest">Success (24h)</h3>
-                <p id="stat-success" class="text-3xl font-bold text-emerald-400 leading-none">--</p>
-                <div class="mt-4 h-1 bg-slate-800 rounded-full overflow-hidden">
-                    <div id="bar-24h" class="h-full bg-emerald-500 w-0 transition-all duration-1000"></div>
+            <div class="card p-5 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-3 tracking-widest text-emerald-400">Operations (24h)</h3>
+                    <div class="flex items-baseline gap-2">
+                        <p id="stat-success" class="text-3xl font-bold text-emerald-400 leading-none">--</p>
+                        <span class="text-slate-600 font-bold">/</span>
+                        <p id="stat-fail" class="text-xl font-bold text-red-400/80 leading-none">--</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="h-1 bg-slate-800 rounded-full overflow-hidden">
+                        <div id="bar-24h" class="h-full bg-emerald-500 w-0 transition-all duration-1000"></div>
+                    </div>
+                    <p id="label-cooldowns" class="text-[8px] text-slate-500 mt-2 uppercase tracking-tighter">0 active cooldowns</p>
                 </div>
             </div>
-            <div class="card p-5 rounded-2xl border-red-500/20">
-                <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-3 tracking-widest">Failures (24h)</h3>
-                <p id="stat-fail" class="text-3xl font-bold text-red-400 leading-none">--</p>
-                <p id="label-cooldowns" class="text-[9px] text-slate-500 mt-2">0 active cooldowns</p>
+
+            <div class="card p-5 rounded-2xl flex flex-col justify-center items-center">
+                <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-widest text-blue-400">7D Reliability</h3>
+                <p id="reliability-7d" class="text-5xl font-black text-blue-400 leading-none tracking-tighter">--%</p>
             </div>
+
+            <div class="card p-5 rounded-2xl flex flex-col justify-center items-center border-emerald-500/20">
+                <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-widest text-emerald-400">30D Reliability</h3>
+                <p id="reliability-30d" class="text-5xl font-black text-emerald-400 leading-none tracking-tighter">--%</p>
+            </div>
+
             <div class="card p-4 rounded-2xl flex flex-col">
                 <div class="flex justify-between items-center mb-3">
-                    <h3 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest text-blue-400">7D Pulse Heatmap</h3>
+                    <h3 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest text-slate-400">7D Pulse Heatmap</h3>
                 </div>
                 <div id="heatmap-container" class="grid grid-cols-7 gap-1 flex-grow">
                     <!-- Heatmap cells injected here -->
                 </div>
-            </div>
-            <div class="card p-5 rounded-2xl flex flex-col justify-center items-center">
-                <h3 class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-widest text-purple-400">30D Reliability</h3>
-                <p id="reliability-score" class="text-5xl font-black text-emerald-400 leading-none tracking-tighter">--%</p>
             </div>
         </div>
 
@@ -61,7 +70,7 @@
             <div class="lg:col-span-2 flex flex-col h-full">
                 <h2 class="text-2xl font-bold text-white tracking-tight mb-6 ml-1">Model Distribution</h2>
                 
-                <!-- Cooldown Status (Restored) -->
+                <!-- Cooldown Status -->
                 <div id="cooldown-timers" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     <div class="card p-4 rounded-2xl border-l-4 border-l-amber-500/50 bg-[#1a2035] flex justify-between items-center">
                         <div>
@@ -85,7 +94,7 @@
 
                 <div class="card p-6 rounded-3xl grow flex flex-col min-h-[400px]">
                     <div id="dynamic-legend" class="flex flex-wrap gap-x-4 gap-y-2 text-[9px] font-bold justify-center mb-6 border-b border-slate-800 pb-4">
-                        <!-- Dynamic Legends Injected Here -->
+                        <!-- Legend Injected Here -->
                     </div>
                     <div class="grow w-full relative">
                         <canvas id="modelChart"></canvas>
@@ -97,7 +106,6 @@
             <div>
                 <h2 class="text-2xl font-bold text-white tracking-tight mb-6 ml-1">Recent System Pulse</h2>
                 <div id="system-log" class="space-y-3 pr-1">
-                    <!-- Items will be injected here -->
                     <div class="text-center py-10 text-slate-600 italic text-xs">Waiting for pulse data...</div>
                 </div>
             </div>
@@ -111,30 +119,29 @@
 
     <script>
         let chartInstance = null;
+        const modelConfig = [
+            { key: 'ag_flash', label: 'AG GEMINI FLASH', color: '#3b82f6' },
+            { key: 'ag_pro', label: 'AG GEMINI PRO', color: '#a855f7' },
+            { key: 'gcli_flash', label: 'GCLI FLASH', color: '#67e8f9' },
+            { key: 'gcli_pro', label: 'GCLI PRO', color: '#c084fc' },
+            { key: 'copilot', label: 'GPT-5-MINI', color: '#10b981' },
+            { key: 'opus', label: 'CLAUDE OPUS', color: '#f43f5e' },
+            { key: 'sonnet', label: 'CLAUDE SONNET', color: '#f59e0b' },
+            { key: 'local', label: 'LOCAL QWEN', color: '#64748b' }
+        ];
 
-        function getLocalYMD(d) {
-            // Use America/Los_Angeles to match user context
-            return d.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
-        }
-
+        function getLocalYMD(d) { return d.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }); }
         function getLast7Dates() {
-            const dates = [];
-            const now = new Date();
-            for (let i = 6; i >= 0; i--) {
-                const d = new Date(now);
-                d.setDate(d.getDate() - i);
-                dates.push(getLocalYMD(d));
-            }
+            const dates = []; const now = new Date();
+            for (let i = 6; i >= 0; i--) { const d = new Date(now); d.setDate(d.getDate() - i); dates.push(getLocalYMD(d)); }
             return dates;
         }
 
         async function updateDashboard() {
             try {
-                const url = 'https://benfoxsb.github.io/status/vitals.json?nocache=' + Date.now();
-                const response = await fetch(url);
+                const response = await fetch('https://benfoxsb.github.io/status/vitals.json?nocache=' + Date.now());
                 const data = await response.json();
                 
-                // 1. TOP CARDS
                 const w24 = data.windows['24h'];
                 const w7 = data.windows['7d'];
                 const w30 = data.windows['30d'];
@@ -142,173 +149,71 @@
                 document.getElementById('stat-success').innerText = w24.success;
                 document.getElementById('stat-fail').innerText = w24.fail;
                 document.getElementById('label-cooldowns').innerText = `${w24.cooldowns || 0} active cooldowns`;
-
-                // Update Timers
-                if (document.getElementById('timer-rl')) {
-                    document.getElementById('timer-rl').innerText = w24.timers?.rate_limit || "0.0";
-                }
-                if (document.getElementById('timer-quota')) {
-                    document.getElementById('timer-quota').innerText = w24.timers?.quota || "0.0";
-                }
                 
                 const total24 = w24.success + w24.fail;
                 document.getElementById('bar-24h').style.width = total24 > 0 ? (w24.success / total24 * 100) + '%' : '0%';
 
-                const total30 = w30.success + w30.fail;
-                const reliability = total30 > 0 ? (w30.success / total30 * 100).toFixed(1) : "0.0";
-                document.getElementById('reliability-score').innerText = `${reliability}%`;
+                document.getElementById('reliability-7d').innerText = `${w7.reliability || '0.0'}%`;
+                document.getElementById('reliability-30d').innerText = `${w30.reliability || '0.0'}%`;
 
-                // 1.5 COOLDOWNS
-                const cdContainer = document.getElementById('cooldown-status');
-                if (cdContainer) {
-                    const cds = data.windows['24h'].cooldown_list || [];
-                    cdContainer.innerHTML = cds.map(cd => `
-                        <div class="card p-3 rounded-xl border border-slate-800/50 flex flex-col items-center justify-center text-center bg-[#111625]">
-                            <span class="text-[8px] font-bold text-slate-500 uppercase tracking-widest mb-1">${cd.name}</span>
-                            <span class="text-[10px] font-black ${cd.color} tracking-tighter">${cd.status}</span>
-                        </div>
-                    `).join('');
-                }
+                if (document.getElementById('timer-rl')) document.getElementById('timer-rl').innerText = w24.timers?.rate_limit || "0.0";
+                if (document.getElementById('timer-quota')) document.getElementById('timer-quota').innerText = w24.timers?.quota || "0.0";
 
-                // 1.6 DYNAMIC LEGENDS
                 const legendContainer = document.getElementById('dynamic-legend');
-                const modelConfig = [
-                    { key: 'flash', label: 'GEMINI FLASH', color: '#3b82f6' },
-                    { key: 'pro', label: 'GEMINI PRO', color: '#a855f7' },
-                    { key: 'copilot', label: 'GPT-5-MINI', color: '#10b981' },
-                    { key: 'opus', label: 'CLAUDE OPUS', color: '#f43f5e' },
-                    { key: 'sonnet', label: 'CLAUDE SONNET', color: '#f59e0b' },
-                    { key: 'local', label: 'LOCAL QWEN', color: '#64748b' },
-                    { key: 'deepseek', label: 'LOCAL DEEPSEEK', color: '#ec4899' }
-                ];
-                
-                // Show if data exists in 7d usage
-                const activeModels = modelConfig.filter(m => (w7.usage[m.key] || 0) > 0);
-                // Fallback to defaults if none active to avoid empty header
-                const displayModels = activeModels.length > 0 ? activeModels : modelConfig.slice(0,3);
-                
-                legendContainer.innerHTML = displayModels.map(m => `
-                    <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full" style="background-color: ${m.color}"></span> ${m.label}</div>
-                `).join('');
+                const activeModels = modelConfig.filter(m => (w7.usage[m.key] || 0) > 0 || m.key === 'ag_flash');
+                legendContainer.innerHTML = activeModels.map(m => `<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full" style="background-color: ${m.color}"></span> ${m.label}</div>`).join('');
 
-                // 2. HEATMAP
-                renderHeatmap(data.heatmap, data.history);
-
-                // 3. CHART
+                renderHeatmap(data.heatmap);
                 renderChart(data.history);
 
-                // 4. PULSE
                 const pulseContainer = document.getElementById('system-log');
                 if (data.pulse && data.pulse.length > 0) {
-                    let lastDate = "";
-                    const today = getLocalYMD(new Date());
-                    // yesterday logic
-                    const yD = new Date(); yD.setDate(yD.getDate() - 1);
-                    const yesterday = getLocalYMD(yD);
+                    let lastDate = ""; const today = getLocalYMD(new Date());
+                    const yD = new Date(); yD.setDate(yD.getDate() - 1); const yesterday = getLocalYMD(yD);
                     
-                    const sortedPulse = data.pulse.sort((a, b) => {
-                        if (a.date !== b.date) return b.date.localeCompare(a.date);
-                        return b.time.localeCompare(a.time);
-                    });
+                    const sortedPulse = data.pulse.sort((a, b) => a.date !== b.date ? b.date.localeCompare(a.date) : b.time.localeCompare(a.time));
                     
                     pulseContainer.innerHTML = sortedPulse.map(item => {
                         let header = "";
                         if (item.date !== lastDate) {
-                            let label = item.date;
-                            if (item.date === today) label = 'Today';
-                            else if (item.date === yesterday) label = 'Yesterday';
+                            let label = item.date === today ? 'Today' : (item.date === yesterday ? 'Yesterday' : item.date);
                             header = `<div class="text-[9px] font-bold text-slate-600 uppercase tracking-[0.2em] mt-4 mb-2 ml-1">${label}</div>`;
                             lastDate = item.date;
                         }
                         
-                        const displayTime = item.time === "00:00" ? "09:00" : item.time;
+                        const mKey = item.model.toUpperCase();
+                        let theme = { time: "text-blue-400", text: "text-blue-100/90", border: "border-blue-500/20" };
+                        if (mKey.includes('GCLI')) theme = { time: "text-cyan-400", text: "text-cyan-100/90", border: "border-cyan-500/20" };
+                        else if (mKey.includes('PRO')) theme = { time: "text-purple-400", text: "text-purple-100/90", border: "border-purple-500/20" };
+                        else if (mKey.includes('COPILOT')) theme = { time: "text-emerald-400", text: "text-emerald-100/90", border: "border-emerald-500/20" };
+                        else if (mKey.includes('CLAUDE')) theme = { time: "text-rose-400", text: "text-rose-100/90", border: "border-rose-500/20" };
 
-                        const modelThemes = {
-                            'GEMINI-3-FLASH': { time: "text-blue-400", text: "text-blue-100/90", border: "border-blue-500/20" },
-                            'GEMINI-FLASH': { time: "text-blue-400", text: "text-blue-100/90", border: "border-blue-500/20" },
-                            'GEMINI-3-PRO-HIGH': { time: "text-purple-400", text: "text-purple-100/90", border: "border-purple-500/20" },
-                            'GEMINI-3-PRO-LOW': { time: "text-purple-400", text: "text-purple-100/90", border: "border-purple-500/20" },
-                            'GEMINI-PRO': { time: "text-purple-400", text: "text-purple-100/90", border: "border-purple-500/20" },
-                            'GPT-5-MINI': { time: "text-emerald-400", text: "text-emerald-100/90", border: "border-emerald-500/20" },
-                            'COPILOT': { time: "text-emerald-400", text: "text-emerald-100/90", border: "border-emerald-500/20" },
-                            'CLAUDE-OPUS-4-5-THINKING': { time: "text-rose-400", text: "text-rose-100/90", border: "border-rose-500/20" },
-                            'CLAUDE-OPUS': { time: "text-rose-400", text: "text-rose-100/90", border: "border-rose-500/20" },
-                            'CLAUDE-SONNET-4-5': { time: "text-amber-400", text: "text-amber-100/90", border: "border-amber-500/20" },
-                            'CLAUDE-SONNET': { time: "text-amber-400", text: "text-amber-100/90", border: "border-amber-500/20" },
-                            'QWEN': { time: "text-slate-400", text: "text-slate-100/90", border: "border-slate-500/20" },
-                            'LOCAL': { time: "text-slate-400", text: "text-slate-100/90", border: "border-slate-500/20" },
-                            'DEEPSEEK': { time: "text-pink-400", text: "text-pink-100/90", border: "border-pink-500/20" },
-                            'AGENT': { time: "text-blue-400", text: "text-blue-100/90", border: "border-slate-800" }
-                        };
-                        
-                        const modelKey = (item.model || 'AGENT').toUpperCase();
-                        const theme = modelThemes[modelKey] || modelThemes['AGENT'];
-
-                        // Improved mobile layout: flex-wrap + min-width handling
-                        return `
-                            ${header}
-                            <div class="card p-3 md:p-4 rounded-xl border ${theme.border} flex flex-col sm:flex-row justify-between sm:items-center gap-2 sm:gap-4 group bg-[#1a2035]">
-                                <div class="flex items-center gap-3 w-full min-w-0">
-                                    <div class="flex flex-col shrink-0">
-                                        <span class="text-xs font-mono font-bold ${theme.time}">${displayTime}</span>
-                                        <span class="text-[7px] font-black uppercase tracking-tighter ${theme.time} opacity-70 mt-0.5">${(item.model || 'AGENT').split('-').slice(-1)[0]}</span>
-                                    </div>
-                                    <span class="text-slate-500 font-bold hidden sm:inline">—</span>
-                                    <span class="text-[11px] ${theme.text} font-medium truncate flex-1 min-w-0">${item.summary}</span>
-                                </div>
-                                <span class="self-end sm:self-auto text-[9px] font-black text-slate-600 bg-slate-900/50 px-2 py-0.5 rounded border border-slate-800 group-hover:text-blue-400 transition-colors uppercase tracking-tighter shrink-0">${item.model || 'AGENT'}</span>
-                            </div>
-                        `;
+                        return `${header}<div class="card p-3 rounded-xl border ${theme.border} flex flex-col sm:flex-row justify-between sm:items-center gap-2 group bg-[#1a2035]"><div class="flex items-center gap-3 w-full min-w-0"><div class="flex flex-col shrink-0"><span class="text-xs font-mono font-bold ${theme.time}">${item.time}</span><span class="text-[7px] font-black uppercase tracking-tighter ${theme.time} opacity-70 mt-0.5">${item.model.split('-').pop()}</span></div><span class="text-[11px] ${theme.text} font-medium truncate flex-1 min-w-0">${item.summary}</span></div><span class="self-end sm:self-auto text-[9px] font-black text-slate-600 bg-slate-900/50 px-2 py-0.5 rounded border border-slate-800 group-hover:text-blue-400 transition-colors uppercase tracking-tighter shrink-0">${item.model}</span></div>`;
                     }).join('');
                 }
-
                 document.getElementById('last-update').innerText = new Date(data.updated).toLocaleTimeString();
-            } catch (e) {
-                console.error("Dashboard sync failed", e);
-            }
+            } catch (e) { console.error("Dashboard sync failed", e); }
         }
 
-        function renderHeatmap(heatmap, history) {
+        function renderHeatmap(heatmap) {
             const container = document.getElementById('heatmap-container');
             container.innerHTML = '';
-            
             const last7 = getLast7Dates();
-            
-            // Map dates to heatmap data directly using the date property
-            const dateToHeatmap = {};
-            if (heatmap && Array.isArray(heatmap)) {
-                heatmap.forEach(h => {
-                    if (h.date) {
-                        dateToHeatmap[h.date] = h;
-                    }
-                });
-            }
+            const dateToHeatmap = {}; heatmap.forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
 
-            // 7 Columns (Days) x 24 Rows (Hours)
             last7.forEach(date => {
                 const dayData = dateToHeatmap[date] || { success: {}, fail: {} };
                 const dayCol = document.createElement('div');
-                dayCol.className = 'flex flex-col gap-0.5 w-full'; // Added w-full
-                
+                dayCol.className = 'flex flex-col gap-0.5 w-full';
                 for (let hour = 0; hour < 24; hour++) {
-                    const hrKeyPadded = hour.toString().padStart(2, '0');
-                    const hrKeySimple = hour.toString();
-                    
-                    const sObj = dayData.success || {};
-                    const fObj = dayData.fail || {};
-
-                    const sCount = parseInt(sObj[hrKeyPadded] || sObj[hrKeySimple] || 0);
-                    const fCount = parseInt(fObj[hrKeyPadded] || fObj[hrKeySimple] || 0);
-                    
+                    const hrKey = hour.toString().padStart(2, '0');
+                    const s = parseInt(dayData.success[hrKey] || 0);
+                    const f = parseInt(dayData.fail[hrKey] || 0);
                     const cell = document.createElement('div');
-                    
-                    let colorClass = 'bg-slate-800/50';
-                    // Threshold logic: Red only if failures dominate or no success exists
-                    if (fCount > 0 && (sCount === 0 || fCount >= sCount)) colorClass = 'bg-red-500';
-                    else if (sCount > 0) colorClass = 'bg-emerald-400';
-                    
-                    cell.className = `w-full h-1 rounded-[1px] ${colorClass}`;
-                    cell.title = `${date} ${hrKeyPadded}:00 — Success: ${sCount}, Fail: ${fCount}`;
+                    let color = 'bg-slate-800/50';
+                    if (f > 0 && (s === 0 || f >= s)) color = 'bg-red-500';
+                    else if (s > 0) color = 'bg-emerald-400';
+                    cell.className = `w-full h-1 rounded-[1px] ${color}`;
                     dayCol.appendChild(cell);
                 }
                 container.appendChild(dayCol);
@@ -317,54 +222,28 @@
 
         function renderChart(history) {
             const ctx = document.getElementById('modelChart').getContext('2d');
-            
             const last7 = getLast7Dates();
-            
-            // Normalize data to last 7 days (pad with 0)
-            const normalizedData = last7.map(date => {
-                const existing = (history || []).find(h => h.date === date);
-                if (existing) return existing;
-                return { 
-                    date: date, 
-                    flash: 0, pro: 0, copilot: 0, opus: 0, sonnet: 0, local: 0 
-                };
-            });
-
-            const labels = normalizedData.map(d => d.date.split('-').slice(1).join('/'));
-            const flashData = normalizedData.map(d => d.flash || 0);
-            const proData = normalizedData.map(d => d.pro || 0);
-            const copilotData = normalizedData.map(d => d.copilot || 0);
-            const opusData = normalizedData.map(d => d.opus || 0);
-            const sonnetData = normalizedData.map(d => d.sonnet || 0);
-            const localData = normalizedData.map(d => d.local || 0);
-            const deepseekData = normalizedData.map(d => d.deepseek || 0);
+            const normalizedData = last7.map(date => (history || []).find(h => h.date === date) || { date });
 
             if (chartInstance) chartInstance.destroy();
-
             chartInstance = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: labels,
-                    datasets: [
-                        { label: 'Gemini Flash', data: flashData, backgroundColor: '#3b82f6', borderRadius: 4 },
-                        { label: 'Gemini Pro', data: proData, backgroundColor: '#a855f7', borderRadius: 4 },
-                        { label: 'GPT-5 Mini', data: copilotData, backgroundColor: '#10b981', borderRadius: 4 },
-                        { label: 'Claude Opus', data: opusData, backgroundColor: '#f43f5e', borderRadius: 4 },
-                        { label: 'Claude Sonnet', data: sonnetData, backgroundColor: '#f59e0b', borderRadius: 4 },
-                        { label: 'Local Qwen', data: localData, backgroundColor: '#64748b', borderRadius: 4 },
-                        { label: 'Local DeepSeek', data: deepseekData, backgroundColor: '#ec4899', borderRadius: 4 }
-                    ]
+                    labels: normalizedData.map(d => d.date.split('-').slice(1).join('/')),
+                    datasets: modelConfig.map(m => ({
+                        label: m.label,
+                        data: normalizedData.map(d => d[m.key] || (m.key === 'ag_flash' ? d.flash : (m.key === 'ag_pro' ? d.pro : 0)) || 0),
+                        backgroundColor: m.color,
+                        borderRadius: 4
+                    }))
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    responsive: true, maintainAspectRatio: false,
                     scales: {
                         x: { stacked: true, grid: { display: false }, ticks: { color: '#64748b', font: { size: 10 } } },
                         y: { stacked: true, grid: { color: '#1e293b' }, ticks: { color: '#64748b', font: { size: 10 } } }
                     },
-                    plugins: {
-                        legend: { display: false }
-                    }
+                    plugins: { legend: { display: false } }
                 }
             });
         }
