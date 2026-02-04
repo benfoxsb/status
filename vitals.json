@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-04T13:40:32Z",
+  "updated": "2026-02-04T13:55:44Z",
   "windows": {
     "24h": {
-      "success": 64,
-      "fail": 6,
+      "success": 66,
+      "fail": 8,
       "cooldowns": 3,
-      "quotas": 6,
+      "quotas": 8,
       "cooldown_list": [
         {
           "name": "Claude Opus",
@@ -29,35 +29,35 @@
         }
       ],
       "usage": {
-        "flash": 65,
+        "flash": 67,
         "pro": 6,
-        "copilot": 3,
+        "copilot": 4,
         "local": 0,
         "opus": 0,
         "sonnet": 0
       }
     },
     "7d": {
-      "success": 256,
-      "fail": 166,
+      "success": 258,
+      "fail": 168,
       "days": 2,
       "usage": {
-        "flash": 186,
+        "flash": 188,
         "pro": 19,
-        "copilot": 52,
+        "copilot": 53,
         "local": 0,
         "opus": 0,
         "sonnet": 0
       }
     },
     "30d": {
-      "success": 256,
-      "fail": 166,
+      "success": 258,
+      "fail": 168,
       "days": 2,
       "usage": {
-        "flash": 186,
+        "flash": 188,
         "pro": 19,
-        "copilot": 52,
+        "copilot": 53,
         "local": 0,
         "opus": 0,
         "sonnet": 0
@@ -76,11 +76,11 @@
     },
     {
       "date": "2026-02-04",
-      "success": 64,
-      "fail": 6,
-      "flash": 65,
+      "success": 66,
+      "fail": 8,
+      "flash": 67,
       "pro": 6,
-      "copilot": 3,
+      "copilot": 4,
       "local": 0,
       "opus": 0,
       "sonnet": 0
@@ -119,25 +119,25 @@
     },
     {
       "date": "2026-02-04",
-      "time": "13:09",
+      "time": "13:26",
       "model": "gpt-5-mini",
       "summary": "Dashboard Upgrade:"
     },
     {
       "date": "2026-02-04",
-      "time": "13:09",
+      "time": "13:26",
       "model": "gpt-5-mini",
       "summary": "Visual Alignment:"
     },
     {
       "date": "2026-02-04",
-      "time": "13:09",
+      "time": "13:26",
       "model": "gpt-5-mini",
       "summary": "Data Engineering:"
     },
     {
       "date": "2026-02-04",
-      "time": "13:09",
+      "time": "13:26",
       "model": "gpt-5-mini",
       "summary": "Tier 3 Verification:"
     }
@@ -217,12 +217,13 @@
         "10": "22",
         "11": "12",
         "12": "6",
-        "13": "3"
+        "13": "5"
       },
       "fail": {
         "09": "2",
         "11": "2",
-        "12": "2"
+        "12": "2",
+        "13": "2"
       }
     }
   ]
