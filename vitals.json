@@ -1,0 +1,15 @@
+{
+  "last_updated": "2026-02-03T17:56:35-08:00",
+  "metrics": {
+    "success": 117,
+    "fail": 152,
+    "cooldowns": 31,
+    "quotas": 8
+  },
+  "usage": {
+    "flash": 50,
+    "pro": 8,
+    "copilot": 45,
+    "local": 0
+  }
+}
