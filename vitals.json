@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T20:24:40Z",
+  "updated": "2026-02-04T20:35:47Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -82,115 +82,115 @@
   "pulse": [
     {
       "date": "2026-02-04",
+      "time": "12:35",
+      "project": "benfoxsb.github.io",
+      "hash": "67aa62f",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/67aa62f",
+      "summary": "feat: move dashboard to root for direct benfoxsb.github.io serving"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "12:34",
+      "project": "benfoxsb.github.io",
+      "hash": "724ab28",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/724ab28",
+      "summary": "fix: workflow path"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "12:33",
+      "project": "benfoxsb.github.io",
+      "hash": "ade646b",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/ade646b",
+      "summary": "feat: move dashboard to /site and configure root deployment"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "12:24",
+      "project": "benfoxsb.github.io",
+      "hash": "83357e7",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/83357e7",
+      "summary": "data: focus pulse on code check-ins"
+    },
+    {
+      "date": "2026-02-04",
       "time": "12:22",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "b4c6059",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/b4c6059",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/b4c6059",
       "summary": "chore: remove redundant/failing workflow"
     },
     {
       "date": "2026-02-04",
       "time": "12:21",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "40153a4",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/40153a4",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/40153a4",
       "summary": "fix: update data fetch URL to be relative"
     },
     {
       "date": "2026-02-04",
       "time": "12:16",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "9c67df9",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/9c67df9",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/9c67df9",
       "summary": "ui: high-density layout with project columns and unified performance hub"
     },
     {
       "date": "2026-02-04",
       "time": "12:16",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "25b4008",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/25b4008",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/25b4008",
       "summary": "data: focus pulse on code check-ins"
     },
     {
       "date": "2026-02-04",
       "time": "12:14",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "978e65e",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/978e65e",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/978e65e",
       "summary": "data: focus pulse on code check-ins"
     },
     {
       "date": "2026-02-04",
       "time": "12:14",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "4f2c941",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/4f2c941",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/4f2c941",
       "summary": "data: focus pulse on code check-ins"
     },
     {
       "date": "2026-02-04",
       "time": "12:14",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "46aaab3",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/46aaab3",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/46aaab3",
       "summary": "ui: fix heatmap alignment in Operational Hub"
     },
     {
       "date": "2026-02-04",
       "time": "12:09",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "089f1a2",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/089f1a2",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/089f1a2",
       "summary": "data: focus pulse on code check-ins"
     },
     {
       "date": "2026-02-04",
       "time": "12:06",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "ef83605",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/ef83605",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/ef83605",
       "summary": "ui: unified layout with multi-project pulse columns"
     },
     {
       "date": "2026-02-04",
       "time": "12:06",
-      "project": "agent-status-board",
+      "project": "benfoxsb.github.io",
       "hash": "b4eba86",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/b4eba86",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/b4eba86",
       "summary": "data: focus pulse on code check-ins"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:57",
-      "project": "agent-status-board",
-      "hash": "47acd34",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/47acd34",
-      "summary": "ui: unified performance card and multi-project pulse grouping"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:57",
-      "project": "agent-status-board",
-      "hash": "0691c77",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/0691c77",
-      "summary": "data: integrate multi-project git pulse tracking"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:54",
-      "project": "agent-status-board",
-      "hash": "85d804d",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/85d804d",
-      "summary": "data: integrate multi-project git pulse tracking"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "11:46",
-      "project": "agent-status-board",
-      "hash": "eccef35",
-      "url": "https://github.com/benfoxsb/agent-status-board/commit/eccef35",
-      "summary": "ui: implement grouped multi-project pulse with expandable cards"
     },
     {
       "date": "2026-02-03",
@@ -385,7 +385,7 @@
       "success": {
         "10": "5",
         "11": "11",
-        "12": "11"
+        "12": "13"
       },
       "fail": {
         "11": "2",
