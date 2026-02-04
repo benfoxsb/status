@@ -1,0 +1,148 @@
+{
+  "updated": "2026-02-04T18:58:33Z",
+  "windows": {
+    "24h": {
+      "success": 4,
+      "fail": 0,
+      "cooldowns": 2,
+      "quotas": 0,
+      "timers": {
+        "ag_rl": "0.0",
+        "ag_quota": "0.0",
+        "gcli_rl": "0.0",
+        "gcli_quota": "0.0"
+      },
+      "usage": {
+        "ag_flash": 5,
+        "ag_pro": 0,
+        "gcli_flash": 0,
+        "gcli_pro": 0,
+        "copilot": 0,
+        "local": 0,
+        "opus": 0,
+        "sonnet": 0
+      }
+    },
+    "7d": {
+      "success": 285,
+      "fail": 176,
+      "days": 2,
+      "usage": {
+        "ag_flash": 198,
+        "ag_pro": 21,
+        "gcli_flash": 16,
+        "gcli_pro": 0,
+        "copilot": 55,
+        "local": 0,
+        "opus": 0,
+        "sonnet": 0
+      },
+      "reliability": "61.8"
+    },
+    "30d": {
+      "success": 285,
+      "fail": 176,
+      "days": 2,
+      "usage": {
+        "ag_flash": 198,
+        "ag_pro": 21,
+        "gcli_flash": 16,
+        "gcli_pro": 0,
+        "copilot": 55,
+        "local": 0,
+        "opus": 0,
+        "sonnet": 0
+      },
+      "reliability": "61.8"
+    }
+  },
+  "history": [
+    {
+      "date": "2026-02-03",
+      "success": 192,
+      "fail": 160,
+      "flash": 121,
+      "pro": 13,
+      "copilot": 49,
+      "local": 0
+    },
+    {
+      "date": "2026-02-04",
+      "success": 93,
+      "fail": 16,
+      "ag_flash": 77,
+      "ag_pro": 8,
+      "gcli_flash": 16,
+      "gcli_pro": 0,
+      "copilot": 6,
+      "local": 0,
+      "opus": 0,
+      "sonnet": 0
+    }
+  ],
+  "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "18:51",
+      "model": "AG-GEMINI-3-FLASH",
+      "summary": "Dashboard Upgrade:"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "18:51",
+      "model": "AG-GEMINI-3-FLASH",
+      "summary": "Visual Alignment:"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "18:51",
+      "model": "AG-GEMINI-3-FLASH",
+      "summary": "Data Engineering:"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "18:51",
+      "model": "AG-GEMINI-3-FLASH",
+      "summary": "Tier 3 Verification:"
+    }
+  ],
+  "heatmap": [
+    {
+      "date": "2026-01-29",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-01-30",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-01-31",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-01",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-02",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-03",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-04",
+      "success": {
+        "18": "4"
+      },
+      "fail": {}
+    }
+  ]
+}
