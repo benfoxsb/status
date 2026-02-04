@@ -1,0 +1,211 @@
+{
+  "updated": "2026-02-04T09:33:14Z",
+  "windows": {
+    "24h": {
+      "success": 10,
+      "fail": 0,
+      "cooldowns": 0,
+      "quotas": 0,
+      "usage": {
+        "flash": 15,
+        "pro": 2,
+        "copilot": 0,
+        "local": 0
+      }
+    },
+    "7d": {
+      "success": 202,
+      "fail": 160,
+      "days": 2,
+      "usage": {
+        "flash": 136,
+        "pro": 15,
+        "copilot": 49,
+        "local": 0
+      }
+    },
+    "30d": {
+      "success": 202,
+      "fail": 160,
+      "days": 2,
+      "usage": {
+        "flash": 136,
+        "pro": 15,
+        "copilot": 49,
+        "local": 0
+      }
+    }
+  },
+  "history": [
+    {
+      "date": "2026-02-03",
+      "success": 192,
+      "fail": 160,
+      "flash": 121,
+      "pro": 13,
+      "copilot": 49,
+      "local": 0
+    },
+    {
+      "date": "2026-02-04",
+      "success": 10,
+      "fail": 0,
+      "flash": 15,
+      "pro": 2,
+      "copilot": 0,
+      "local": 0
+    }
+  ],
+  "pulse": [
+    {
+      "date": "2026-02-03",
+      "time": "07:55",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "07:56",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "07:59",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "08:00",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "08:06",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "08:11",
+      "model": "gpt-5-mini",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "08:11",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "08:12",
+      "model": "gemini-3-flash-preview",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "08:42",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "09:14",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "09:15",
+      "model": "gemini-3-pro-high",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "09:17",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "09:19",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "09:21",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "09:26",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "09:31",
+      "model": "gemini-3-flash",
+      "summary": "System Pulse"
+    }
+  ],
+  "heatmap": [
+    {
+      "date": "2026-01-29",
+      "hours": {}
+    },
+    {
+      "date": "2026-01-30",
+      "hours": {}
+    },
+    {
+      "date": "2026-01-31",
+      "hours": {}
+    },
+    {
+      "date": "2026-02-01",
+      "hours": {}
+    },
+    {
+      "date": "2026-02-02",
+      "hours": {}
+    },
+    {
+      "date": "2026-02-03",
+      "hours": {
+        "00": "10",
+        "01": "8",
+        "02": "15",
+        "03": "8",
+        "04": "7",
+        "05": "16",
+        "06": "10",
+        "07": "16",
+        "08": "4",
+        "09": "20",
+        "10": "10",
+        "15": "1",
+        "16": "4",
+        "17": "18",
+        "18": "7",
+        "19": "8",
+        "20": "5",
+        "21": "5",
+        "22": "9",
+        "23": "13"
+      }
+    },
+    {
+      "date": "2026-02-04",
+      "hours": {
+        "08": "4",
+        "09": "6"
+      }
+    }
+  ]
+}
