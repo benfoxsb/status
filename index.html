@@ -14,6 +14,7 @@
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
         .glass { background: rgba(22, 27, 44, 0.7); backdrop-filter: blur(10px); }
         ::-webkit-scrollbar { width: 0px; background: transparent; }
+        .active-model { border-color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.1); }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -66,8 +67,15 @@
             </div>
         </div>
 
+        <!-- Failover Pipeline Card -->
+        <div class="card p-6 rounded-3xl mb-8 border-emerald-500/10">
+            <h3 class="text-xs font-bold uppercase mb-6 tracking-widest text-emerald-500">Failover Pipeline (Live Strategy)</h3>
+            <div id="failover-path" class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-8">
-            <!-- Left: Model Distribution Chart -->
             <div class="lg:col-span-2 flex flex-col h-full">
                 <h2 class="text-3xl font-bold text-white tracking-tight mb-6 ml-1">Model Distribution</h2>
                 
@@ -148,68 +156,74 @@
                 document.getElementById('stat-success').innerText = w24.success;
                 document.getElementById('stat-fail').innerText = w24.fail;
                 
-                // Update Operations Bar
-                const total24 = w24.success + w24.fail;
-                if (total24 > 0) {
-                    document.getElementById('bar-success-24h').style.width = (w24.success / total24 * 100) + '%';
-                    document.getElementById('bar-fail-24h').style.width = (w24.fail / total24 * 100) + '%';
+                if (w24.success + w24.fail > 0) {
+                    const total = w24.success + w24.fail;
+                    document.getElementById('bar-success-24h').style.width = (w24.success / total * 100) + '%';
+                    document.getElementById('bar-fail-24h').style.width = (w24.fail / total * 100) + '%';
                 }
 
                 document.getElementById('reliability-7d').innerText = `${w7.reliability || '0.0'}%`;
                 document.getElementById('reliability-30d').innerText = `${w30.reliability || '0.0'}%`;
 
+                // Update Timers
                 const setTimer = (id, val) => {
                     const el = document.getElementById(id);
                     const unit = document.getElementById('unit-' + id.replace('timer-', ''));
                     const card = el?.closest('.card');
                     if (!el) return;
                     if (!val || val === "0.0") {
-                        el.innerText = "HEALTHY";
-                        el.classList.remove('text-amber-400', 'text-blue-400', 'text-red-500', 'text-2xl');
+                        el.innerText = "HEALTHY"; el.classList.remove('text-red-500', 'text-2xl');
                         el.classList.add('text-emerald-400', 'text-base', 'font-bold');
                         if (unit) unit.classList.add('hidden');
                         if (card) { card.classList.remove('border-l-red-500'); card.classList.add('border-l-slate-700'); }
                     } else {
-                        el.innerText = val;
-                        el.classList.add('text-2xl', 'text-red-500');
-                        el.classList.remove('text-base', 'text-emerald-400', 'font-bold', 'text-amber-400', 'text-blue-400');
+                        el.innerText = val; el.classList.add('text-2xl', 'text-red-500');
+                        el.classList.remove('text-base', 'text-emerald-400', 'font-bold');
                         if (unit) unit.classList.remove('hidden');
                         if (card) { card.classList.remove('border-l-slate-700'); card.classList.add('border-l-red-500'); }
                     }
                 };
+                setTimer('timer-ag-quota', t.ag_quota); setTimer('timer-ag-rl', t.ag_rl);
+                setTimer('timer-gcli-quota', t.gcli_quota); setTimer('timer-gcli-rl', t.gcli_rl);
 
-                setTimer('timer-ag-quota', t.ag_quota);
-                setTimer('timer-ag-rl', t.ag_rl);
-                setTimer('timer-gcli-quota', t.gcli_quota);
-                setTimer('timer-gcli-rl', t.gcli_rl);
+                // Update Failover Pipeline
+                const pipelineEl = document.getElementById('failover-path');
+                if (data.failover) {
+                    let activeFound = false;
+                    pipelineEl.innerHTML = data.failover.map((item, idx) => {
+                        const isHit = (t[item.quota_id] && t[item.quota_id] !== "0.0") || (t[item.rl_id] && t[item.rl_id] !== "0.0");
+                        let statusText = "STANDBY"; let statusColor = "text-slate-500";
+                        let border = "border-slate-800";
+                        
+                        if (isHit) { statusText = "COOLDOWN"; statusColor = "text-red-500"; }
+                        else if (!activeFound) { statusText = "ACTIVE"; statusColor = "text-emerald-400"; border = "border-emerald-500/50 active-model"; activeFound = true; }
+                        
+                        return `
+                            <div class="card p-3 rounded-xl border-2 ${border} relative overflow-hidden">
+                                <span class="absolute top-0 right-0 px-1.5 py-0.5 bg-slate-900 text-[7px] font-black text-slate-500 border-b border-l border-slate-800">${idx === 0 ? 'PRIME' : 'F-BACK'}</span>
+                                <p class="text-[9px] font-bold text-slate-300 truncate">${item.name}</p>
+                                <p class="text-[8px] font-black ${statusColor} mt-1">${statusText}</p>
+                            </div>
+                        `;
+                    }).join('');
+                }
 
                 const legendContainer = document.getElementById('dynamic-legend');
                 const activeModels = modelConfig.filter(m => (w7.usage[m.key] || 0) > 0 || m.key === 'ag_flash');
                 legendContainer.innerHTML = activeModels.map(m => `<div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full" style="background-color: ${m.color}"></span> ${m.label}</div>`).join('');
 
-                renderHeatmap(data.heatmap);
-                renderChart(data.history);
+                renderHeatmap(data.heatmap); renderChart(data.history);
 
                 const pulseContainer = document.getElementById('system-log');
                 if (data.pulse && data.pulse.length > 0) {
                     let lastDate = ""; const today = getLocalYMD(new Date());
                     const yD = new Date(); yD.setDate(yD.getDate() - 1); const yesterday = getLocalYMD(yD);
                     const sortedPulse = data.pulse.sort((a, b) => a.date !== b.date ? b.date.localeCompare(a.date) : b.time.localeCompare(a.time));
-                    
                     pulseContainer.innerHTML = sortedPulse.map(item => {
-                        let header = "";
-                        if (item.date !== lastDate) {
-                            let label = item.date === today ? 'Today' : (item.date === yesterday ? 'Yesterday' : item.date);
-                            header = `<div class="text-xs font-bold text-slate-600 uppercase tracking-[0.2em] mt-6 mb-3 ml-1">${label}</div>`;
-                            lastDate = item.date;
-                        }
-                        const mKey = item.model.toUpperCase();
-                        let theme = { time: "text-blue-400", text: "text-blue-100/90", border: "border-blue-500/20" };
-                        if (mKey.includes('GCLI')) theme = { time: "text-cyan-400", text: "text-cyan-100/90", border: "border-cyan-500/20" };
-                        else if (mKey.includes('PRO')) theme = { time: "text-purple-400", text: "text-purple-100/90", border: "border-purple-500/20" };
-                        else if (mKey.includes('COPILOT')) theme = { time: "text-emerald-400", text: "text-emerald-100/90", border: "border-emerald-500/20" };
-                        else if (mKey.includes('CLAUDE')) theme = { time: "text-rose-400", text: "text-rose-100/90", border: "border-rose-500/20" };
-                        return `${header}<div class="card p-4 rounded-xl border ${theme.border} flex flex-col sm:flex-row justify-between sm:items-center gap-2 group bg-[#1a2035]"><div class="flex items-center gap-4 w-full min-w-0"><div class="flex flex-col shrink-0"><span class="text-sm font-mono font-bold ${theme.time}">${item.time}</span></div><span class="text-base ${theme.text} font-semibold truncate flex-1 min-w-0">${item.summary}</span></div></div>`;
+                        let header = ""; if (item.date !== lastDate) { let label = item.date === today ? 'Today' : (item.date === yesterday ? 'Yesterday' : item.date); header = `<div class="text-xs font-bold text-slate-600 uppercase tracking-[0.2em] mt-6 mb-3 ml-1">${label}</div>`; lastDate = item.date; }
+                        const mKey = item.model.toUpperCase(); let theme = { time: "text-blue-400", text: "text-blue-100/90", border: "border-blue-500/20" };
+                        if (mKey.includes('GCLI')) theme = { time: "text-cyan-400", text: "text-cyan-100/90", border: "border-cyan-500/20" }; else if (mKey.includes('PRO')) theme = { time: "text-purple-400", text: "text-purple-100/90", border: "border-purple-500/20" }; else if (mKey.includes('COPILOT')) theme = { time: "text-emerald-400", text: "text-emerald-100/90", border: "border-emerald-500/20" }; else if (mKey.includes('CLAUDE')) theme = { time: "text-rose-400", text: "text-rose-100/90", border: "border-rose-500/20" };
+                        return `${header}<div class="card p-4 rounded-xl border ${theme.border} flex flex-col sm:flex-row justify-between sm:items-center gap-2 group bg-[#1a2035]"><div class="flex items-center gap-3 w-full min-w-0"><div class="flex flex-col shrink-0"><span class="text-sm font-mono font-bold ${theme.time}">${item.time}</span></div><span class="text-base ${theme.text} font-semibold truncate flex-1 min-w-0">${item.summary}</span></div></div>`;
                     }).join('');
                 }
                 document.getElementById('last-update').innerText = new Date(data.updated).toLocaleTimeString();
@@ -218,37 +232,27 @@
 
         function renderHeatmap(heatmap) {
             const container = document.getElementById('heatmap-container');
-            container.innerHTML = ''; const last7 = getLast7Dates();
-            const dateToHeatmap = {}; heatmap.forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
+            container.innerHTML = ''; const last7 = getLast7Dates(); const dateToHeatmap = {}; heatmap.forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
             last7.forEach(date => {
                 const dayData = dateToHeatmap[date] || { success: {}, fail: {} };
                 const dayCol = document.createElement('div'); dayCol.className = 'flex flex-col gap-1 w-full';
                 for (let hour = 0; hour < 24; hour++) {
-                    const hrKey = hour.toString().padStart(2, '0');
-                    const s = parseInt(dayData.success[hrKey] || 0); const f = parseInt(dayData.fail[hrKey] || 0);
+                    const hrKey = hour.toString().padStart(2, '0'); const s = parseInt(dayData.success[hrKey] || 0); const f = parseInt(dayData.fail[hrKey] || 0);
                     const cell = document.createElement('div'); let color = 'bg-slate-800/50';
-                    if (f > 0 && (s === 0 || f >= s)) color = 'bg-red-500';
-                    else if (s > 0) color = 'bg-emerald-400';
-                    cell.className = `w-full h-1.5 rounded-[1px] ${color}`;
-                    dayCol.appendChild(cell);
+                    if (f > 0 && (s === 0 || f >= s)) color = 'bg-red-500'; else if (s > 0) color = 'bg-emerald-400';
+                    cell.className = `w-full h-1.5 rounded-[1px] ${color}`; container.appendChild(dayCol); dayCol.appendChild(cell);
                 }
-                container.appendChild(dayCol);
             });
         }
 
         function renderChart(history) {
-            const ctx = document.getElementById('modelChart').getContext('2d');
-            const last7 = getLast7Dates(); const normalizedData = last7.map(date => (history || []).find(h => h.date === date) || { date });
+            const ctx = document.getElementById('modelChart').getContext('2d'); const last7 = getLast7Dates(); const normalizedData = last7.map(date => (history || []).find(h => h.date === date) || { date });
             if (chartInstance) chartInstance.destroy();
             chartInstance = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: normalizedData.map(d => d.date.split('-').slice(1).join('/')),
-                    datasets: modelConfig.map(m => ({
-                        label: m.label,
-                        data: normalizedData.map(d => d[m.key] || (m.key === 'ag_flash' ? d.flash : (m.key === 'ag_pro' ? d.pro : 0)) || 0),
-                        backgroundColor: m.color, borderRadius: 6
-                    }))
+                    datasets: modelConfig.map(m => ({ label: m.label, data: normalizedData.map(d => d[m.key] || (m.key === 'ag_flash' ? d.flash : (m.key === 'ag_pro' ? d.pro : 0)) || 0), backgroundColor: m.color, borderRadius: 6 }))
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
