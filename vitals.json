@@ -1,8 +1,8 @@
 {
-  "updated": "2026-02-04T16:53:05Z",
+  "updated": "2026-02-04T17:04:18Z",
   "windows": {
     "24h": {
-      "success": 84,
+      "success": 86,
       "fail": 14,
       "cooldowns": 5,
       "quotas": 10,
@@ -25,16 +25,13 @@
           "name": "Gemini Pro",
           "status": "4h wait",
           "color": "text-amber-400"
-        },
-        {
-          "name": "GPT-5 Mini",
-          "status": "Ready",
-          "color": "text-emerald-400"
         }
       ],
       "usage": {
-        "flash": 83,
-        "pro": 8,
+        "ag_flash": 70,
+        "ag_pro": 8,
+        "gcli_flash": 15,
+        "gcli_pro": 0,
         "copilot": 5,
         "local": 0,
         "opus": 0,
@@ -42,30 +39,36 @@
       }
     },
     "7d": {
-      "success": 276,
+      "success": 278,
       "fail": 174,
       "days": 2,
       "usage": {
-        "flash": 204,
-        "pro": 21,
+        "ag_flash": 191,
+        "ag_pro": 21,
+        "gcli_flash": 15,
+        "gcli_pro": 0,
         "copilot": 54,
         "local": 0,
         "opus": 0,
         "sonnet": 0
-      }
+      },
+      "reliability": "61.5"
     },
     "30d": {
-      "success": 276,
+      "success": 278,
       "fail": 174,
       "days": 2,
       "usage": {
-        "flash": 204,
-        "pro": 21,
+        "ag_flash": 191,
+        "ag_pro": 21,
+        "gcli_flash": 15,
+        "gcli_pro": 0,
         "copilot": 54,
         "local": 0,
         "opus": 0,
         "sonnet": 0
-      }
+      },
+      "reliability": "61.5"
     }
   },
   "history": [
@@ -80,10 +83,12 @@
     },
     {
       "date": "2026-02-04",
-      "success": 84,
+      "success": 86,
       "fail": 14,
-      "flash": 83,
-      "pro": 8,
+      "ag_flash": 70,
+      "ag_pro": 8,
+      "gcli_flash": 15,
+      "gcli_pro": 0,
       "copilot": 5,
       "local": 0,
       "opus": 0,
@@ -93,56 +98,56 @@
   "pulse": [
     {
       "date": "2026-02-03",
-      "time": "08:07",
-      "model": "gpt-5-mini",
+      "time": "08:12",
+      "model": "GCLI-GEMINI-3-FLASH-PREVIEW",
       "summary": "X Integration:"
     },
     {
       "date": "2026-02-03",
-      "time": "08:07",
-      "model": "gpt-5-mini",
+      "time": "08:12",
+      "model": "GCLI-GEMINI-3-FLASH-PREVIEW",
       "summary": "Website Launch:"
     },
     {
       "date": "2026-02-03",
-      "time": "08:07",
-      "model": "gpt-5-mini",
+      "time": "08:12",
+      "model": "GCLI-GEMINI-3-FLASH-PREVIEW",
       "summary": "Dashboard Restoration:"
     },
     {
       "date": "2026-02-03",
-      "time": "08:07",
-      "model": "gpt-5-mini",
+      "time": "08:12",
+      "model": "GCLI-GEMINI-3-FLASH-PREVIEW",
       "summary": "Brain Hierarchy:"
     },
     {
       "date": "2026-02-03",
-      "time": "08:07",
-      "model": "gpt-5-mini",
+      "time": "08:12",
+      "model": "GCLI-GEMINI-3-FLASH-PREVIEW",
       "summary": "Agile Infrastructure:"
     },
     {
       "date": "2026-02-04",
-      "time": "16:43",
-      "model": "gemini-3-pro-high",
+      "time": "17:03",
+      "model": "AG-GEMINI-3-FLASH",
       "summary": "Dashboard Upgrade:"
     },
     {
       "date": "2026-02-04",
-      "time": "16:43",
-      "model": "gemini-3-pro-high",
+      "time": "17:03",
+      "model": "AG-GEMINI-3-FLASH",
       "summary": "Visual Alignment:"
     },
     {
       "date": "2026-02-04",
-      "time": "16:43",
-      "model": "gemini-3-pro-high",
+      "time": "17:03",
+      "model": "AG-GEMINI-3-FLASH",
       "summary": "Data Engineering:"
     },
     {
       "date": "2026-02-04",
-      "time": "16:43",
-      "model": "gemini-3-pro-high",
+      "time": "17:03",
+      "model": "AG-GEMINI-3-FLASH",
       "summary": "Tier 3 Verification:"
     }
   ],
@@ -224,7 +229,7 @@
         "13": "6",
         "14": "6",
         "15": "6",
-        "16": "5"
+        "16": "7"
       },
       "fail": {
         "09": "2",
