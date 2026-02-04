@@ -155,10 +155,24 @@
                 document.getElementById('reliability-30d').innerText = `${w30.reliability || '0.0'}%`;
 
                 const t = w24.timers || {};
-                document.getElementById('timer-ag-quota').innerText = t.ag_quota || "0.0";
-                document.getElementById('timer-ag-rl').innerText = t.ag_rl || "0.0";
-                document.getElementById('timer-gcli-quota').innerText = t.gcli_quota || "0.0";
-                document.getElementById('timer-gcli-rl').innerText = t.gcli_rl || "0.0";
+                const setTimer = (id, val) => {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+                    if (!val || val === "0.0") {
+                        el.innerText = "READY";
+                        el.classList.remove('text-amber-400', 'text-blue-400', 'text-xl');
+                        el.classList.add('text-emerald-400', 'text-sm', 'font-bold');
+                    } else {
+                        el.innerText = val;
+                        el.classList.add('text-xl');
+                        el.classList.remove('text-sm', 'text-emerald-400');
+                    }
+                };
+
+                setTimer('timer-ag-quota', t.ag_quota);
+                setTimer('timer-ag-rl', t.ag_rl);
+                setTimer('timer-gcli-quota', t.gcli_quota);
+                setTimer('timer-gcli-rl', t.gcli_rl);
 
                 const legendContainer = document.getElementById('dynamic-legend');
                 const activeModels = modelConfig.filter(m => (w7.usage[m.key] || 0) > 0 || m.key === 'ag_flash');
