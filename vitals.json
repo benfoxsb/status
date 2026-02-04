@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-04T11:00:01Z",
+  "updated": "2026-02-04T11:08:59Z",
   "windows": {
     "24h": {
-      "success": 43,
-      "fail": 2,
+      "success": 46,
+      "fail": 4,
       "cooldowns": 3,
-      "quotas": 2,
+      "quotas": 4,
       "cooldown_list": [
         {
           "name": "Claude Opus",
@@ -29,35 +29,35 @@
         }
       ],
       "usage": {
-        "flash": 44,
+        "flash": 47,
         "pro": 6,
-        "copilot": 1,
+        "copilot": 2,
         "local": 0,
         "opus": 0,
         "sonnet": 0
       }
     },
     "7d": {
-      "success": 235,
-      "fail": 162,
+      "success": 238,
+      "fail": 164,
       "days": 2,
       "usage": {
-        "flash": 165,
+        "flash": 168,
         "pro": 19,
-        "copilot": 50,
+        "copilot": 51,
         "local": 0,
         "opus": 0,
         "sonnet": 0
       }
     },
     "30d": {
-      "success": 235,
-      "fail": 162,
+      "success": 238,
+      "fail": 164,
       "days": 2,
       "usage": {
-        "flash": 165,
+        "flash": 168,
         "pro": 19,
-        "copilot": 50,
+        "copilot": 51,
         "local": 0,
         "opus": 0,
         "sonnet": 0
@@ -76,11 +76,11 @@
     },
     {
       "date": "2026-02-04",
-      "success": 43,
-      "fail": 2,
-      "flash": 44,
+      "success": 46,
+      "fail": 4,
+      "flash": 47,
       "pro": 6,
-      "copilot": 1,
+      "copilot": 2,
       "local": 0,
       "opus": 0,
       "sonnet": 0
@@ -119,26 +119,26 @@
     },
     {
       "date": "2026-02-04",
-      "time": "10:54",
-      "model": "gemini-3-pro-high",
+      "time": "11:00",
+      "model": "gpt-5-mini",
       "summary": "Dashboard Upgrade:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:54",
-      "model": "gemini-3-pro-high",
+      "time": "11:00",
+      "model": "gpt-5-mini",
       "summary": "Visual Alignment:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:54",
-      "model": "gemini-3-pro-high",
+      "time": "11:00",
+      "model": "gpt-5-mini",
       "summary": "Data Engineering:"
     },
     {
       "date": "2026-02-04",
-      "time": "10:54",
-      "model": "gemini-3-pro-high",
+      "time": "11:00",
+      "model": "gpt-5-mini",
       "summary": "Tier 3 Verification:"
     }
   ],
@@ -214,10 +214,12 @@
       "success": {
         "08": "4",
         "09": "17",
-        "10": "22"
+        "10": "22",
+        "11": "3"
       },
       "fail": {
-        "09": "2"
+        "09": "2",
+        "11": "2"
       }
     }
   ]
