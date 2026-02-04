@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-04T23:34:19Z",
+  "updated": "2026-02-04T23:48:10Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -7,13 +7,13 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gcli_flash": 23,
+      "gcli_flash": 24,
       "gcli_pro": 0,
       "copilot": 6,
       "local": 0,
       "opus": 0,
       "sonnet": 4,
-      "cooldowns": 3,
+      "cooldowns": 4,
       "quotas": 10,
       "timers": {
         "ag_rl": "0.0",
@@ -29,7 +29,7 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gcli_flash": 23,
+        "gcli_flash": 24,
         "gcli_pro": 0,
         "copilot": 55,
         "local": 0,
@@ -45,7 +45,7 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gcli_flash": 23,
+        "gcli_flash": 24,
         "gcli_pro": 0,
         "copilot": 55,
         "local": 0,
@@ -71,7 +71,7 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gcli_flash": 23,
+      "gcli_flash": 24,
       "gcli_pro": 0,
       "copilot": 6,
       "local": 0,
@@ -80,6 +80,24 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "15:34",
+      "project": "benfoxsb.github.io",
+      "hash": "67e07d0",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/67e07d0",
+      "summary": "data: role-based model icons and PST alignment",
+      "model": "GC-GEMINI-3-FLASH-PREVIEW"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "15:34",
+      "project": "benfoxsb.github.io",
+      "hash": "431a41f",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/431a41f",
+      "summary": "ui: synchronize model colors and enhance brain icon logic",
+      "model": "GC-GEMINI-3-FLASH-PREVIEW"
+    },
     {
       "date": "2026-02-04",
       "time": "15:33",
@@ -185,24 +203,6 @@
       "project": "benfoxsb.github.io",
       "hash": "c856ca1",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/c856ca1",
-      "summary": "data: focus pulse on code check-ins",
-      "model": "GC-GEMINI-3-FLASH-PREVIEW"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "14:26",
-      "project": "benfoxsb.github.io",
-      "hash": "8deaaf8",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/8deaaf8",
-      "summary": "data: focus pulse on code check-ins",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "14:11",
-      "project": "benfoxsb.github.io",
-      "hash": "51200a1",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/51200a1",
       "summary": "data: focus pulse on code check-ins",
       "model": "GC-GEMINI-3-FLASH-PREVIEW"
     },
@@ -417,7 +417,7 @@
         "12": "19",
         "13": "10",
         "14": "13",
-        "15": "11"
+        "15": "13"
       },
       "fail": {
         "11": "2",
