@@ -1,2 +1,2 @@
 # status
-Ben Fox AI System Status Dashboard
+Agent Fox AI System Status Dashboard
