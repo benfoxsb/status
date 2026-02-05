@@ -250,6 +250,8 @@
                     
                     const activeProjKeys = Object.keys(groups).filter(k => groups[k].length > 0).sort();
                     const columnBins = [[], [], []];
+                    
+                    // Manual distribution to ensure 3 columns are used if possible
                     activeProjKeys.forEach((proj, idx) => {
                         const items = groups[proj]; const days = {};
                         items.forEach(it => { const label = it.date === today ? 'Today' : 'Yesterday'; if (!days[label]) days[label] = []; days[label].push(it); });
@@ -310,10 +312,19 @@
                             }).join('')}</div></div>`;
                         }).join('')}</div></div>`;
                         
+                        // Use a simple round-robin to populate all 3 bins
                         columnBins[idx % 3].push(html);
                     });
                     
-                    pulseContainer.innerHTML = columnBins.filter(bin => bin.length > 0).map(bin => `<div class="pulse-col">${bin.join('')}</div>`).join('');
+                    // Always render 3 columns if we have at least 3 projects, or just render available
+                    const colsToRender = activeProjKeys.length >= 3 ? 3 : activeProjKeys.length;
+                    let finalHtml = "";
+                    for(let i=0; i<3; i++) {
+                        if (columnBins[i].length > 0 || i < colsToRender) {
+                            finalHtml += `<div class="pulse-col">${columnBins[i].join('')}</div>`;
+                        }
+                    }
+                    pulseContainer.innerHTML = finalHtml;
                 }
                 document.getElementById('last-update').innerText = new Date(data.updated).toLocaleTimeString();
             } catch (e) { console.error("Dashboard sync failed", e); }
