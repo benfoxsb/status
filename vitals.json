@@ -1,21 +1,21 @@
 {
-  "updated": "2026-02-05T19:27:12Z",
+  "updated": "2026-02-05T19:34:20Z",
   "windows": {
     "24h": {
       "date": "2026-02-05",
-      "success": 5,
-      "fail": 0,
-      "ag_flash": 6,
+      "success": 7,
+      "fail": 4,
+      "ag_flash": 7,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
-      "gh_gpt5": 0,
+      "gh_gpt5": 1,
       "gh_gpt4": 0,
       "lc_qwen": 0,
       "ag_opus": 0,
-      "ag_sonnet": 0,
+      "ag_sonnet": 1,
       "cooldowns": 0,
-      "quotas": 0,
+      "quotas": 2,
       "timers": {
         "ag_flash_cd": "0.0",
         "gc_flash_cd": "0.0",
@@ -27,38 +27,38 @@
       }
     },
     "7d": {
-      "success": 367,
-      "fail": 190,
+      "success": 369,
+      "fail": 194,
       "days": 3,
       "usage": {
-        "ag_flash": 238,
+        "ag_flash": 239,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
-        "gh_gpt5": 57,
+        "gh_gpt5": 58,
         "gh_gpt4": 1,
         "lc_qwen": 0,
         "ag_opus": 1,
-        "ag_sonnet": 5
+        "ag_sonnet": 6
       },
-      "reliability": "65.8"
+      "reliability": "65.5"
     },
     "30d": {
-      "success": 367,
-      "fail": 190,
+      "success": 369,
+      "fail": 194,
       "days": 3,
       "usage": {
-        "ag_flash": 238,
+        "ag_flash": 239,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
-        "gh_gpt5": 57,
+        "gh_gpt5": 58,
         "gh_gpt4": 1,
         "lc_qwen": 0,
         "ag_opus": 1,
-        "ag_sonnet": 5
+        "ag_sonnet": 6
       },
-      "reliability": "65.8"
+      "reliability": "65.5"
     }
   },
   "history": [
@@ -92,20 +92,29 @@
     },
     {
       "date": "2026-02-05",
-      "success": 5,
-      "fail": 0,
-      "ag_flash": 6,
+      "success": 7,
+      "fail": 4,
+      "ag_flash": 7,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
-      "gh_gpt5": 0,
+      "gh_gpt5": 1,
       "gh_gpt4": 0,
       "lc_qwen": 0,
       "ag_opus": 0,
-      "ag_sonnet": 0
+      "ag_sonnet": 1
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-05",
+      "time": "11:34",
+      "project": "benfoxsb.github.io",
+      "hash": "adaab1f",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/adaab1f",
+      "summary": "style: enforce 6px model-coded left border on cards",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-05",
       "time": "00:00",
@@ -419,9 +428,11 @@
     {
       "date": "2026-02-05",
       "success": {
-        "11": "5"
+        "11": "7"
       },
-      "fail": {}
+      "fail": {
+        "11": "4"
+      }
     }
   ],
   "failover": [
