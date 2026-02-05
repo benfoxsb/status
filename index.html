@@ -8,21 +8,21 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { background-color: #0b0f1a; color: #f1f5f9; font-family: 'Inter', sans-serif; font-size: 1.125rem; }
-        .card { background-color: #161b2c; border: 1px solid #2d334a; transition: transform 0.2s; }
+        .card { background-color: #161b2c; border: 1px solid #2d334a; border-left: 4px solid #2d334a; transition: transform 0.2s; }
         .card:hover { transform: translateY(-2px); }
         .pulse-anim { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; display: inline-block; }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.1); } }
         ::-webkit-scrollbar { width: 4px; height: 4px; background: transparent; }
         ::-webkit-scrollbar-thumb { background: #2d334a; border-radius: 10px; }
-        .active-model { border-color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.1); }
+        .active-model { }
         .pulse-card { cursor: pointer; transition: background 0.2s; }
         .pulse-card:hover { background: #1e253a; }
         .pulse-expanded { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #2d334a; }
+        /* Project Layer Styles - Masonry Layout */
         .proj-block { break-inside: avoid; margin-bottom: 2rem; width: 100%; display: block; }
-        #project-columns { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: flex-start; }
-        @media (min-width: 600px) { #project-columns { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 900px) { #project-columns { grid-template-columns: repeat(3, 1fr); } }
-        .pulse-col { display: flex; flex-direction: column; gap: 2rem; }
+        #project-columns { column-count: 1; column-gap: 2rem; column-fill: auto; }
+        @media (min-width: 768px) { #project-columns { column-count: 2; } }
+        @media (min-width: 1280px) { #project-columns { column-count: 3; } }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -38,7 +38,7 @@
         <!-- Top Operational Layer -->
         <div class="grid grid-cols-1 lg:grid-cols-6 gap-6 mb-8">
             <!-- Unified Performance Hub -->
-            <div class="lg:col-span-2 card p-6 rounded-3xl flex flex-col">
+            <div class="lg:col-span-2 card p-6 rounded-3xl flex flex-col" style="border-left-color: #10b981">
                 <div class="mb-6 h-full flex flex-col">
                     <h3 class="text-xs font-bold uppercase mb-6 tracking-widest text-emerald-400">Operational Hub</h3>
                     
@@ -71,7 +71,7 @@
             </div>
 
             <!-- Model Distribution histogram -->
-            <div class="lg:col-span-3 card p-6 rounded-3xl">
+            <div class="lg:col-span-3 card p-6 rounded-3xl" style="border-left-color: #3b82f6">
                 <h3 class="text-xs font-bold uppercase mb-4 tracking-widest text-blue-400">Model Distribution</h3>
                 <div id="dynamic-legend" class="flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-bold mb-6">
                 </div>
@@ -82,7 +82,7 @@
 
             <!-- Infrastructure & Billing Stacks -->
             <div class="lg:col-span-1 flex flex-col gap-4">
-                <div id="card-ag" class="card p-5 rounded-2xl flex-1 border-l-4 border-l-slate-700 overflow-hidden">
+                <div id="card-ag" class="card p-5 rounded-2xl flex-1 overflow-hidden" style="border-left-color: #64748b">
                     <div class="mb-4">
                         <h3 id="billing-ag-name" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Ben Fox Agent</h3>
                         <p id="billing-ag-id" class="text-[8px] text-slate-600 truncate">gen-lang-client-0036704643</p>
@@ -92,7 +92,7 @@
                         <p id="billing-ag-cost" class="text-2xl font-black text-emerald-400 leading-none">$0.00 <span class="text-[8px] text-slate-600 font-normal">MTD</span></p>
                     </div>
                 </div>
-                <div id="card-gcli" class="card p-5 rounded-2xl flex-1 border-l-4 border-l-slate-700 overflow-hidden">
+                <div id="card-gcli" class="card p-5 rounded-2xl flex-1 overflow-hidden" style="border-left-color: #64748b">
                     <div class="mb-4">
                         <h3 id="billing-gc-name" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Agent Failover Mesh</h3>
                         <p id="billing-gc-id" class="text-[8px] text-slate-600 truncate">gen-lang-mesh-001</p>
@@ -106,7 +106,7 @@
         </div>
 
         <!-- Strategy Layer -->
-        <div class="card p-6 rounded-3xl mb-8 border-emerald-500/10">
+        <div class="card p-6 rounded-3xl mb-8" style="border-left-color: #10b981">
             <h3 class="text-xs font-bold uppercase mb-6 tracking-widest text-emerald-500">Failover Pipeline</h3>
             <div id="failover-path" class="grid grid-cols-2 md:grid-cols-7 gap-4">
             </div>
@@ -151,15 +151,16 @@
 
         function getModelKey(id) {
             if (!id) return 'lc_qwen';
-            const s = id.toLowerCase();
-            if (s === 'ag_flash') return 'ag_flash';
-            if (s === 'ag_pro') return 'ag_pro';
-            if (s === 'gc_flash' || s === 'gcli_flash') return 'gc_flash';
-            if (s === 'gc_pro' || s === 'gcli_pro') return 'gc_pro';
-            if (s === 'gh_gpt5' || s.includes('gh_gpt5') || s === 'copilot') return 'gh_gpt5';
-            if (s === 'gh_gpt4' || s.includes('gh_gpt4') || s === 'copilot-4o') return 'gh_gpt4';
-            if (s === 'ag_sonnet' || s.includes('sonnet')) return 'ag_sonnet';
-            if (s === 'ag_opus' || s.includes('opus')) return 'ag_opus';
+            const s = id.toLowerCase().replace(/-/g, '_');
+            if (s.includes('ag_flash') || s.includes('gemini_3_flash')) return 'ag_flash';
+            if (s.includes('ag_pro') || s.includes('gemini_3_pro')) return 'ag_pro';
+            if (s.includes('gc_flash')) return 'gc_flash';
+            if (s.includes('gc_pro')) return 'gc_pro';
+            if (s.includes('gh_gpt5') || s.includes('gpt_5_mini')) return 'gh_gpt5';
+            if (s.includes('gh_gpt4') || s.includes('gpt_4o')) return 'gh_gpt4';
+            if (s.includes('sonnet')) return 'ag_sonnet';
+            if (s.includes('opus')) return 'ag_opus';
+            if (s.includes('lc_') || s.includes('ollama') || s.includes('qwen')) return 'lc_qwen';
             return 'lc_qwen';
         }
 
@@ -180,9 +181,11 @@
                 const response = await fetch('vitals.json?nocache=' + Date.now());
                 const data = await response.json();
                 const w24 = data.windows['24h']; const w7 = data.windows['7d']; const w30 = data.windows['30d']; const t = w24.timers || {};
+                const today = getLocalYMD(new Date()); 
+                const yesterday = getLocalYMD(new Date(Date.now() - 86400000));
 
-                document.getElementById('stat-success').innerText = w24.success || 0;
-                document.getElementById('stat-fail').innerText = w24.fail || 0;
+                document.getElementById('stat-success').innerText = w24.success;
+                document.getElementById('stat-fail').innerText = w24.fail;
                 if (w24.success + w24.fail > 0) {
                     const total = w24.success + w24.fail;
                     document.getElementById('bar-success-24h').style.width = (w24.success / total * 100) + '%';
@@ -208,18 +211,18 @@
                         const val = t[item.quota_id];
                         const isHit = (val && val !== "0.0" && val !== "null");
                         const mKey = getModelKey(item.id);
-                        const cfg = modelConfig.find(c => c.key === mKey) || { tw: 'slate', label: item.display || item.name };
-                        let statusText = "HEALTHY"; let statusColor = "text-slate-500"; let border = "border-slate-800";
+                        const cfg = modelConfig.find(c => c.key === mKey) || { tw: 'slate', label: item.display || item.name, color: '#2d334a' };
+                        let statusText = "HEALTHY"; let statusColor = "text-slate-500"; let border = "";
                         let roleIcon = item.icon || "🛡️"; let brainIndicator = ""; let reason = "";
                         
                         if (isHit) { 
                             statusText = "COOLDOWN"; statusColor = "text-red-500"; 
                             reason = `QUOTA RESET (${val}h)`;
                         }
-                        else if (!activeFound) { statusText = "ACTIVE"; statusColor = `text-${cfg.tw}-400`; border = `border-${cfg.tw}-500/50 active-model`; brainIndicator = "🧠"; activeFound = true; }
+                        else if (!activeFound) { statusText = "ACTIVE"; statusColor = `text-${cfg.tw}-400`; border = `active-model`; brainIndicator = "🧠"; activeFound = true; }
                         
                         return `
-                            <div class="card p-4 rounded-xl border-2 ${border} relative overflow-hidden transition-all duration-300" title="${item.name} | ${item.role}">
+                            <div class="card p-4 rounded-xl ${border} relative overflow-hidden transition-all duration-300" style="border-left-width: 6px !important; border-left-color: ${cfg.color} !important" title="${item.name} | ${item.role}">
                                 <span class="absolute top-0 right-0 px-2 py-0.5 bg-slate-900 text-[8px] font-black text-slate-500 border-b border-l border-slate-800">${idx === 0 ? 'PRIME' : 'F-BACK'}</span>
                                 <div class="flex items-center gap-3">
                                     <span class="text-xl">${roleIcon}</span>
@@ -235,7 +238,7 @@
                 }
 
                 const legendContainer = document.getElementById('dynamic-legend');
-                const activeModels = modelConfig.filter(m => (w7 && w7.usage && (w7.usage[m.key] || 0) > 0) || m.key === 'ag_flash');
+                const activeModels = modelConfig.filter(m => (w7.usage[m.key] || 0) > 0 || m.key === 'ag_flash');
                 legendContainer.innerHTML = activeModels.map(m => `<div class="flex items-center gap-1.5" style="color: ${m.color}"><span class="w-4 h-4 rounded-full" style="background-color: ${m.color}"></span> ${m.label}</div>`).join('');
 
                 renderHeatmap(data.heatmap); renderChart(data.history);
@@ -243,26 +246,21 @@
                 const pulseContainer = document.getElementById('project-columns');
                 if (data.pulse && data.pulse.length > 0) {
                     const groups = {}; 
-                    const today = getLocalYMD(new Date()); 
-                    const yesterday = getLocalYMD(new Date(Date.now() - 86400000));
                     
                     data.pulse.forEach(item => { 
                         if (!groups[item.project]) groups[item.project] = []; 
                         groups[item.project].push(item); 
                     });
                     
-                    // Recency sort: most recent commit date+time first
                     const activeProjKeys = Object.keys(groups).sort((a, b) => {
-                        const aLatest = groups[a][0];
-                        const bLatest = groups[b][0];
-                        const aTs = `${aLatest.date} ${aLatest.time}`;
-                        const bTs = `${bLatest.date} ${bLatest.time}`;
-                        return bTs.localeCompare(aTs);
+                        const getLatest = (proj) => {
+                            const last = groups[proj][0];
+                            return `${last.date} ${last.time}`;
+                        };
+                        return getLatest(b).localeCompare(getLatest(a));
                     });
-
-                    // Round-robin binning into 3 columns
-                    const columnBins = [[], [], []];
-                    activeProjKeys.forEach((proj, pIdx) => {
+                    
+                    pulseContainer.innerHTML = activeProjKeys.map((proj, i) => {
                         const items = groups[proj]; 
                         const days = {};
                         items.forEach(it => { 
@@ -273,80 +271,62 @@
                             days[label].push(it); 
                         });
 
-                        const projHtml = `
-                            <div class="proj-block">
-                                <div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-4 border-b-2 border-blue-500/20 pb-2">${proj}</div>
-                                ${Object.keys(days).map((dayLabel, dIdx) => {
-                                    const dayId = `p${pIdx}-d${dIdx}`;
-                                    const isOld = dayLabel !== 'Today' && dayLabel !== 'Yesterday';
-                                    const collapsedItems = [];
-                                    days[dayLabel].forEach(item => {
-                                        const last = collapsedItems[collapsedItems.length - 1];
-                                        if (last && last.summary === item.summary) {
-                                            last.count = (last.count || 1) + 1;
-                                            last.endTime = last.startTime || last.time;
-                                            last.startTime = item.time;
-                                        } else {
-                                            collapsedItems.push({ ...item, count: 1 });
-                                        }
-                                    });
+                        return `<div class="proj-block"><div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 border-b-2 border-blue-500/20 pb-2">${proj}</div><div>${Object.keys(days).map((dayLabel, dIdx) => {
+                            const dayId = `p${i}-d${dIdx}`;
+                            const isOld = dayLabel !== 'Today' && dayLabel !== 'Yesterday';
+                            const collapsedItems = [];
+                            days[dayLabel].forEach(item => {
+                                const last = collapsedItems[collapsedItems.length - 1];
+                                if (last && last.summary === item.summary) {
+                                    last.count = (last.count || 1) + 1;
+                                    last.endTime = last.startTime || last.time;
+                                    last.startTime = item.time;
+                                } else {
+                                    collapsedItems.push({ ...item, count: 1 });
+                                }
+                            });
 
-                                    return `
-                                        <div>
-                                            <div class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-4 mb-2 ml-1 cursor-pointer hover:text-blue-400 flex items-center gap-2" onclick="toggleDay('${dayId}')">
-                                                <svg id="icon-${dayId}" class="w-2 h-2 transition-transform" style="transform: ${isOld ? 'rotate(-90deg)' : 'rotate(0deg)'}" fill="currentColor" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" /></svg>
-                                                ${dayLabel}
+                            return `<div><div class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2 mb-2 ml-1 cursor-pointer hover:text-blue-400 flex items-center gap-2" onclick="toggleDay('${dayId}')"><svg id="icon-${dayId}" class="w-2 h-2 transition-transform" style="transform: ${isOld ? 'rotate(-90deg)' : 'rotate(0deg)'}" fill="currentColor" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" /></svg>${dayLabel}</div><div id="day-group-${dayId}" style="display: ${isOld ? 'none' : 'block'}">${collapsedItems.map((item, cIdx) => {
+                                const mKey = getModelKey(item.model || '');
+                                const cfg = modelConfig.find(c => c.key === mKey) || modelConfig[8];
+                                const timeDisplay = item.count > 1 ? `${item.startTime} - ${item.endTime}` : item.time;
+                                const countBadge = item.count > 1 ? `<span class="bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded text-[8px] font-black ml-2">x${item.count}</span>` : '';
+                                const cardId = `p${i}-d${dIdx}-c${cIdx}`;
+                                
+                                return `
+                                    <div class="card p-3 rounded-xl mb-2 group transition-all" style="border-left-width: 6px !important; border-left-color: ${cfg.color} !important; box-shadow: -10px 0 20px ${cfg.color}15; cursor: pointer; background: #1a2035;" onclick="togglePulse('${cardId}')">
+                                        <div class="flex flex-col gap-1">
+                                            <div class="flex justify-between items-center">
+                                                <div class="flex items-center">
+                                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-900/50" style="color: ${cfg.color}; border: 1px solid ${cfg.color}44;">${timeDisplay}</span>
+                                                    ${countBadge}
+                                                </div>
+                                                <span class="text-[8px] font-mono text-slate-600 bg-slate-900/50 px-1.5 py-0.5 rounded">#${item.hash.substring(0,6)}</span>
                                             </div>
-                                            <div id="day-group-${dayId}" style="display: ${isOld ? 'none' : 'block'}">
-                                                ${collapsedItems.map((item, cIdx) => {
-                                                    const mKey = getModelKey(item.model || '');
-                                                    const cfg = modelConfig.find(c => c.key === mKey) || modelConfig[8];
-                                                    const timeDisplay = item.count > 1 ? `${item.startTime} - ${item.endTime}` : item.time;
-                                                    const countBadge = item.count > 1 ? `<span class="bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded text-[8px] font-black ml-2">x${item.count}</span>` : '';
-                                                    const cardId = `p${pIdx}-d${dIdx}-c${cIdx}`;
-                                                    
-                                                    return `
-                                                        <div class="card p-3 rounded-xl mb-2 group transition-all border-l-4" style="border-left-color: ${cfg.color} !important; box-shadow: -10px 0 20px ${cfg.color}15; cursor: pointer; background: #1a2035;" onclick="togglePulse('${cardId}')">
-                                                            <div class="flex flex-col gap-1">
-                                                                <div class="flex justify-between items-center">
-                                                                    <div class="flex items-center">
-                                                                        <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-900/50" style="color: ${cfg.color}; border: 1px solid ${cfg.color}44;">${timeDisplay}</span>
-                                                                        ${countBadge}
-                                                                    </div>
-                                                                    <span class="text-[8px] font-mono text-slate-600 bg-slate-900/50 px-1.5 py-0.5 rounded">#${item.hash.substring(0,6)}</span>
-                                                                </div>
-                                                                <span class="text-sm text-slate-200 font-medium leading-tight group-hover:text-blue-400 transition-colors truncate">${item.summary}</span>
-                                                            </div>
-                                                            <div id="expanded-${cardId}" class="pulse-expanded mt-3 pt-3 border-t border-slate-800">
-                                                                <div class="grid grid-cols-2 gap-4 mb-4">
-                                                                    <div>
-                                                                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1">Compute</p>
-                                                                        <p class="text-[10px] font-black uppercase tracking-tight" style="color: ${cfg.color}">${cfg.label}</p>
-                                                                    </div>
-                                                                    <div class="text-right">
-                                                                        <p class="text-[8px] font-bold text-slate-500 uppercase mb-1">Branch</p>
-                                                                        <p class="text-[10px] font-black text-slate-300">main</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex justify-between items-center pt-2">
-                                                                    <span class="text-[9px] text-slate-500 italic">Target: ${item.project}</span>
-                                                                    <a href="${item.url}" target="_blank" class="inline-flex items-center gap-1 text-[10px] font-bold text-blue-400 hover:text-white transition-colors bg-blue-500/10 px-3 py-1.5 rounded-lg border border-blue-500/20">
-                                                                        GITHUB <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>`;
-                                                }).join('')}
+                                            <span class="text-sm text-slate-200 font-medium leading-tight group-hover:text-blue-400 transition-colors truncate">${item.summary}</span>
+                                        </div>
+                                        <div id="expanded-${cardId}" class="pulse-expanded mt-3 pt-3 border-t border-slate-800">
+                                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                                <div>
+                                                    <p class="text-[8px] font-bold text-slate-500 uppercase mb-1">Compute</p>
+                                                    <p class="text-[10px] font-black uppercase tracking-tight" style="color: ${cfg.color}">${cfg.label}</p>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p class="text-[8px] font-bold text-slate-500 uppercase mb-1">Branch</p>
+                                                    <p class="text-[10px] font-black text-slate-300">main</p>
+                                                </div>
                                             </div>
-                                        </div>`;
-                                }).join('')}
-                            </div>`;
-                        
-                        columnBins[pIdx % 3].push(projHtml);
-                    });
-                    
-                    // Construct final HTML with 3 flex columns
-                    pulseContainer.innerHTML = columnBins.map(bin => `<div class="pulse-col">${bin.join('')}</div>`).join('');
+                                            <div class="flex justify-between items-center pt-2">
+                                                <span class="text-[9px] text-slate-500 italic">Target: ${item.project}</span>
+                                                <a href="${item.url}" target="_blank" class="inline-flex items-center gap-1 text-[10px] font-bold text-blue-400 hover:text-white transition-colors bg-blue-500/10 px-3 py-1.5 rounded-lg border border-blue-500/20">
+                                                    GITHUB <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>`;
+                            }).join('')}</div></div>`;
+                        }).join('')}</div></div>`;
+                    }).join('');
                 }
                 document.getElementById('last-update').innerText = new Date(data.updated).toLocaleTimeString();
             } catch (e) { console.error("Dashboard sync failed", e); }
