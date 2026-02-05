@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:49:01Z",
+  "updated": "2026-02-05T00:49:26Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -88,6 +88,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "16:49",
+      "project": "benfoxsb.github.io",
+      "hash": "8daadf9",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/8daadf9",
+      "summary": "data: bulletproof cooldown detection and role icon alignment",
+      "model": "AGENT"
+    },
     {
       "date": "2026-02-04",
       "time": "16:48",
@@ -193,15 +202,6 @@
       "project": "benfoxsb.github.io",
       "hash": "8ea4f23",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/8ea4f23",
-      "summary": "data: enhance cooldown detection and PST alignment",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:07",
-      "project": "benfoxsb.github.io",
-      "hash": "e62f9ff",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/e62f9ff",
       "summary": "data: enhance cooldown detection and PST alignment",
       "model": "AGENT"
     },
