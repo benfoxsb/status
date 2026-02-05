@@ -1,9 +1,9 @@
 {
-  "updated": "2026-02-05T01:19:59Z",
+  "updated": "2026-02-05T01:22:29Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 103,
+      "success": 104,
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
@@ -17,17 +17,17 @@
       "cooldowns": 13,
       "quotas": 12,
       "timers": {
-        "ag_flash_cd": "18.9",
-        "gc_flash_cd": "0.0",
-        "sonnet_cd": "0.0",
-        "ag_pro_cd": "0.0",
-        "gh_gpt5_cd": "0.0",
-        "gh_gpt4_cd": "0.0",
-        "lc_qwen_cd": "0.0"
+        "ag_flash_cd": "",
+        "gc_flash_cd": "",
+        "sonnet_cd": "",
+        "ag_pro_cd": "",
+        "gh_gpt5_cd": "",
+        "gh_gpt4_cd": "",
+        "lc_qwen_cd": ""
       }
     },
     "7d": {
-      "success": 295,
+      "success": 296,
       "fail": 180,
       "days": 2,
       "usage": {
@@ -44,7 +44,7 @@
       "reliability": "62.1"
     },
     "30d": {
-      "success": 295,
+      "success": 296,
       "fail": 180,
       "days": 2,
       "usage": {
@@ -73,7 +73,7 @@
     },
     {
       "date": "2026-02-04",
-      "success": 103,
+      "success": 104,
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
@@ -87,6 +87,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "17:19",
+      "project": "benfoxsb.github.io",
+      "hash": "02f5f5b",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/02f5f5b",
+      "summary": "data: bulletproof midnight-to-midnight PST collection",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "17:10",
@@ -202,15 +211,6 @@
       "hash": "bd40d54",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/bd40d54",
       "summary": "data: consolidate health detection into single source of truth",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:49",
-      "project": "benfoxsb.github.io",
-      "hash": "5f0748d",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/5f0748d",
-      "summary": "data: bulletproof cooldown detection and role icon alignment",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -426,7 +426,7 @@
         "14": "13",
         "15": "17",
         "16": "24",
-        "17": "4"
+        "17": "5"
       },
       "fail": {
         "11": "2",
