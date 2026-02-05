@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:50:12Z",
+  "updated": "2026-02-05T00:51:28Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -89,6 +89,15 @@
   "pulse": [
     {
       "date": "2026-02-04",
+      "time": "16:50",
+      "project": "benfoxsb.github.io",
+      "hash": "bd40d54",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/bd40d54",
+      "summary": "data: consolidate health detection into single source of truth",
+      "model": "AGENT"
+    },
+    {
+      "date": "2026-02-04",
       "time": "16:49",
       "project": "benfoxsb.github.io",
       "hash": "8daadf9",
@@ -156,15 +165,6 @@
       "project": "benfoxsb.github.io",
       "hash": "893ed19",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/893ed19",
-      "summary": "data: focus pulse on code check-ins and PST alignment",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:34",
-      "project": "benfoxsb.github.io",
-      "hash": "0e3c0e8",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/0e3c0e8",
       "summary": "data: focus pulse on code check-ins and PST alignment",
       "model": "AGENT"
     },
