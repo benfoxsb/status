@@ -1,2 +1,2 @@
 {"date":"2026-02-03", "success":192, "fail":160, "flash":121, "pro":13, "copilot":49, "local":0}
-{"date":"2026-02-04","success":105,"fail":20,"ag_flash":82,"ag_pro":9,"gc_flash":42,"gc_pro":0,"gh_gpt5":6,"gh_gpt4":0,"lc_qwen":0,"ag_opus":0,"ag_sonnet":4}
+{"date":"2026-02-04","success":113,"fail":22,"ag_flash":82,"ag_pro":9,"gc_flash":44,"gc_pro":0,"gh_gpt5":6,"gh_gpt4":1,"lc_qwen":0,"ag_opus":0,"ag_sonnet":5}

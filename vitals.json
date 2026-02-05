@@ -1,23 +1,23 @@
 {
-  "updated": "2026-02-05T01:23:32Z",
+  "updated": "2026-02-05T01:34:30Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 105,
-      "fail": 20,
+      "success": 113,
+      "fail": 22,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 42,
+      "gc_flash": 44,
       "gc_pro": 0,
       "gh_gpt5": 6,
-      "gh_gpt4": 0,
+      "gh_gpt4": 1,
       "lc_qwen": 0,
       "ag_opus": 0,
-      "ag_sonnet": 4,
-      "cooldowns": 13,
+      "ag_sonnet": 5,
+      "cooldowns": 15,
       "quotas": 12,
       "timers": {
-        "ag_flash_cd": "18.8",
+        "ag_flash_cd": "18.6",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",
@@ -27,38 +27,38 @@
       }
     },
     "7d": {
-      "success": 297,
-      "fail": 180,
+      "success": 305,
+      "fail": 182,
       "days": 2,
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 42,
+        "gc_flash": 44,
         "gc_pro": 0,
         "gh_gpt5": 55,
-        "gh_gpt4": 0,
+        "gh_gpt4": 1,
         "lc_qwen": 0,
         "ag_opus": 0,
-        "ag_sonnet": 4
+        "ag_sonnet": 5
       },
-      "reliability": "62.2"
+      "reliability": "62.6"
     },
     "30d": {
-      "success": 297,
-      "fail": 180,
+      "success": 305,
+      "fail": 182,
       "days": 2,
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 42,
+        "gc_flash": 44,
         "gc_pro": 0,
         "gh_gpt5": 55,
-        "gh_gpt4": 0,
+        "gh_gpt4": 1,
         "lc_qwen": 0,
         "ag_opus": 0,
-        "ag_sonnet": 4
+        "ag_sonnet": 5
       },
-      "reliability": "62.2"
+      "reliability": "62.6"
     }
   },
   "history": [
@@ -73,20 +73,38 @@
     },
     {
       "date": "2026-02-04",
-      "success": 105,
-      "fail": 20,
+      "success": 113,
+      "fail": 22,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 42,
+      "gc_flash": 44,
       "gc_pro": 0,
       "gh_gpt5": 6,
-      "gh_gpt4": 0,
+      "gh_gpt4": 1,
       "lc_qwen": 0,
       "ag_opus": 0,
-      "ag_sonnet": 4
+      "ag_sonnet": 5
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "17:34",
+      "project": "benfoxsb.github.io",
+      "hash": "dd42e7a",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/dd42e7a",
+      "summary": "docs: add audit feedback and fix UI discrepancies",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "17:23",
+      "project": "benfoxsb.github.io",
+      "hash": "b717a4f",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/b717a4f",
+      "summary": "data: bulletproof midnight-to-midnight PST collection",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "17:23",
@@ -183,24 +201,6 @@
       "project": "benfoxsb.github.io",
       "hash": "8a45b4c",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/8a45b4c",
-      "summary": "data: bulletproof cooldown detection and unified PST alignment",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:54",
-      "project": "benfoxsb.github.io",
-      "hash": "ca7bc3d",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/ca7bc3d",
-      "summary": "ui: synchronize failover status and fix model mapping labels",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:54",
-      "project": "benfoxsb.github.io",
-      "hash": "c2f69bd",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/c2f69bd",
       "summary": "data: bulletproof cooldown detection and unified PST alignment",
       "model": "AG-GEMINI-3-FLASH"
     },
@@ -426,7 +426,7 @@
         "14": "13",
         "15": "17",
         "16": "24",
-        "17": "6"
+        "17": "14"
       },
       "fail": {
         "11": "2",
@@ -434,7 +434,8 @@
         "13": "2",
         "14": "4",
         "15": "6",
-        "16": "2"
+        "16": "2",
+        "17": "2"
       }
     }
   ],
