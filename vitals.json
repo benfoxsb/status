@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:51:38Z",
+  "updated": "2026-02-05T00:54:17Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -7,7 +7,7 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 34,
+      "gc_flash": 35,
       "gc_pro": 0,
       "gh_gpt5": 6,
       "gh_gpt4": 0,
@@ -17,7 +17,7 @@
       "cooldowns": 10,
       "quotas": 12,
       "timers": {
-        "ag_flash_cd": "19.4",
+        "ag_flash_cd": "19.3",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",
@@ -33,7 +33,7 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 34,
+        "gc_flash": 35,
         "gc_pro": 0,
         "gh_gpt5": 55,
         "gh_gpt4": 0,
@@ -50,7 +50,7 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 34,
+        "gc_flash": 35,
         "gc_pro": 0,
         "gh_gpt5": 55,
         "gh_gpt4": 0,
@@ -77,7 +77,7 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 34,
+      "gc_flash": 35,
       "gc_pro": 0,
       "gh_gpt5": 6,
       "gh_gpt4": 0,
@@ -87,6 +87,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "16:51",
+      "project": "benfoxsb.github.io",
+      "hash": "f5b5505",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/f5b5505",
+      "summary": "data: consolidate health detection into single source of truth",
+      "model": "AGENT"
+    },
     {
       "date": "2026-02-04",
       "time": "16:51",
@@ -157,15 +166,6 @@
       "hash": "f29dadd",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/f29dadd",
       "summary": "data: focus pulse on code check-ins and PST alignment",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:38",
-      "project": "benfoxsb.github.io",
-      "hash": "1e91953",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/1e91953",
-      "summary": "ui: reorganize layout and fix model mapping in failover",
       "model": "AGENT"
     },
     {
@@ -335,7 +335,7 @@
         "13": "10",
         "14": "13",
         "15": "17",
-        "16": "17"
+        "16": "18"
       },
       "fail": {
         "11": "2",
@@ -350,66 +350,59 @@
   "failover": [
     {
       "id": "ag_flash",
-      "name": "AG Gemini 3 Flash",
+      "name": "Antigravity Gemini 3 Flash",
       "display": "AG FLASH",
       "role": "Fast Operations",
       "icon": "⚡",
-      "quota_id": "ag_flash_cd",
-      "rl_id": "ag_flash_cd"
+      "quota_id": "ag_flash_cd"
     },
     {
       "id": "gc_flash",
-      "name": "GC Gemini 3 Flash",
+      "name": "Gemini CLI Flash",
       "display": "GC FLASH",
       "role": "Reliable Backup",
       "icon": "🛡️",
-      "quota_id": "gc_flash_cd",
-      "rl_id": "gc_flash_cd"
+      "quota_id": "gc_flash_cd"
     },
     {
       "id": "ag_sonnet",
-      "name": "AG Claude Sonnet 4.5",
+      "name": "Antigravity Claude Sonnet 4.5",
       "display": "AG SONNET",
       "role": "Complex Reasoning",
       "icon": "🧠",
-      "quota_id": "sonnet_cd",
-      "rl_id": "sonnet_cd"
+      "quota_id": "sonnet_cd"
     },
     {
       "id": "ag_pro",
-      "name": "AG Gemini 3 Pro",
+      "name": "Antigravity Gemini 3 Pro",
       "display": "AG PRO",
       "role": "Vision & Audit",
       "icon": "👁️",
-      "quota_id": "ag_pro_cd",
-      "rl_id": "ag_pro_cd"
+      "quota_id": "ag_pro_cd"
     },
     {
       "id": "gh_gpt5",
-      "name": "GH GPT-5-Mini",
+      "name": "GitHub Copilot GPT-5-Mini",
       "display": "GH GPT-5",
       "role": "Code Optimization",
       "icon": "💻",
-      "quota_id": "gh_gpt5_cd",
-      "rl_id": "gh_gpt5_cd"
+      "quota_id": "gh_gpt5_cd"
     },
     {
       "id": "gh_gpt4",
-      "name": "GH GPT-4.1",
+      "name": "GitHub Copilot GPT-4.1",
       "display": "GH GPT-4.1",
       "role": "Safety Backup",
       "icon": "📜",
-      "quota_id": "gh_gpt4_cd",
-      "rl_id": "gh_gpt4_cd"
+      "quota_id": "gh_gpt4_cd"
     },
     {
       "id": "lc_qwen",
-      "name": "Local Qwen Coder",
+      "name": "Local Ollama Qwen Coder",
       "display": "LC QWEN",
       "role": "Local Safeguard",
       "icon": "🏠",
-      "quota_id": "lc_qwen_cd",
-      "rl_id": "lc_qwen_cd"
+      "quota_id": "lc_qwen_cd"
     }
   ],
   "billing": {
