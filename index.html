@@ -150,8 +150,8 @@
             if (s === 'ag_pro') return 'ag_pro';
             if (s === 'gc_flash' || s === 'gcli_flash') return 'gc_flash';
             if (s === 'gc_pro' || s === 'gcli_pro') return 'gc_pro';
-            if (s === 'gh_gpt5' || s === 'copilot') return 'gh_gpt5';
-            if (s === 'gh_gpt4' || s === 'copilot-4o') return 'gh_gpt4';
+            if (s === 'gh_gpt5' || s === 'copilot' || s === 'gh-gpt-5') return 'gh_gpt5';
+            if (s === 'gh_gpt4' || s === 'copilot-4o' || s === 'gh-gpt-4.1') return 'gh_gpt4';
             if (s === 'ag_sonnet' || s === 'sonnet') return 'ag_sonnet';
             if (s === 'ag_opus' || s === 'opus') return 'ag_opus';
             if (s === 'local' || s === 'lc_qwen') return 'lc_qwen';
@@ -160,7 +160,6 @@
             if (s.includes('opus')) return 'ag_opus';
             if (s.includes('pro')) return s.includes('gc') ? 'gc_pro' : 'ag_pro';
             if (s.includes('flash')) return s.includes('gc') ? 'gc_flash' : 'ag_flash';
-            if (s.includes('gh-') || s.includes('copilot')) return s.includes('4') ? 'gh_gpt4' : 'gh_gpt5';
             return 'lc_qwen';
         }
 
@@ -227,8 +226,8 @@
                                     <p class="text-sm font-bold text-slate-200 truncate">${cfg.label}</p>
                                 </div>
                                 <div class="flex justify-between items-end mt-2 h-5">
-                                    <p class="text-sm font-black ${statusColor} uppercase tracking-widest">${reason || statusText}</p>
-                                    ${brainIndicator ? `<span class="text-sm pulse">${brainIndicator}</span>` : ''}
+                                    <p class="text-sm font-black ${statusColor} uppercase tracking-widest leading-none">${reason || statusText}</p>
+                                    ${brainIndicator ? `<span class="text-sm pulse leading-none">${brainIndicator}</span>` : ''}
                                 </div>
                             </div>
                         `;
