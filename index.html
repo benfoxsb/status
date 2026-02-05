@@ -10,8 +10,8 @@
         body { background-color: #0b0f1a; color: #f1f5f9; font-family: 'Inter', sans-serif; font-size: 1.125rem; }
         .card { background-color: #161b2c; border: 1px solid #2d334a; transition: transform 0.2s; }
         .card:hover { transform: translateY(-2px); }
-        .pulse-anim { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        .pulse-anim { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; display: inline-block; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.1); } }
         ::-webkit-scrollbar { width: 4px; height: 4px; background: transparent; }
         ::-webkit-scrollbar-thumb { background: #2d334a; border-radius: 10px; }
         .active-model { border-color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.1); }
@@ -31,15 +31,16 @@
             </div>
         </header>
 
+        <!-- Top Operational Layer -->
         <div class="grid grid-cols-1 lg:grid-cols-6 gap-6 mb-8">
-            <!-- Operational Hub -->
+            <!-- Unified Performance Hub -->
             <div class="lg:col-span-2 card p-6 rounded-3xl flex flex-col">
                 <div class="mb-6 h-full flex flex-col">
-                    <h3 class="text-xs font-bold uppercase mb-6 tracking-widest text-emerald-400">System Performance</h3>
+                    <h3 class="text-xs font-bold uppercase mb-6 tracking-widest text-emerald-400">Operational Hub</h3>
                     
                     <div class="mb-8">
                         <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-3">7D Activity Pattern</h3>
-                        <div id="heatmap-container" class="grid grid-cols-7 gap-1 h-32 overflow-hidden">
+                        <div id="heatmap-container" class="flex flex-row gap-1 h-32 overflow-hidden">
                         </div>
                     </div>
 
@@ -75,26 +76,26 @@
                 </div>
             </div>
 
-            <!-- Billing Cards -->
+            <!-- Infrastructure & Billing Stacks -->
             <div class="lg:col-span-1 flex flex-col gap-4">
                 <div id="card-ag" class="card p-5 rounded-2xl flex-1 border-l-4 border-l-slate-700 overflow-hidden">
                     <div class="mb-4">
-                        <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Ben Fox Agent</h3>
-                        <p class="text-[8px] text-slate-600 truncate">gen-lang-client-0036704643</p>
+                        <h3 id="billing-ag-name" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Ben Fox Agent</h3>
+                        <p id="billing-ag-id" class="text-[8px] text-slate-600 truncate">gen-lang-client-0036704643</p>
                     </div>
                     <div class="pt-3 border-t border-slate-800/50">
                         <p class="text-[8px] font-bold text-slate-500 uppercase mb-1">Monthly Cost</p>
-                        <p class="text-2xl font-black text-emerald-400 leading-none">$0.00 <span class="text-[8px] text-slate-600 font-normal">MTD</span></p>
+                        <p id="billing-ag-cost" class="text-2xl font-black text-emerald-400 leading-none">$0.00 <span class="text-[8px] text-slate-600 font-normal">MTD</span></p>
                     </div>
                 </div>
                 <div id="card-gcli" class="card p-5 rounded-2xl flex-1 border-l-4 border-l-slate-700 overflow-hidden">
                     <div class="mb-4">
-                        <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">GC Project</h3>
-                        <p class="text-[8px] text-slate-600 truncate">Agent Failover Mesh</p>
+                        <h3 id="billing-gc-name" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Agent Failover Mesh</h3>
+                        <p id="billing-gc-id" class="text-[8px] text-slate-600 truncate">gen-lang-mesh-001</p>
                     </div>
                     <div class="pt-3 border-t border-slate-800/50">
                         <p class="text-[8px] font-bold text-slate-500 uppercase mb-1">Monthly Cost</p>
-                        <p class="text-2xl font-black text-emerald-400 leading-none">$0.00 <span class="text-[8px] text-slate-600 font-normal">MTD</span></p>
+                        <p id="billing-gc-cost" class="text-2xl font-black text-emerald-400 leading-none">$0.00 <span class="text-[8px] text-slate-600 font-normal">MTD</span></p>
                     </div>
                 </div>
             </div>
@@ -187,6 +188,15 @@
                 document.getElementById('reliability-7d').innerText = `${w7.reliability || '0.0'}%`;
                 document.getElementById('reliability-30d').innerText = `${w30.reliability || '0.0'}%`;
 
+                if (data.billing) {
+                    document.getElementById('billing-ag-name').innerText = data.billing.ag.name;
+                    document.getElementById('billing-ag-id').innerText = data.billing.ag.id;
+                    document.getElementById('billing-ag-cost').innerText = data.billing.ag.cost;
+                    document.getElementById('billing-gc-name').innerText = data.billing.gc.name;
+                    document.getElementById('billing-gc-id').innerText = data.billing.gc.id;
+                    document.getElementById('billing-gc-cost').innerText = data.billing.gc.cost;
+                }
+
                 const pipelineEl = document.getElementById('failover-path');
                 if (data.failover) {
                     let activeFound = false;
@@ -195,12 +205,12 @@
                         const isHit = (val && val !== "0.0" && val !== "null");
                         const mKey = getModelKey(item.id);
                         const cfg = modelConfig.find(c => c.key === mKey) || { tw: 'slate', label: item.display || item.name };
-                        let statusText = "STANDBY"; let statusColor = "text-slate-500"; let border = "border-slate-800";
+                        let statusText = "HEALTHY"; let statusColor = "text-slate-500"; let border = "border-slate-800";
                         let roleIcon = item.icon || "🛡️"; let brainIndicator = ""; let reason = "";
                         
                         if (isHit) { 
                             statusText = "COOLDOWN"; statusColor = "text-red-500"; 
-                            reason = `QUOTA (${val}h)`;
+                            reason = `QUOTA RESET (${val}h)`;
                         }
                         else if (!activeFound) { statusText = "ACTIVE"; statusColor = `text-${cfg.tw}-400`; border = `border-${cfg.tw}-500/50 active-model`; brainIndicator = "🧠"; activeFound = true; }
                         
@@ -212,7 +222,7 @@
                                     <p class="text-sm font-bold text-slate-200 truncate">${cfg.label}</p>
                                 </div>
                                 <div class="flex justify-between items-end mt-2 h-5">
-                                    <p class="text-[10px] font-black ${statusColor} uppercase tracking-widest leading-none">${reason || statusText}</p>
+                                    <p class="text-[10px] font-bold ${statusColor} uppercase tracking-widest leading-none">${reason || statusText}</p>
                                     ${brainIndicator ? `<span class="text-sm pulse-anim leading-none">${brainIndicator}</span>` : ''}
                                 </div>
                             </div>
@@ -228,7 +238,7 @@
 
                 const pulseContainer = document.getElementById('project-columns');
                 if (data.pulse && data.pulse.length > 0) {
-                    const groups = {}; const today = getLocalYMD(new Date()); const yesterday = getLocalYMD(new Date(Date.now() - 86400000));
+                    const groups = {}; today = getLocalYMD(new Date()); yesterday = getLocalYMD(new Date(Date.now() - 86400000));
                     data.pulse.forEach(item => { if (!groups[item.project]) groups[item.project] = []; groups[item.project].push(item); });
                     
                     pulseContainer.innerHTML = Object.keys(groups).sort().map((proj, pIdx) => {
