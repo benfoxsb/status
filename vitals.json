@@ -1,9 +1,9 @@
 {
-  "updated": "2026-02-05T01:35:15Z",
+  "updated": "2026-02-05T01:36:26Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 114,
+      "success": 115,
       "fail": 22,
       "ag_flash": 82,
       "ag_pro": 9,
@@ -27,7 +27,7 @@
       }
     },
     "7d": {
-      "success": 306,
+      "success": 307,
       "fail": 182,
       "days": 2,
       "usage": {
@@ -44,7 +44,7 @@
       "reliability": "62.7"
     },
     "30d": {
-      "success": 306,
+      "success": 307,
       "fail": 182,
       "days": 2,
       "usage": {
@@ -73,7 +73,7 @@
     },
     {
       "date": "2026-02-04",
-      "success": 114,
+      "success": 115,
       "fail": 22,
       "ag_flash": 82,
       "ag_pro": 9,
@@ -87,6 +87,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "17:35",
+      "project": "benfoxsb.github.io",
+      "hash": "744a616",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/744a616",
+      "summary": "data: bulletproof midnight-to-midnight PST collection",
+      "model": "GC-GEMINI-3-FLASH-PREVIEW"
+    },
     {
       "date": "2026-02-04",
       "time": "17:34",
@@ -201,15 +210,6 @@
       "project": "benfoxsb.github.io",
       "hash": "38c051f",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/38c051f",
-      "summary": "data: bulletproof cooldown detection and unified PST alignment",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:56",
-      "project": "benfoxsb.github.io",
-      "hash": "8a45b4c",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/8a45b4c",
       "summary": "data: bulletproof cooldown detection and unified PST alignment",
       "model": "AG-GEMINI-3-FLASH"
     },
@@ -426,7 +426,7 @@
         "14": "13",
         "15": "17",
         "16": "24",
-        "17": "15"
+        "17": "16"
       },
       "fail": {
         "11": "2",
