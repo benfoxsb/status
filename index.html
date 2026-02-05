@@ -21,7 +21,8 @@
         /* Project Layer Styles */
         .proj-block { break-inside: avoid; margin-bottom: 2rem; width: 100%; display: block; }
         #project-columns { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; align-items: flex-start; }
-        @media (min-width: 768px) { #project-columns { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 768px) { #project-columns { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1280px) { #project-columns { grid-template-columns: repeat(3, 1fr); } }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -265,6 +266,7 @@
 
                         return `<div class="proj-block"><div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 border-b-2 border-blue-500/20 pb-2">${proj}</div><div>${Object.keys(days).map((dayLabel, dIdx) => {
                             const dayId = `p${i}-d${dIdx}`;
+                            const isOld = dayLabel !== 'Today' && dayLabel !== 'Yesterday';
                             const collapsedItems = [];
                             days[dayLabel].forEach(item => {
                                 const last = collapsedItems[collapsedItems.length - 1];
@@ -277,7 +279,7 @@
                                 }
                             });
 
-                            return `<div><div class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2 mb-2 ml-1 cursor-pointer hover:text-blue-400 flex items-center gap-2" onclick="toggleDay('${dayId}')"><svg id="icon-${dayId}" class="w-2 h-2 transition-transform" fill="currentColor" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" /></svg>${dayLabel}</div><div id="day-group-${dayId}">${collapsedItems.map((item, cIdx) => {
+                            return `<div><div class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2 mb-2 ml-1 cursor-pointer hover:text-blue-400 flex items-center gap-2" onclick="toggleDay('${dayId}')"><svg id="icon-${dayId}" class="w-2 h-2 transition-transform" style="transform: ${isOld ? 'rotate(-90deg)' : 'rotate(0deg)'}" fill="currentColor" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" /></svg>${dayLabel}</div><div id="day-group-${dayId}" style="display: ${isOld ? 'none' : 'block'}">${collapsedItems.map((item, cIdx) => {
                                 const mKey = getModelKey(item.model || '');
                                 const cfg = modelConfig.find(c => c.key === mKey) || modelConfig[8];
                                 const timeDisplay = item.count > 1 ? `${item.startTime} - ${item.endTime}` : item.time;
