@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:49:26Z",
+  "updated": "2026-02-05T00:50:12Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -17,14 +17,13 @@
       "cooldowns": 10,
       "quotas": 12,
       "timers": {
-        "ag_quota": "0.0",
-        "ag_rl": "0.0",
-        "gc_quota": "0.0",
-        "gc_rl": "0.0",
-        "sonnet_quota": "0.0",
-        "ag_pro_quota": "0.0",
-        "gh_gpt5_quota": "0.0",
-        "gh_gpt4_quota": "0.0"
+        "ag_flash_cd": "19.4",
+        "gc_flash_cd": "0.0",
+        "sonnet_cd": "0.0",
+        "ag_pro_cd": "0.0",
+        "gh_gpt5_cd": "0.0",
+        "gh_gpt4_cd": "0.0",
+        "lc_qwen_cd": "0.0"
       }
     },
     "7d": {
@@ -99,6 +98,15 @@
     },
     {
       "date": "2026-02-04",
+      "time": "16:49",
+      "project": "benfoxsb.github.io",
+      "hash": "5f0748d",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/5f0748d",
+      "summary": "data: bulletproof cooldown detection and role icon alignment",
+      "model": "AGENT"
+    },
+    {
+      "date": "2026-02-04",
       "time": "16:48",
       "project": "benfoxsb.github.io",
       "hash": "040e4b7",
@@ -158,60 +166,6 @@
       "hash": "0e3c0e8",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/0e3c0e8",
       "summary": "data: focus pulse on code check-ins and PST alignment",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:25",
-      "project": "benfoxsb.github.io",
-      "hash": "1ca886e",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/1ca886e",
-      "summary": "data: focus pulse on code check-ins and PST alignment",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:23",
-      "project": "benfoxsb.github.io",
-      "hash": "07abad4",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/07abad4",
-      "summary": "data: focus pulse on code check-ins and PST alignment",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:22",
-      "project": "benfoxsb.github.io",
-      "hash": "dba2693",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/dba2693",
-      "summary": "data: focus pulse on code check-ins and PST alignment",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:22",
-      "project": "benfoxsb.github.io",
-      "hash": "c3a14b7",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/c3a14b7",
-      "summary": "ui: reorganize hub and enhance failover pipeline with reasons and billing",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:19",
-      "project": "benfoxsb.github.io",
-      "hash": "8ea4f23",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/8ea4f23",
-      "summary": "data: enhance cooldown detection and PST alignment",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:07",
-      "project": "benfoxsb.github.io",
-      "hash": "bffc5b8",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/bffc5b8",
-      "summary": "data: enhance cooldown detection and PST alignment",
       "model": "AGENT"
     },
     {
@@ -303,51 +257,6 @@
       "url": "https://github.com/velocity-tech-io/website/commit/fcf52f6",
       "summary": "Enhance section descriptions with gradient text styling",
       "model": "AGENT"
-    },
-    {
-      "date": "2026-01-28",
-      "time": "23:27",
-      "project": "velocity-tech-site",
-      "hash": "c3126ba",
-      "url": "https://github.com/velocity-tech-io/website/commit/c3126ba",
-      "summary": "Fix mobile horizontal scroll and disable zoom",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-01-27",
-      "time": "23:30",
-      "project": "velocity-tech-site",
-      "hash": "c1df911",
-      "url": "https://github.com/velocity-tech-io/website/commit/c1df911",
-      "summary": "perf: optimize mobile performance",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-01-27",
-      "time": "22:04",
-      "project": "velocity-tech-site",
-      "hash": "462e3c1",
-      "url": "https://github.com/velocity-tech-io/website/commit/462e3c1",
-      "summary": "Remove Google Fonts and switch to system fonts",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-01-27",
-      "time": "14:37",
-      "project": "velocity-tech-site",
-      "hash": "78cc034",
-      "url": "https://github.com/velocity-tech-io/website/commit/78cc034",
-      "summary": "Make website fully responsive for mobile browsers",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-01-27",
-      "time": "01:25",
-      "project": "velocity-tech-site",
-      "hash": "690d8b6",
-      "url": "https://github.com/velocity-tech-io/website/commit/690d8b6",
-      "summary": "fix: remove white border flash on navigation transitions",
-      "model": "AGENT"
     }
   ],
   "heatmap": [
@@ -426,7 +335,7 @@
         "13": "10",
         "14": "13",
         "15": "17",
-        "16": "16"
+        "16": "17"
       },
       "fail": {
         "11": "2",
@@ -441,66 +350,66 @@
   "failover": [
     {
       "id": "ag_flash",
-      "name": "Antigravity Gemini 3 Flash",
+      "name": "AG Gemini 3 Flash",
       "display": "AG FLASH",
       "role": "Fast Operations",
       "icon": "⚡",
-      "quota_id": "ag_quota",
-      "rl_id": "ag_rl"
+      "quota_id": "ag_flash_cd",
+      "rl_id": "ag_flash_cd"
     },
     {
       "id": "gc_flash",
-      "name": "Gemini CLI Flash",
+      "name": "GC Gemini 3 Flash",
       "display": "GC FLASH",
       "role": "Reliable Backup",
       "icon": "🛡️",
-      "quota_id": "gc_quota",
-      "rl_id": "gc_rl"
+      "quota_id": "gc_flash_cd",
+      "rl_id": "gc_flash_cd"
     },
     {
       "id": "ag_sonnet",
-      "name": "Antigravity Claude Sonnet 4.5",
+      "name": "AG Claude Sonnet 4.5",
       "display": "AG SONNET",
       "role": "Complex Reasoning",
       "icon": "🧠",
-      "quota_id": "sonnet_quota",
-      "rl_id": "sonnet_quota"
+      "quota_id": "sonnet_cd",
+      "rl_id": "sonnet_cd"
     },
     {
       "id": "ag_pro",
-      "name": "Antigravity Gemini 3 Pro",
+      "name": "AG Gemini 3 Pro",
       "display": "AG PRO",
       "role": "Vision & Audit",
-      "icon": "🔬",
-      "quota_id": "ag_pro_quota",
-      "rl_id": "ag_pro_quota"
+      "icon": "👁️",
+      "quota_id": "ag_pro_cd",
+      "rl_id": "ag_pro_cd"
     },
     {
       "id": "gh_gpt5",
-      "name": "GitHub Copilot GPT-5-Mini",
+      "name": "GH GPT-5-Mini",
       "display": "GH GPT-5",
       "role": "Code Optimization",
       "icon": "💻",
-      "quota_id": "gh_gpt5_quota",
-      "rl_id": "gh_gpt5_quota"
+      "quota_id": "gh_gpt5_cd",
+      "rl_id": "gh_gpt5_cd"
     },
     {
       "id": "gh_gpt4",
-      "name": "GitHub Copilot GPT-4.1",
+      "name": "GH GPT-4.1",
       "display": "GH GPT-4.1",
       "role": "Safety Backup",
       "icon": "📜",
-      "quota_id": "gh_gpt4_quota",
-      "rl_id": "gh_gpt4_quota"
+      "quota_id": "gh_gpt4_cd",
+      "rl_id": "gh_gpt4_cd"
     },
     {
       "id": "lc_qwen",
-      "name": "Local Ollama Qwen Coder",
+      "name": "Local Qwen Coder",
       "display": "LC QWEN",
       "role": "Local Safeguard",
       "icon": "🏠",
-      "quota_id": "",
-      "rl_id": ""
+      "quota_id": "lc_qwen_cd",
+      "rl_id": "lc_qwen_cd"
     }
   ],
   "billing": {
