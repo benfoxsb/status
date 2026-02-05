@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-05T07:34:12Z",
+  "updated": "2026-02-05T07:49:31Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 168,
+      "success": 170,
       "fail": 30,
-      "ag_flash": 109,
+      "ag_flash": 111,
       "ag_pro": 9,
       "gc_flash": 58,
       "gc_pro": 0,
@@ -17,7 +17,7 @@
       "cooldowns": 16,
       "quotas": 16,
       "timers": {
-        "ag_flash_cd": "12.6",
+        "ag_flash_cd": "12.4",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",
@@ -27,11 +27,11 @@
       }
     },
     "7d": {
-      "success": 360,
+      "success": 362,
       "fail": 190,
       "days": 2,
       "usage": {
-        "ag_flash": 230,
+        "ag_flash": 232,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -41,14 +41,14 @@
         "ag_opus": 1,
         "ag_sonnet": 5
       },
-      "reliability": "65.4"
+      "reliability": "65.5"
     },
     "30d": {
-      "success": 360,
+      "success": 362,
       "fail": 190,
       "days": 2,
       "usage": {
-        "ag_flash": 230,
+        "ag_flash": 232,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -58,7 +58,7 @@
         "ag_opus": 1,
         "ag_sonnet": 5
       },
-      "reliability": "65.4"
+      "reliability": "65.5"
     }
   },
   "history": [
@@ -73,9 +73,9 @@
     },
     {
       "date": "2026-02-04",
-      "success": 168,
+      "success": 170,
       "fail": 30,
-      "ag_flash": 109,
+      "ag_flash": 111,
       "ag_pro": 9,
       "gc_flash": 58,
       "gc_pro": 0,
@@ -87,6 +87,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "23:45",
+      "project": "benfoxsb.github.io",
+      "hash": "a9b924c",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/a9b924c",
+      "summary": "feat: sort projects by recency and fix model color mapping",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "23:30",
@@ -333,7 +342,7 @@
         "20": "4",
         "21": "4",
         "22": "10",
-        "23": "9"
+        "23": "11"
       },
       "fail": {
         "11": "2",
