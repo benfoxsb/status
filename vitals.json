@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-05T04:54:40Z",
+  "updated": "2026-02-05T05:10:05Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 144,
+      "success": 145,
       "fail": 26,
-      "ag_flash": 87,
+      "ag_flash": 88,
       "ag_pro": 9,
       "gc_flash": 56,
       "gc_pro": 0,
@@ -17,7 +17,7 @@
       "cooldowns": 16,
       "quotas": 16,
       "timers": {
-        "ag_flash_cd": "15.3",
+        "ag_flash_cd": "15.1",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",
@@ -27,11 +27,11 @@
       }
     },
     "7d": {
-      "success": 336,
+      "success": 337,
       "fail": 186,
       "days": 2,
       "usage": {
-        "ag_flash": 208,
+        "ag_flash": 209,
         "ag_pro": 22,
         "gc_flash": 56,
         "gc_pro": 0,
@@ -41,14 +41,14 @@
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "64.3"
+      "reliability": "64.4"
     },
     "30d": {
-      "success": 336,
+      "success": 337,
       "fail": 186,
       "days": 2,
       "usage": {
-        "ag_flash": 208,
+        "ag_flash": 209,
         "ag_pro": 22,
         "gc_flash": 56,
         "gc_pro": 0,
@@ -58,7 +58,7 @@
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "64.3"
+      "reliability": "64.4"
     }
   },
   "history": [
@@ -73,9 +73,9 @@
     },
     {
       "date": "2026-02-04",
-      "success": 144,
+      "success": 145,
       "fail": 26,
-      "ag_flash": 87,
+      "ag_flash": 88,
       "ag_pro": 9,
       "gc_flash": 56,
       "gc_pro": 0,
@@ -87,6 +87,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "20:54",
+      "project": "benfoxsb.github.io",
+      "hash": "36fb079",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/36fb079",
+      "summary": "data: focus pulse on code check-ins and PST alignment",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "20:39",
@@ -147,15 +156,6 @@
       "project": "benfoxsb.github.io",
       "hash": "5d414d3",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/5d414d3",
-      "summary": "data: focus pulse on code check-ins and PST alignment",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "18:52",
-      "project": "benfoxsb.github.io",
-      "hash": "90ddb47",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/90ddb47",
       "summary": "data: focus pulse on code check-ins and PST alignment",
       "model": "AG-GEMINI-3-FLASH"
     },
@@ -348,7 +348,7 @@
         "17": "27",
         "18": "11",
         "19": "4",
-        "20": "3"
+        "20": "4"
       },
       "fail": {
         "11": "2",
