@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T19:26:54Z",
+  "updated": "2026-02-05T19:27:12Z",
   "windows": {
     "24h": {
       "date": "2026-02-05",
@@ -122,7 +122,7 @@
       "hash": "4f20ff7",
       "url": "https://github.com/benfoxsb/gh-pm/commit/4f20ff7",
       "summary": "Add files via upload",
-      "model": "AG-GEMINI-3-FLASH"
+      "model": "GH-GPT-5-MINI"
     },
     {
       "date": "2026-02-04",
