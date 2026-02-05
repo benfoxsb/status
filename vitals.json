@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T06:39:16Z",
+  "updated": "2026-02-05T06:40:26Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -17,7 +17,7 @@
       "cooldowns": 16,
       "quotas": 16,
       "timers": {
-        "ag_flash_cd": "13.6",
+        "ag_flash_cd": "13.5",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",

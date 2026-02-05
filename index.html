@@ -19,10 +19,9 @@
         .pulse-card:hover { background: #1e253a; }
         .pulse-expanded { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #2d334a; }
         .proj-block { break-inside: avoid; margin-bottom: 2rem; width: 100%; display: inline-block; }
-        #project-columns { display: flex; flex-direction: column; gap: 2rem; }
-        .pulse-col { display: flex; flex-direction: column; gap: 2rem; flex: 1; min-width: 0; }
-        @media (min-width: 1024px) { #project-columns { flex-direction: row; } .pulse-col { flex: 0 0 32%; } }
-        @media (min-width: 1440px) { .pulse-col { flex: 0 0 31%; } }
+        #project-columns { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        @media (min-width: 1024px) { #project-columns { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1440px) { #project-columns { grid-template-columns: repeat(3, 1fr); } }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -250,14 +249,12 @@
                     });
                     
                     const activeProjKeys = Object.keys(groups).filter(k => groups[k].length > 0).sort();
-                    console.log("Active Projects:", activeProjKeys);
-                    const columnBins = [[], [], []];
                     
-                    activeProjKeys.forEach((proj, idx) => {
+                    pulseContainer.innerHTML = activeProjKeys.map((proj, idx) => {
                         const items = groups[proj]; const days = {};
                         items.forEach(it => { const label = it.date === today ? 'Today' : 'Yesterday'; if (!days[label]) days[label] = []; days[label].push(it); });
 
-                        const html = `<div class="proj-block"><div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 border-b-2 border-blue-500/20 pb-2">${proj}</div><div>${Object.keys(days).map((dayLabel, dIdx) => {
+                        return `<div class="proj-block"><div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 border-b-2 border-blue-500/20 pb-2">${proj}</div><div>${Object.keys(days).map((dayLabel, dIdx) => {
                             const dayId = `p${idx}-d${dIdx}`;
                             
                             const collapsedItems = [];
@@ -311,16 +308,7 @@
                                     </div>`;
                             }).join('')}</div></div>`;
                         }).join('')}</div></div>`;
-                        
-                        columnBins[idx % 3].push(html);
-                    });
-                    
-                    let finalHtml = "";
-                    for(let i=0; i<3; i++) {
-                        finalHtml += `<div class="pulse-col">${columnBins[i].join('')}</div>`;
-                    }
-                    pulseContainer.innerHTML = finalHtml;
-                }
+                    }).join('');
                 document.getElementById('last-update').innerText = new Date(data.updated).toLocaleTimeString();
             } catch (e) { console.error("Dashboard sync failed", e); }
         }
