@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:58:03Z",
+  "updated": "2026-02-05T01:04:35Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -17,7 +17,7 @@
       "cooldowns": 10,
       "quotas": 12,
       "timers": {
-        "ag_flash_cd": "19.2",
+        "ag_flash_cd": "19.1",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",
@@ -89,6 +89,15 @@
   "pulse": [
     {
       "date": "2026-02-04",
+      "time": "16:58",
+      "project": "benfoxsb.github.io",
+      "hash": "38c051f",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/38c051f",
+      "summary": "data: bulletproof cooldown detection and unified PST alignment",
+      "model": "AGENT"
+    },
+    {
+      "date": "2026-02-04",
       "time": "16:56",
       "project": "benfoxsb.github.io",
       "hash": "8a45b4c",
@@ -148,15 +157,6 @@
       "hash": "bd40d54",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/bd40d54",
       "summary": "data: consolidate health detection into single source of truth",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:49",
-      "project": "benfoxsb.github.io",
-      "hash": "8daadf9",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/8daadf9",
-      "summary": "data: bulletproof cooldown detection and role icon alignment",
       "model": "AGENT"
     },
     {
@@ -335,7 +335,7 @@
         "13": "10",
         "14": "13",
         "15": "17",
-        "16": "23"
+        "16": "24"
       },
       "fail": {
         "11": "2",
