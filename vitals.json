@@ -1,13 +1,13 @@
 {
-  "updated": "2026-02-05T06:41:11Z",
+  "updated": "2026-02-05T06:48:17Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 156,
-      "fail": 26,
-      "ag_flash": 99,
+      "success": 157,
+      "fail": 28,
+      "ag_flash": 100,
       "ag_pro": 9,
-      "gc_flash": 56,
+      "gc_flash": 57,
       "gc_pro": 0,
       "gh_gpt5": 8,
       "gh_gpt4": 1,
@@ -17,7 +17,7 @@
       "cooldowns": 16,
       "quotas": 16,
       "timers": {
-        "ag_flash_cd": "13.5",
+        "ag_flash_cd": "13.4",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",
@@ -27,13 +27,13 @@
       }
     },
     "7d": {
-      "success": 348,
-      "fail": 186,
+      "success": 349,
+      "fail": 188,
       "days": 2,
       "usage": {
-        "ag_flash": 220,
+        "ag_flash": 221,
         "ag_pro": 22,
-        "gc_flash": 56,
+        "gc_flash": 57,
         "gc_pro": 0,
         "gh_gpt5": 57,
         "gh_gpt4": 1,
@@ -41,16 +41,16 @@
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "65.1"
+      "reliability": "64.9"
     },
     "30d": {
-      "success": 348,
-      "fail": 186,
+      "success": 349,
+      "fail": 188,
       "days": 2,
       "usage": {
-        "ag_flash": 220,
+        "ag_flash": 221,
         "ag_pro": 22,
-        "gc_flash": 56,
+        "gc_flash": 57,
         "gc_pro": 0,
         "gh_gpt5": 57,
         "gh_gpt4": 1,
@@ -58,7 +58,7 @@
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "65.1"
+      "reliability": "64.9"
     }
   },
   "history": [
@@ -73,11 +73,11 @@
     },
     {
       "date": "2026-02-04",
-      "success": 156,
-      "fail": 26,
-      "ag_flash": 99,
+      "success": 157,
+      "fail": 28,
+      "ag_flash": 100,
       "ag_pro": 9,
-      "gc_flash": 56,
+      "gc_flash": 57,
       "gc_pro": 0,
       "gh_gpt5": 8,
       "gh_gpt4": 1,
@@ -332,7 +332,7 @@
         "19": "4",
         "20": "4",
         "21": "4",
-        "22": "7"
+        "22": "8"
       },
       "fail": {
         "11": "2",
@@ -342,7 +342,8 @@
         "15": "6",
         "16": "2",
         "17": "4",
-        "18": "2"
+        "18": "2",
+        "22": "2"
       }
     }
   ],
