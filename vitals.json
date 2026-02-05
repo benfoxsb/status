@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T10:10:25Z",
+  "updated": "2026-02-05T10:25:32Z",
   "windows": {
     "24h": {
       "date": "2026-02-05",
@@ -26,15 +26,6 @@
       "hash": "7d8ae77",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/7d8ae77",
       "summary": "fix: remove active shadow to strictly use labels for state",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-05",
-      "time": "00:14",
-      "project": "benfoxsb.github.io",
-      "hash": "0890127",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/0890127",
-      "summary": "feat: apply refined card design to failover pipeline",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
