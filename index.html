@@ -18,7 +18,10 @@
         .pulse-card { cursor: pointer; transition: background 0.2s; }
         .pulse-card:hover { background: #1e253a; }
         .pulse-expanded { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #2d334a; }
-        .proj-col { min-width: 340px; flex-shrink: 0; flex-grow: 1; }
+        .proj-block { break-inside: avoid; margin-bottom: 2rem; width: 100%; }
+        #project-columns { display: block; column-width: 380px; column-gap: 2rem; }
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #2d334a; border-radius: 10px; }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -114,7 +117,7 @@
                 <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                 Project Pulse
             </h2>
-            <div id="project-columns" class="flex flex-wrap gap-8 items-start">
+            <div id="project-columns" class="w-full">
             </div>
         </div>
 
@@ -245,7 +248,7 @@
                         const items = groups[proj]; const days = {};
                         items.forEach(it => { const label = it.date === today ? 'Today' : (it.date === yesterday ? 'Yesterday' : it.date); if (!days[label]) days[label] = []; days[label].push(it); });
 
-                        return `<div class="flex flex-col gap-4 proj-col"><div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 border-b-2 border-blue-500/20 pb-2">${proj}</div><div class="max-h-[600px] overflow-y-auto pr-2 custom-scroll">${Object.keys(days).map((dayLabel, dIdx) => {
+                        return `<div class="proj-block"><div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 border-b-2 border-blue-500/20 pb-2">${proj}</div><div class="max-h-[600px] overflow-y-auto pr-2 custom-scroll">${Object.keys(days).map((dayLabel, dIdx) => {
                             const dayId = `${pIdx}-${dIdx}`;
                             
                             // Group identical summaries to prevent noise
