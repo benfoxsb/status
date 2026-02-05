@@ -151,15 +151,16 @@
 
         function getModelKey(id) {
             if (!id) return 'lc_qwen';
-            const s = id.toLowerCase();
-            if (s === 'ag_flash') return 'ag_flash';
-            if (s === 'ag_pro') return 'ag_pro';
-            if (s === 'gc_flash' || s === 'gcli_flash') return 'gc_flash';
-            if (s === 'gc_pro' || s === 'gcli_pro') return 'gc_pro';
-            if (s === 'gh_gpt5' || s.includes('gh_gpt5') || s === 'copilot') return 'gh_gpt5';
-            if (s === 'gh_gpt4' || s.includes('gh_gpt4') || s === 'copilot-4o') return 'gh_gpt4';
-            if (s === 'ag_sonnet' || s.includes('sonnet')) return 'ag_sonnet';
-            if (s === 'ag_opus' || s.includes('opus')) return 'ag_opus';
+            const s = id.toLowerCase().replace(/-/g, '_');
+            if (s.includes('ag_flash') || s.includes('gemini_3_flash')) return 'ag_flash';
+            if (s.includes('ag_pro') || s.includes('gemini_3_pro')) return 'ag_pro';
+            if (s.includes('gc_flash')) return 'gc_flash';
+            if (s.includes('gc_pro')) return 'gc_pro';
+            if (s.includes('gh_gpt5') || s.includes('gpt_5_mini')) return 'gh_gpt5';
+            if (s.includes('gh_gpt4') || s.includes('gpt_4o')) return 'gh_gpt4';
+            if (s.includes('sonnet')) return 'ag_sonnet';
+            if (s.includes('opus')) return 'ag_opus';
+            if (s.includes('lc_') || s.includes('ollama') || s.includes('qwen')) return 'lc_qwen';
             return 'lc_qwen';
         }
 
@@ -251,7 +252,13 @@
                         groups[item.project].push(item); 
                     });
                     
-                    const activeProjKeys = Object.keys(groups).sort();
+                    const activeProjKeys = Object.keys(groups).sort((a, b) => {
+                        const getLatest = (proj) => {
+                            const latest = groups[proj][0];
+                            return new Date(`${latest.date} ${latest.time}`).getTime();
+                        };
+                        return getLatest(b) - getLatest(a);
+                    });
                     
                     pulseContainer.innerHTML = activeProjKeys.map((proj, i) => {
                         const items = groups[proj]; 
