@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-05T06:28:46Z",
+  "updated": "2026-02-05T06:32:49Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 154,
+      "success": 155,
       "fail": 26,
-      "ag_flash": 97,
+      "ag_flash": 98,
       "ag_pro": 9,
       "gc_flash": 56,
       "gc_pro": 0,
@@ -27,11 +27,11 @@
       }
     },
     "7d": {
-      "success": 346,
+      "success": 347,
       "fail": 186,
       "days": 2,
       "usage": {
-        "ag_flash": 218,
+        "ag_flash": 219,
         "ag_pro": 22,
         "gc_flash": 56,
         "gc_pro": 0,
@@ -41,14 +41,14 @@
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "65.0"
+      "reliability": "65.1"
     },
     "30d": {
-      "success": 346,
+      "success": 347,
       "fail": 186,
       "days": 2,
       "usage": {
-        "ag_flash": 218,
+        "ag_flash": 219,
         "ag_pro": 22,
         "gc_flash": 56,
         "gc_pro": 0,
@@ -58,7 +58,7 @@
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "65.0"
+      "reliability": "65.1"
     }
   },
   "history": [
@@ -73,9 +73,9 @@
     },
     {
       "date": "2026-02-04",
-      "success": 154,
+      "success": 155,
       "fail": 26,
-      "ag_flash": 97,
+      "ag_flash": 98,
       "ag_pro": 9,
       "gc_flash": 56,
       "gc_pro": 0,
@@ -341,7 +341,7 @@
         "19": "4",
         "20": "4",
         "21": "4",
-        "22": "5"
+        "22": "6"
       },
       "fail": {
         "11": "2",
