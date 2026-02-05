@@ -20,8 +20,6 @@
         .pulse-expanded { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #2d334a; }
         .proj-block { break-inside: avoid; margin-bottom: 2rem; width: 100%; }
         #project-columns { display: block; column-width: 380px; column-gap: 2rem; }
-        .custom-scroll::-webkit-scrollbar { width: 4px; }
-        .custom-scroll::-webkit-scrollbar-thumb { background: #2d334a; border-radius: 10px; }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -241,14 +239,18 @@
 
                 const pulseContainer = document.getElementById('project-columns');
                 if (data.pulse && data.pulse.length > 0) {
-                    const groups = {}; today = getLocalYMD(new Date()); yesterday = getLocalYMD(new Date(Date.now() - 86400000));
-                    data.pulse.forEach(item => { if (!groups[item.project]) groups[item.project] = []; groups[item.project].push(item); });
+                    const groups = {}; const today = getLocalYMD(new Date()); const yesterday = getLocalYMD(new Date(Date.now() - 86400000));
+                    data.pulse.forEach(item => { 
+                        if (item.date !== today && item.date !== yesterday) return;
+                        if (!groups[item.project]) groups[item.project] = []; 
+                        groups[item.project].push(item); 
+                    });
                     
                     pulseContainer.innerHTML = Object.keys(groups).sort().map((proj, pIdx) => {
                         const items = groups[proj]; const days = {};
-                        items.forEach(it => { const label = it.date === today ? 'Today' : (it.date === yesterday ? 'Yesterday' : it.date); if (!days[label]) days[label] = []; days[label].push(it); });
+                        items.forEach(it => { const label = it.date === today ? 'Today' : 'Yesterday'; if (!days[label]) days[label] = []; days[label].push(it); });
 
-                        return `<div class="proj-block"><div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 border-b-2 border-blue-500/20 pb-2">${proj}</div><div class="max-h-[600px] overflow-y-auto pr-2 custom-scroll">${Object.keys(days).map((dayLabel, dIdx) => {
+                        return `<div class="proj-block"><div class="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 border-b-2 border-blue-500/20 pb-2">${proj}</div><div>${Object.keys(days).map((dayLabel, dIdx) => {
                             const dayId = `${pIdx}-${dIdx}`;
                             
                             // Group identical summaries to prevent noise
