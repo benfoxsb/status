@@ -254,10 +254,10 @@
                     
                     const activeProjKeys = Object.keys(groups).sort((a, b) => {
                         const getLatest = (proj) => {
-                            const latest = groups[proj][0];
-                            return new Date(`${latest.date} ${latest.time}`).getTime();
+                            const last = groups[proj][0];
+                            return `${last.date} ${last.time}`;
                         };
-                        return getLatest(b) - getLatest(a);
+                        return getLatest(b).localeCompare(getLatest(a));
                     });
                     
                     pulseContainer.innerHTML = activeProjKeys.map((proj, i) => {
@@ -294,7 +294,7 @@
                                 const cardId = `p${i}-d${dIdx}-c${cIdx}`;
                                 
                                 return `
-                                    <div class="card p-3 rounded-xl mb-2 group transition-all" style="border-left-color: ${cfg.color}; box-shadow: -10px 0 20px ${cfg.color}15; cursor: pointer; background: #1a2035;" onclick="togglePulse('${cardId}')">
+                                    <div class="card p-3 rounded-xl mb-2 group transition-all" style="box-shadow: -10px 0 20px ${cfg.color}15; cursor: pointer; background: #1a2035;" onclick="togglePulse('${cardId}')">
                                         <div class="flex flex-col gap-1">
                                             <div class="flex justify-between items-center">
                                                 <div class="flex items-center">
