@@ -1,21 +1,21 @@
 {
-  "updated": "2026-02-05T01:36:26Z",
+  "updated": "2026-02-05T01:37:34Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 115,
-      "fail": 22,
+      "success": 116,
+      "fail": 24,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 45,
+      "gc_flash": 46,
       "gc_pro": 0,
-      "gh_gpt5": 6,
+      "gh_gpt5": 7,
       "gh_gpt4": 1,
       "lc_qwen": 0,
       "ag_opus": 0,
       "ag_sonnet": 5,
       "cooldowns": 16,
-      "quotas": 12,
+      "quotas": 14,
       "timers": {
         "ag_flash_cd": "18.6",
         "gc_flash_cd": "0.0",
@@ -27,38 +27,38 @@
       }
     },
     "7d": {
-      "success": 307,
-      "fail": 182,
+      "success": 308,
+      "fail": 184,
       "days": 2,
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 45,
+        "gc_flash": 46,
         "gc_pro": 0,
-        "gh_gpt5": 55,
+        "gh_gpt5": 56,
         "gh_gpt4": 1,
         "lc_qwen": 0,
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "62.7"
+      "reliability": "62.6"
     },
     "30d": {
-      "success": 307,
-      "fail": 182,
+      "success": 308,
+      "fail": 184,
       "days": 2,
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 45,
+        "gc_flash": 46,
         "gc_pro": 0,
-        "gh_gpt5": 55,
+        "gh_gpt5": 56,
         "gh_gpt4": 1,
         "lc_qwen": 0,
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "62.7"
+      "reliability": "62.6"
     }
   },
   "history": [
@@ -73,13 +73,13 @@
     },
     {
       "date": "2026-02-04",
-      "success": 115,
-      "fail": 22,
+      "success": 116,
+      "fail": 24,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 45,
+      "gc_flash": 46,
       "gc_pro": 0,
-      "gh_gpt5": 6,
+      "gh_gpt5": 7,
       "gh_gpt4": 1,
       "lc_qwen": 0,
       "ag_opus": 0,
@@ -87,6 +87,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "17:36",
+      "project": "benfoxsb.github.io",
+      "hash": "1d69ddd",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/1d69ddd",
+      "summary": "data: bulletproof midnight-to-midnight PST collection",
+      "model": "GC-GEMINI-3-FLASH-PREVIEW"
+    },
     {
       "date": "2026-02-04",
       "time": "17:35",
@@ -201,15 +210,6 @@
       "project": "benfoxsb.github.io",
       "hash": "10180d3",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/10180d3",
-      "summary": "data: bulletproof cooldown detection and unified PST alignment",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:58",
-      "project": "benfoxsb.github.io",
-      "hash": "38c051f",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/38c051f",
       "summary": "data: bulletproof cooldown detection and unified PST alignment",
       "model": "AG-GEMINI-3-FLASH"
     },
@@ -426,7 +426,7 @@
         "14": "13",
         "15": "17",
         "16": "24",
-        "17": "16"
+        "17": "17"
       },
       "fail": {
         "11": "2",
@@ -435,7 +435,7 @@
         "14": "4",
         "15": "6",
         "16": "2",
-        "17": "2"
+        "17": "4"
       }
     }
   ],
