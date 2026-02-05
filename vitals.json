@@ -1,0 +1,391 @@
+{
+  "updated": "2026-02-05T09:04:06Z",
+  "windows": {
+    "24h": {
+      "date": "2026-02-05",
+      "success": 0
+    },
+    "7d": {},
+    "30d": {}
+  },
+  "history": [],
+  "pulse": [
+    {
+      "date": "2026-02-05",
+      "time": "00:42",
+      "project": "benfoxsb.github.io",
+      "hash": "2eb240f",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/2eb240f",
+      "summary": "fix: manual data restore",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "00:14",
+      "project": "benfoxsb.github.io",
+      "hash": "7d8ae77",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/7d8ae77",
+      "summary": "fix: remove active shadow to strictly use labels for state",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "00:14",
+      "project": "benfoxsb.github.io",
+      "hash": "0890127",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/0890127",
+      "summary": "feat: apply refined card design to failover pipeline",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "00:00",
+      "project": "benfoxsb.github.io",
+      "hash": "f695974",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/f695974",
+      "summary": "feat: robust recency sorting and move model colors to shadow only",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "18:47",
+      "project": "gh-pm",
+      "hash": "4f20ff7",
+      "url": "https://github.com/benfoxsb/gh-pm/commit/4f20ff7",
+      "summary": "Add files via upload",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "21:35",
+      "project": "velocity-tech-site",
+      "hash": "c96f65b",
+      "url": "https://github.com/velocity-tech-io/website/commit/c96f65b",
+      "summary": "chore: trigger deployment build after adding supabase secrets",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "21:34",
+      "project": "velocity-tech-site",
+      "hash": "acf1b20",
+      "url": "https://github.com/velocity-tech-io/website/commit/acf1b20",
+      "summary": "chore: trigger deployment build after adding supabase secrets",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "21:18",
+      "project": "velocity-tech-site",
+      "hash": "2803d32",
+      "url": "https://github.com/velocity-tech-io/website/commit/2803d32",
+      "summary": "fix: handle missing supabase env vars during build",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "21:17",
+      "project": "velocity-tech-site",
+      "hash": "78a799d",
+      "url": "https://github.com/velocity-tech-io/website/commit/78a799d",
+      "summary": "feat: mount ChatWidget in RootLayout",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "21:10",
+      "project": "velocity-tech-site",
+      "hash": "e5ce59d",
+      "url": "https://github.com/velocity-tech-io/website/commit/e5ce59d",
+      "summary": "fix: remove server-side API route to unblock static build",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "20:51",
+      "project": "velocity-tech-site",
+      "hash": "37427bf",
+      "url": "https://github.com/velocity-tech-io/website/commit/37427bf",
+      "summary": "feat: complete client-side ChatWidget implementation with Supabase",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-03",
+      "time": "11:22",
+      "project": "velocity-tech-site",
+      "hash": "539b113",
+      "url": "https://github.com/velocity-tech-io/website/commit/539b113",
+      "summary": "fix: move chat logic to client-side for static export compatibility",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-01",
+      "time": "23:29",
+      "project": "velocity-tech-site",
+      "hash": "b4604e3",
+      "url": "https://github.com/velocity-tech-io/website/commit/b4604e3",
+      "summary": "Add ChatWidget and Supabase integration",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-01",
+      "time": "02:17",
+      "project": "snapcard.app",
+      "hash": "a0b6f5d",
+      "url": "https://github.com/velocity-tech-io/snapcard.app/commit/a0b6f5d",
+      "summary": "feat: Add landing page MVP with pricing and features",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-28",
+      "time": "23:55",
+      "project": "velocity-tech-site",
+      "hash": "fcf52f6",
+      "url": "https://github.com/velocity-tech-io/website/commit/fcf52f6",
+      "summary": "Enhance section descriptions with gradient text styling",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-28",
+      "time": "23:27",
+      "project": "velocity-tech-site",
+      "hash": "c3126ba",
+      "url": "https://github.com/velocity-tech-io/website/commit/c3126ba",
+      "summary": "Fix mobile horizontal scroll and disable zoom",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "23:30",
+      "project": "velocity-tech-site",
+      "hash": "c1df911",
+      "url": "https://github.com/velocity-tech-io/website/commit/c1df911",
+      "summary": "perf: optimize mobile performance",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "22:04",
+      "project": "velocity-tech-site",
+      "hash": "462e3c1",
+      "url": "https://github.com/velocity-tech-io/website/commit/462e3c1",
+      "summary": "Remove Google Fonts and switch to system fonts",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "14:37",
+      "project": "velocity-tech-site",
+      "hash": "78cc034",
+      "url": "https://github.com/velocity-tech-io/website/commit/78cc034",
+      "summary": "Make website fully responsive for mobile browsers",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "01:25",
+      "project": "velocity-tech-site",
+      "hash": "690d8b6",
+      "url": "https://github.com/velocity-tech-io/website/commit/690d8b6",
+      "summary": "fix: remove white border flash on navigation transitions",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "01:15",
+      "project": "velocity-tech-site",
+      "hash": "8c38ca7",
+      "url": "https://github.com/velocity-tech-io/website/commit/8c38ca7",
+      "summary": "style: enhance footer with teal accents and concise branding",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "01:09",
+      "project": "velocity-tech-site",
+      "hash": "380b6a0",
+      "url": "https://github.com/velocity-tech-io/website/commit/380b6a0",
+      "summary": "style: improve footer text formatting for better readability",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "01:06",
+      "project": "velocity-tech-site",
+      "hash": "4e4e354",
+      "url": "https://github.com/velocity-tech-io/website/commit/4e4e354",
+      "summary": "style: improve hero subtitle formatting for better visual alignment",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "01:01",
+      "project": "velocity-tech-site",
+      "hash": "9f1f222",
+      "url": "https://github.com/velocity-tech-io/website/commit/9f1f222",
+      "summary": "style: fix YAML linting - split long deploy command",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "00:40",
+      "project": "velocity-tech-site",
+      "hash": "c0a1a7a",
+      "url": "https://github.com/velocity-tech-io/website/commit/c0a1a7a",
+      "summary": "chore: update deployment and TypeScript configuration",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "00:32",
+      "project": "velocity-tech-site",
+      "hash": "fd5753d",
+      "url": "https://github.com/velocity-tech-io/website/commit/fd5753d",
+      "summary": "style: remove redundant teal icon for cleaner branding",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "00:22",
+      "project": "velocity-tech-site",
+      "hash": "c996280",
+      "url": "https://github.com/velocity-tech-io/website/commit/c996280",
+      "summary": "security: upgrade Next.js to 15.5.10 to patch CVE-2025-29927",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "00:15",
+      "project": "velocity-tech-site",
+      "hash": "62b6bdd",
+      "url": "https://github.com/velocity-tech-io/website/commit/62b6bdd",
+      "summary": "style: update branding to 'Velocity Tech' with refined typography",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "00:00",
+      "project": "velocity-tech-site",
+      "hash": "904062a",
+      "url": "https://github.com/velocity-tech-io/website/commit/904062a",
+      "summary": "style: update color scheme to teal accent colors",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-26",
+      "time": "23:45",
+      "project": "velocity-tech-site",
+      "hash": "6cc7b83",
+      "url": "https://github.com/velocity-tech-io/website/commit/6cc7b83",
+      "summary": "chore: update gitignore for build artifacts and system files",
+      "model": "AG-GEMINI-3-FLASH"
+    }
+  ],
+  "heatmap": [
+    {
+      "date": "2026-01-30",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-01-31",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-01",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-02",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-03",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-04",
+      "success": {},
+      "fail": {}
+    },
+    {
+      "date": "2026-02-05",
+      "success": {},
+      "fail": {}
+    }
+  ],
+  "failover": [
+    {
+      "id": "ag_flash",
+      "name": "AG Gemini 3 Flash",
+      "display": "AG FLASH",
+      "role": "Fast Operations",
+      "icon": "⚡",
+      "quota_id": "ag_flash_cd"
+    },
+    {
+      "id": "gc_flash",
+      "name": "GC Gemini 3 Flash",
+      "display": "GC FLASH",
+      "role": "Reliable Backup",
+      "icon": "🛡️",
+      "quota_id": "gc_flash_cd"
+    },
+    {
+      "id": "ag_sonnet",
+      "name": "AG Claude Sonnet 4.5",
+      "display": "AG SONNET",
+      "role": "Complex Reasoning",
+      "icon": "🔬",
+      "quota_id": "sonnet_cd"
+    },
+    {
+      "id": "ag_pro",
+      "name": "AG Gemini 3 Pro",
+      "display": "AG PRO",
+      "role": "Vision & Audit",
+      "icon": "👁️",
+      "quota_id": "ag_pro_cd"
+    },
+    {
+      "id": "gh_gpt5",
+      "name": "GH GPT-5-Mini",
+      "display": "GH GPT-5",
+      "role": "Code Optimization",
+      "icon": "💻",
+      "quota_id": "gh_gpt5_cd"
+    },
+    {
+      "id": "gh_gpt4",
+      "name": "GH GPT-4.1",
+      "display": "GH GPT-4.1",
+      "role": "Safety Backup",
+      "icon": "📜",
+      "quota_id": "gh_gpt4_cd"
+    },
+    {
+      "id": "lc_qwen",
+      "name": "Local Qwen Coder",
+      "display": "LC QWEN",
+      "role": "Local Safeguard",
+      "icon": "🏠",
+      "quota_id": "lc_qwen_cd"
+    }
+  ],
+  "billing": {
+    "ag": {
+      "name": "Ben Fox Agent",
+      "id": "gen-lang-client-0036704643",
+      "cost": "$0.00"
+    },
+    "gc": {
+      "name": "Agent Failover Mesh",
+      "id": "gen-lang-mesh-001",
+      "cost": "$0.00"
+    }
+  }
+}
