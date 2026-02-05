@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:07:47Z",
+  "updated": "2026-02-05T00:19:34Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -7,7 +7,7 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 26,
+      "gc_flash": 28,
       "gc_pro": 0,
       "gh_gpt5": 5,
       "gh_gpt4": 0,
@@ -32,7 +32,7 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 26,
+        "gc_flash": 28,
         "gc_pro": 0,
         "gh_gpt5": 54,
         "gh_gpt4": 0,
@@ -49,7 +49,7 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 26,
+        "gc_flash": 28,
         "gc_pro": 0,
         "gh_gpt5": 54,
         "gh_gpt4": 0,
@@ -76,7 +76,7 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 26,
+      "gc_flash": 28,
       "gc_pro": 0,
       "gh_gpt5": 5,
       "gh_gpt4": 0,
@@ -92,6 +92,15 @@
       "project": "benfoxsb.github.io",
       "hash": "e62f9ff",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/e62f9ff",
+      "summary": "data: enhance cooldown detection and PST alignment",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "16:07",
+      "project": "benfoxsb.github.io",
+      "hash": "bffc5b8",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/bffc5b8",
       "summary": "data: enhance cooldown detection and PST alignment",
       "model": "AG-GEMINI-3-FLASH"
     },
@@ -157,15 +166,6 @@
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/d646733",
       "summary": "data: role-based model icons and PST alignment",
       "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "15:34",
-      "project": "benfoxsb.github.io",
-      "hash": "431a41f",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/431a41f",
-      "summary": "ui: synchronize model colors and enhance brain icon logic",
-      "model": "GC-GEMINI-3-FLASH-PREVIEW"
     },
     {
       "date": "2026-02-03",
@@ -334,7 +334,7 @@
         "13": "10",
         "14": "13",
         "15": "17",
-        "16": "2"
+        "16": "5"
       },
       "fail": {
         "11": "2",
