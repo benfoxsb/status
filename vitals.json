@@ -1,13 +1,13 @@
 {
-  "updated": "2026-02-05T01:22:29Z",
+  "updated": "2026-02-05T01:23:07Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 104,
+      "success": 105,
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 41,
+      "gc_flash": 42,
       "gc_pro": 0,
       "gh_gpt5": 6,
       "gh_gpt4": 0,
@@ -17,23 +17,23 @@
       "cooldowns": 13,
       "quotas": 12,
       "timers": {
-        "ag_flash_cd": "",
-        "gc_flash_cd": "",
-        "sonnet_cd": "",
-        "ag_pro_cd": "",
-        "gh_gpt5_cd": "",
-        "gh_gpt4_cd": "",
-        "lc_qwen_cd": ""
+        "ag_flash_cd": "18.8",
+        "gc_flash_cd": "0.0",
+        "sonnet_cd": "0.0",
+        "ag_pro_cd": "0.0",
+        "gh_gpt5_cd": "0.0",
+        "gh_gpt4_cd": "0.0",
+        "lc_qwen_cd": "0.0"
       }
     },
     "7d": {
-      "success": 296,
+      "success": 297,
       "fail": 180,
       "days": 2,
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 41,
+        "gc_flash": 42,
         "gc_pro": 0,
         "gh_gpt5": 55,
         "gh_gpt4": 0,
@@ -41,16 +41,16 @@
         "ag_opus": 0,
         "ag_sonnet": 4
       },
-      "reliability": "62.1"
+      "reliability": "62.2"
     },
     "30d": {
-      "success": 296,
+      "success": 297,
       "fail": 180,
       "days": 2,
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 41,
+        "gc_flash": 42,
         "gc_pro": 0,
         "gh_gpt5": 55,
         "gh_gpt4": 0,
@@ -58,7 +58,7 @@
         "ag_opus": 0,
         "ag_sonnet": 4
       },
-      "reliability": "62.1"
+      "reliability": "62.2"
     }
   },
   "history": [
@@ -73,11 +73,11 @@
     },
     {
       "date": "2026-02-04",
-      "success": 104,
+      "success": 105,
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 41,
+      "gc_flash": 42,
       "gc_pro": 0,
       "gh_gpt5": 6,
       "gh_gpt4": 0,
@@ -87,6 +87,24 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "17:22",
+      "project": "benfoxsb.github.io",
+      "hash": "eff13b7",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/eff13b7",
+      "summary": "ui: synchronize color palette and enhance pulse day grouping",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "17:22",
+      "project": "benfoxsb.github.io",
+      "hash": "20e7bd2",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/20e7bd2",
+      "summary": "data: bulletproof midnight-to-midnight PST collection",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "17:19",
@@ -192,24 +210,6 @@
       "project": "benfoxsb.github.io",
       "hash": "f5b5505",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/f5b5505",
-      "summary": "data: consolidate health detection into single source of truth",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:51",
-      "project": "benfoxsb.github.io",
-      "hash": "1e4dd48",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/1e4dd48",
-      "summary": "data: consolidate health detection into single source of truth",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:50",
-      "project": "benfoxsb.github.io",
-      "hash": "bd40d54",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/bd40d54",
       "summary": "data: consolidate health detection into single source of truth",
       "model": "AG-GEMINI-3-FLASH"
     },
@@ -426,7 +426,7 @@
         "14": "13",
         "15": "17",
         "16": "24",
-        "17": "5"
+        "17": "6"
       },
       "fail": {
         "11": "2",
