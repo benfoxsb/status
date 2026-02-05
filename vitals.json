@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:37:46Z",
+  "updated": "2026-02-05T00:39:47Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -14,12 +14,12 @@
       "lc_qwen": 0,
       "ag_opus": 0,
       "ag_sonnet": 4,
-      "cooldowns": 9,
+      "cooldowns": 10,
       "quotas": 12,
       "timers": {
-        "ag_rl": "23.8",
-        "ag_quota": "23.8",
-        "gc_rl": "23.8",
+        "ag_rl": "23.7",
+        "ag_quota": "23.7",
+        "gc_rl": "23.7",
         "gc_quota": "23.7",
         "gh_quota": "0.0",
         "sonnet_quota": "0.0"
@@ -86,6 +86,24 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "16:38",
+      "project": "benfoxsb.github.io",
+      "hash": "1e91953",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/1e91953",
+      "summary": "ui: reorganize layout and fix model mapping in failover",
+      "model": "GC-GEMINI-3-FLASH-PREVIEW"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "16:37",
+      "project": "benfoxsb.github.io",
+      "hash": "893ed19",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/893ed19",
+      "summary": "data: focus pulse on code check-ins and PST alignment",
+      "model": "GC-GEMINI-3-FLASH-PREVIEW"
+    },
     {
       "date": "2026-02-04",
       "time": "16:34",
@@ -165,6 +183,33 @@
       "hash": "cd2c47e",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/cd2c47e",
       "summary": "ui: implement billing cards and enhanced failover info",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "16:05",
+      "project": "benfoxsb.github.io",
+      "hash": "337710b",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/337710b",
+      "summary": "data: enhance cooldown detection and PST alignment",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "16:03",
+      "project": "benfoxsb.github.io",
+      "hash": "670c687",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/670c687",
+      "summary": "data: role-based model icons and PST alignment",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "15:50",
+      "project": "benfoxsb.github.io",
+      "hash": "27bfb0e",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/27bfb0e",
+      "summary": "data: role-based model icons and PST alignment",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -256,6 +301,51 @@
       "url": "https://github.com/velocity-tech-io/website/commit/fcf52f6",
       "summary": "Enhance section descriptions with gradient text styling",
       "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-28",
+      "time": "23:27",
+      "project": "velocity-tech-site",
+      "hash": "c3126ba",
+      "url": "https://github.com/velocity-tech-io/website/commit/c3126ba",
+      "summary": "Fix mobile horizontal scroll and disable zoom",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "23:30",
+      "project": "velocity-tech-site",
+      "hash": "c1df911",
+      "url": "https://github.com/velocity-tech-io/website/commit/c1df911",
+      "summary": "perf: optimize mobile performance",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "22:04",
+      "project": "velocity-tech-site",
+      "hash": "462e3c1",
+      "url": "https://github.com/velocity-tech-io/website/commit/462e3c1",
+      "summary": "Remove Google Fonts and switch to system fonts",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "14:37",
+      "project": "velocity-tech-site",
+      "hash": "78cc034",
+      "url": "https://github.com/velocity-tech-io/website/commit/78cc034",
+      "summary": "Make website fully responsive for mobile browsers",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-01-27",
+      "time": "01:25",
+      "project": "velocity-tech-site",
+      "hash": "690d8b6",
+      "url": "https://github.com/velocity-tech-io/website/commit/690d8b6",
+      "summary": "fix: remove white border flash on navigation transitions",
+      "model": "AG-GEMINI-3-FLASH"
     }
   ],
   "heatmap": [
@@ -334,7 +424,7 @@
         "13": "10",
         "14": "13",
         "15": "17",
-        "16": "12"
+        "16": "13"
       },
       "fail": {
         "11": "2",
@@ -366,7 +456,7 @@
       "rl_id": "gc_rl"
     },
     {
-      "id": "sonnet",
+      "id": "ag_sonnet",
       "name": "Antigravity Claude Sonnet 4.5",
       "display": "AG SONNET",
       "role": "Complex Reasoning",
@@ -402,7 +492,7 @@
       "rl_id": ""
     },
     {
-      "id": "local",
+      "id": "lc_qwen",
       "name": "Local Ollama Qwen Coder",
       "display": "LC QWEN",
       "role": "Local Safeguard",
