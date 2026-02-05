@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:48:02Z",
+  "updated": "2026-02-05T00:48:32Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -88,6 +88,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "16:48",
+      "project": "benfoxsb.github.io",
+      "hash": "02788f6",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/02788f6",
+      "summary": "data: bulletproof cooldown detection and role icon alignment",
+      "model": "AGENT"
+    },
     {
       "date": "2026-02-04",
       "time": "16:40",
@@ -203,15 +212,6 @@
       "hash": "cd2c47e",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/cd2c47e",
       "summary": "ui: implement billing cards and enhanced failover info",
-      "model": "AGENT"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:05",
-      "project": "benfoxsb.github.io",
-      "hash": "337710b",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/337710b",
-      "summary": "data: enhance cooldown detection and PST alignment",
       "model": "AGENT"
     },
     {
