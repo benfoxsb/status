@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T00:03:25Z",
+  "updated": "2026-02-05T00:05:33Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -7,19 +7,22 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gcli_flash": 26,
-      "gcli_pro": 0,
-      "copilot": 6,
-      "local": 0,
-      "opus": 0,
-      "sonnet": 4,
+      "gc_flash": 26,
+      "gc_pro": 0,
+      "gh_gpt5": 5,
+      "gh_gpt4": 0,
+      "lc_qwen": 0,
+      "ag_opus": 0,
+      "ag_sonnet": 4,
       "cooldowns": 5,
       "quotas": 10,
       "timers": {
         "ag_rl": "0.0",
-        "ag_quota": "0.9",
-        "gcli_rl": "0.0",
-        "gcli_quota": "0.0"
+        "ag_quota": "0.0",
+        "gc_rl": "0.0",
+        "gc_quota": "0.0",
+        "gh_quota": "0.0",
+        "sonnet_quota": "0.0"
       }
     },
     "7d": {
@@ -29,12 +32,13 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gcli_flash": 26,
-        "gcli_pro": 0,
-        "copilot": 55,
-        "local": 0,
-        "opus": 0,
-        "sonnet": 4
+        "gc_flash": 26,
+        "gc_pro": 0,
+        "gh_gpt5": 54,
+        "gh_gpt4": 0,
+        "lc_qwen": 0,
+        "ag_opus": 0,
+        "ag_sonnet": 4
       },
       "reliability": "62.0"
     },
@@ -45,12 +49,13 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gcli_flash": 26,
-        "gcli_pro": 0,
-        "copilot": 55,
-        "local": 0,
-        "opus": 0,
-        "sonnet": 4
+        "gc_flash": 26,
+        "gc_pro": 0,
+        "gh_gpt5": 54,
+        "gh_gpt4": 0,
+        "lc_qwen": 0,
+        "ag_opus": 0,
+        "ag_sonnet": 4
       },
       "reliability": "62.0"
     }
@@ -71,15 +76,25 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gcli_flash": 26,
-      "gcli_pro": 0,
-      "copilot": 6,
-      "local": 0,
-      "opus": 0,
-      "sonnet": 4
+      "gc_flash": 26,
+      "gc_pro": 0,
+      "gh_gpt5": 5,
+      "gh_gpt4": 0,
+      "lc_qwen": 0,
+      "ag_opus": 0,
+      "ag_sonnet": 4
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "16:03",
+      "project": "benfoxsb.github.io",
+      "hash": "670c687",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/670c687",
+      "summary": "data: role-based model icons and PST alignment",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "15:50",
@@ -150,60 +165,6 @@
       "hash": "e2ae92d",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/e2ae92d",
       "summary": "data: role-based model icons and PST alignment",
-      "model": "GC-GEMINI-3-FLASH-PREVIEW"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "15:18",
-      "project": "benfoxsb.github.io",
-      "hash": "ff3c4c8",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/ff3c4c8",
-      "summary": "data: role-based model icons and PST alignment",
-      "model": "GC-GEMINI-3-FLASH-PREVIEW"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "15:17",
-      "project": "benfoxsb.github.io",
-      "hash": "dfe79b8",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/dfe79b8",
-      "summary": "data: role-based model icons and PST alignment",
-      "model": "GC-GEMINI-3-FLASH-PREVIEW"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "15:15",
-      "project": "benfoxsb.github.io",
-      "hash": "182177e",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/182177e",
-      "summary": "data: role-based model icons and PST alignment",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "15:00",
-      "project": "benfoxsb.github.io",
-      "hash": "e3dec6d",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/e3dec6d",
-      "summary": "data: role-based model icons and PST alignment",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "14:46",
-      "project": "benfoxsb.github.io",
-      "hash": "cee3fb0",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/cee3fb0",
-      "summary": "data: role-based model icons and PST alignment",
-      "model": "GC-GEMINI-3-FLASH-PREVIEW"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "14:46",
-      "project": "benfoxsb.github.io",
-      "hash": "324d0d1",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/324d0d1",
-      "summary": "chore: clear unstaged changes for rebase",
       "model": "GC-GEMINI-3-FLASH-PREVIEW"
     },
     {
@@ -295,51 +256,6 @@
       "url": "https://github.com/velocity-tech-io/website/commit/fcf52f6",
       "summary": "Enhance section descriptions with gradient text styling",
       "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-01-28",
-      "time": "23:27",
-      "project": "velocity-tech-site",
-      "hash": "c3126ba",
-      "url": "https://github.com/velocity-tech-io/website/commit/c3126ba",
-      "summary": "Fix mobile horizontal scroll and disable zoom",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-01-27",
-      "time": "23:30",
-      "project": "velocity-tech-site",
-      "hash": "c1df911",
-      "url": "https://github.com/velocity-tech-io/website/commit/c1df911",
-      "summary": "perf: optimize mobile performance",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-01-27",
-      "time": "22:04",
-      "project": "velocity-tech-site",
-      "hash": "462e3c1",
-      "url": "https://github.com/velocity-tech-io/website/commit/462e3c1",
-      "summary": "Remove Google Fonts and switch to system fonts",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-01-27",
-      "time": "14:37",
-      "project": "velocity-tech-site",
-      "hash": "78cc034",
-      "url": "https://github.com/velocity-tech-io/website/commit/78cc034",
-      "summary": "Make website fully responsive for mobile browsers",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-01-27",
-      "time": "01:25",
-      "project": "velocity-tech-site",
-      "hash": "690d8b6",
-      "url": "https://github.com/velocity-tech-io/website/commit/690d8b6",
-      "summary": "fix: remove white border flash on navigation transitions",
-      "model": "AG-GEMINI-3-FLASH"
     }
   ],
   "heatmap": [
@@ -417,7 +333,8 @@
         "12": "19",
         "13": "10",
         "14": "13",
-        "15": "17"
+        "15": "17",
+        "16": "1"
       },
       "fail": {
         "11": "2",
@@ -439,22 +356,22 @@
       "rl_id": "ag_rl"
     },
     {
-      "id": "gcli_flash",
-      "name": "Gemini CLI Flash",
-      "display": "GC FLASH",
-      "role": "Reliable Backup",
-      "icon": "🛡️",
-      "quota_id": "gcli_quota",
-      "rl_id": "gcli_rl"
-    },
-    {
       "id": "sonnet",
       "name": "Antigravity Claude Sonnet 4.5",
       "display": "AG SONNET",
       "role": "Complex Reasoning",
       "icon": "🔬",
-      "quota_id": "ag_rl",
-      "rl_id": "ag_rl"
+      "quota_id": "sonnet_quota",
+      "rl_id": "sonnet_quota"
+    },
+    {
+      "id": "gc_flash",
+      "name": "Gemini CLI Flash",
+      "display": "GC FLASH",
+      "role": "Reliable Backup",
+      "icon": "🛡️",
+      "quota_id": "gc_quota",
+      "rl_id": "gc_rl"
     },
     {
       "id": "ag_pro",
@@ -466,11 +383,20 @@
       "rl_id": "ag_rl"
     },
     {
-      "id": "copilot",
+      "id": "gh_gpt5",
       "name": "GitHub Copilot GPT-5-Mini",
       "display": "GH GPT-5",
       "role": "Code Optimization",
       "icon": "💻",
+      "quota_id": "gh_quota",
+      "rl_id": "gh_quota"
+    },
+    {
+      "id": "gh_gpt4",
+      "name": "GitHub Copilot GPT-4o",
+      "display": "GH GPT-4o",
+      "role": "Legacy Support",
+      "icon": "📜",
       "quota_id": "",
       "rl_id": ""
     },
