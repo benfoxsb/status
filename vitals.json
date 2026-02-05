@@ -1,13 +1,13 @@
 {
-  "updated": "2026-02-05T02:36:48Z",
+  "updated": "2026-02-05T02:37:18Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
-      "success": 133,
+      "success": 134,
       "fail": 24,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 54,
+      "gc_flash": 55,
       "gc_pro": 0,
       "gh_gpt5": 7,
       "gh_gpt4": 1,
@@ -27,13 +27,13 @@
       }
     },
     "7d": {
-      "success": 325,
+      "success": 326,
       "fail": 184,
       "days": 2,
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 54,
+        "gc_flash": 55,
         "gc_pro": 0,
         "gh_gpt5": 56,
         "gh_gpt4": 1,
@@ -41,16 +41,16 @@
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "63.8"
+      "reliability": "63.9"
     },
     "30d": {
-      "success": 325,
+      "success": 326,
       "fail": 184,
       "days": 2,
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 54,
+        "gc_flash": 55,
         "gc_pro": 0,
         "gh_gpt5": 56,
         "gh_gpt4": 1,
@@ -58,7 +58,7 @@
         "ag_opus": 0,
         "ag_sonnet": 5
       },
-      "reliability": "63.8"
+      "reliability": "63.9"
     }
   },
   "history": [
@@ -73,11 +73,11 @@
     },
     {
       "date": "2026-02-04",
-      "success": 133,
+      "success": 134,
       "fail": 24,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 54,
+      "gc_flash": 55,
       "gc_pro": 0,
       "gh_gpt5": 7,
       "gh_gpt4": 1,
@@ -87,6 +87,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "18:36",
+      "project": "benfoxsb.github.io",
+      "hash": "e40562e",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/e40562e",
+      "summary": "data: bulletproof midnight-to-midnight PST collection",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "18:21",
@@ -201,15 +210,6 @@
       "project": "benfoxsb.github.io",
       "hash": "b717a4f",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/b717a4f",
-      "summary": "data: bulletproof midnight-to-midnight PST collection",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "17:23",
-      "project": "benfoxsb.github.io",
-      "hash": "5ae538e",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/5ae538e",
       "summary": "data: bulletproof midnight-to-midnight PST collection",
       "model": "AG-GEMINI-3-FLASH"
     },
@@ -427,7 +427,7 @@
         "15": "17",
         "16": "24",
         "17": "27",
-        "18": "7"
+        "18": "8"
       },
       "fail": {
         "11": "2",
