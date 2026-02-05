@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T02:52:52Z",
+  "updated": "2026-02-05T03:07:19Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -17,7 +17,7 @@
       "cooldowns": 16,
       "quotas": 16,
       "timers": {
-        "ag_flash_cd": "17.3",
+        "ag_flash_cd": "17.1",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",
@@ -98,6 +98,15 @@
     },
     {
       "date": "2026-02-04",
+      "time": "18:52",
+      "project": "benfoxsb.github.io",
+      "hash": "7bb880a",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/7bb880a",
+      "summary": "data: focus pulse on code check-ins and PST alignment",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
       "time": "18:47",
       "project": "gh-pm",
       "hash": "4f20ff7",
@@ -165,15 +174,6 @@
       "project": "benfoxsb.github.io",
       "hash": "07eb25b",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/07eb25b",
-      "summary": "data: bulletproof midnight-to-midnight PST collection",
-      "model": "GC-GEMINI-3-FLASH-PREVIEW"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "17:50",
-      "project": "benfoxsb.github.io",
-      "hash": "9f9eae6",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/9f9eae6",
       "summary": "data: bulletproof midnight-to-midnight PST collection",
       "model": "GC-GEMINI-3-FLASH-PREVIEW"
     },
