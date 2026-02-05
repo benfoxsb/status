@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-05T01:09:11Z",
+  "updated": "2026-02-05T01:10:24Z",
   "windows": {
     "24h": {
       "date": "2026-02-04",
@@ -7,7 +7,7 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 39,
+      "gc_flash": 40,
       "gc_pro": 0,
       "gh_gpt5": 6,
       "gh_gpt4": 0,
@@ -17,7 +17,7 @@
       "cooldowns": 11,
       "quotas": 12,
       "timers": {
-        "ag_flash_cd": "19.1",
+        "ag_flash_cd": "19.0",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "0.0",
@@ -33,7 +33,7 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 39,
+        "gc_flash": 40,
         "gc_pro": 0,
         "gh_gpt5": 55,
         "gh_gpt4": 0,
@@ -50,7 +50,7 @@
       "usage": {
         "ag_flash": 203,
         "ag_pro": 22,
-        "gc_flash": 39,
+        "gc_flash": 40,
         "gc_pro": 0,
         "gh_gpt5": 55,
         "gh_gpt4": 0,
@@ -77,7 +77,7 @@
       "fail": 20,
       "ag_flash": 82,
       "ag_pro": 9,
-      "gc_flash": 39,
+      "gc_flash": 40,
       "gc_pro": 0,
       "gh_gpt5": 6,
       "gh_gpt4": 0,
@@ -87,6 +87,24 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-04",
+      "time": "17:09",
+      "project": "benfoxsb.github.io",
+      "hash": "860f16b",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/860f16b",
+      "summary": "data: bulletproof midnight-to-midnight PST collection",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-04",
+      "time": "17:09",
+      "project": "benfoxsb.github.io",
+      "hash": "5c8f552",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/5c8f552",
+      "summary": "ui: synchronize failover mapping and role icons",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-04",
       "time": "17:04",
@@ -194,24 +212,6 @@
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/040e4b7",
       "summary": "data: bulletproof cooldown detection and role icon alignment",
       "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:48",
-      "project": "benfoxsb.github.io",
-      "hash": "02788f6",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/02788f6",
-      "summary": "data: bulletproof cooldown detection and role icon alignment",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-04",
-      "time": "16:40",
-      "project": "benfoxsb.github.io",
-      "hash": "830befe",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/830befe",
-      "summary": "ui: fix failover model mapping mismatch and layout alignment",
-      "model": "GC-GEMINI-3-FLASH-PREVIEW"
     },
     {
       "date": "2026-02-03",
@@ -426,7 +426,7 @@
         "14": "13",
         "15": "17",
         "16": "24",
-        "17": "1"
+        "17": "2"
       },
       "fail": {
         "11": "2",
