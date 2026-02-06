@@ -43,7 +43,14 @@
                     <h3 class="text-xs font-bold uppercase mb-6 tracking-widest text-emerald-400">Operational Hub</h3>
                     
                     <div class="mb-8">
-                        <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-3">7D Activity Pattern</h3>
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-500">7D Activity Pattern (15m Intervals)</h3>
+                            <div class="flex gap-2 text-[8px] font-bold uppercase tracking-tighter">
+                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-emerald-400"></span> Success</div>
+                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-orange-500"></span> Partial</div>
+                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-red-500"></span> Fail</div>
+                            </div>
+                        </div>
                         <div id="heatmap-container" class="flex flex-row gap-1 h-32 overflow-hidden">
                         </div>
                     </div>
@@ -337,24 +344,28 @@
             container.innerHTML = ''; const last7 = getLast7Dates(); const dateToHeatmap = {}; (heatmap || []).forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
             last7.forEach(date => {
                 const dayData = dateToHeatmap[date] || { success: {}, fail: {} };
-                const dayCol = document.createElement('div'); dayCol.className = 'flex flex-col gap-[2px] w-full h-full';
-                for (let hour = 0; hour < 24; hour++) {
-                    const hrKey = hour.toString().padStart(2, '0');
-                    const s = parseInt(dayData.success[hrKey] || 0);
-                    const f = parseInt(dayData.fail[hrKey] || 0);
+                const dayCol = document.createElement('div'); dayCol.className = 'flex flex-col gap-[1px] w-full h-full';
+                
+                // 96 intervals of 15 mins (24h * 4)
+                for (let i = 0; i < 96; i++) {
+                    const hour = Math.floor(i / 4);
+                    const minute = (i % 4) * 15;
+                    const key = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                    
+                    const s = parseInt(dayData.success[key] || 0);
+                    const f = parseInt(dayData.fail[key] || 0);
                     const cell = document.createElement('div');
-                    let color = 'bg-slate-800/50';
+                    let color = 'bg-slate-800/30';
                     
                     if (f > 0) {
-                        // If failures exist, use red. If successes also exist, maybe a stripes pattern or just prioritize red for visibility of issues.
                         color = 'bg-red-500';
-                        if (s > 0) color = 'bg-orange-500'; // Mixed hour: orange
+                        if (s > 0) color = 'bg-orange-500'; // Mixed: orange
                     } else if (s > 0) {
                         color = 'bg-emerald-400';
                     }
                     
                     cell.className = `w-full flex-1 rounded-[1px] ${color}`;
-                    cell.title = `${date} ${hrKey}:00 - S: ${s}, F: ${f}`;
+                    cell.title = `${date} ${key} - Success: ${s}, Fail: ${f}`;
                     dayCol.appendChild(cell);
                 }
                 container.appendChild(dayCol);
