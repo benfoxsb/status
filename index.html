@@ -7,8 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { background-color: #0b0f1a; color: #f1f5f9; font-family: 'Inter', sans-serif; font-size: 1.125rem; }
-        .card { background-color: #161b2c; border: 1px solid #2d334a; border-left: 4px solid #2d334a; transition: transform 0.2s; }
+        body { background-color: #0b0f1a; color: #f1f5f9; font-family: 'Inter', sans-serif; font-size: 1.125rem; overflow-x: hidden; width: 100vw; position: relative; }
+        .card { background-color: #161b2c; border: 1px solid #2d334a; border-left: 4px solid #2d334a; transition: transform 0.2s; max-width: 100%; box-sizing: border-box; }
         .card:hover { transform: translateY(-2px); }
         .pulse-anim { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; display: inline-block; }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.1); } }
@@ -18,11 +18,11 @@
         .pulse-card { cursor: pointer; transition: background 0.2s; }
         .pulse-card:hover { background: #1e253a; }
         .pulse-expanded { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #2d334a; }
-        /* Project Layer Styles - Masonry Layout */
-        .proj-block { break-inside: avoid; margin-bottom: 2rem; width: 100%; display: block; }
-        #project-columns { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
-        @media (min-width: 768px) { #project-columns { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1280px) { #project-columns { grid-template-columns: repeat(3, 1fr); } }
+        /* Project Layer Styles - Responsive Grid */
+        .proj-block { break-inside: avoid; margin-bottom: 2rem; width: 100%; display: block; overflow: hidden; }
+        #project-columns { display: grid; grid-template-columns: 1fr; gap: 1rem; width: 100%; }
+        @media (min-width: 768px) { #project-columns { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
+        @media (min-width: 1280px) { #project-columns { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -297,16 +297,16 @@
                                 const cardId = `p${i}-d${dIdx}-c${cIdx}`;
                                 
                                 return `
-                                    <div class="card p-3 rounded-xl mb-2 group transition-all" style="border-left-width: 6px !important; border-left-color: ${cfg.color} !important; box-shadow: -10px 0 20px ${cfg.color}15; cursor: pointer; background: #1a2035;" onclick="togglePulse('${cardId}')">
-                                        <div class="flex flex-col gap-1">
-                                            <div class="flex justify-between items-center">
-                                                <div class="flex items-center">
-                                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-900/50" style="color: ${cfg.color}; border: 1px solid ${cfg.color}44;">${timeDisplay}</span>
+                                    <div class="card p-3 rounded-xl mb-2 group transition-all cursor-pointer" style="border-left-width: 6px !important; border-left-color: ${cfg.color} !important;" onclick="togglePulse('${cardId}')">
+                                        <div class="flex flex-col gap-1 overflow-hidden">
+                                            <div class="flex justify-between items-center gap-2">
+                                                <div class="flex items-center min-w-0">
+                                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-900/50 shrink-0" style="color: ${cfg.color}; border: 1px solid ${cfg.color}44;">${timeDisplay}</span>
                                                     ${countBadge}
                                                 </div>
-                                                <span class="text-[8px] font-mono text-slate-600 bg-slate-900/50 px-1.5 py-0.5 rounded">#${item.hash.substring(0,6)}</span>
+                                                <span class="text-[8px] font-mono text-slate-600 bg-slate-900/50 px-1.5 py-0.5 rounded shrink-0">#${item.hash.substring(0,6)}</span>
                                             </div>
-                                            <span class="text-sm text-slate-200 font-medium leading-tight group-hover:text-blue-400 transition-colors truncate">${item.summary}</span>
+                                            <span class="text-sm text-slate-200 font-medium leading-tight group-hover:text-blue-400 transition-colors truncate block w-full">${item.summary}</span>
                                         </div>
                                         <div id="expanded-${cardId}" class="pulse-expanded mt-3 pt-3 border-t border-slate-800">
                                             <div class="grid grid-cols-2 gap-4 mb-4">
