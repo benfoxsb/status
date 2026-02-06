@@ -348,9 +348,9 @@
                 
                 // 96 intervals of 15 mins (24h * 4)
                 for (let i = 0; i < 96; i++) {
-                    const hour = Math.floor(i / 4);
-                    const minute = (i % 4) * 15;
-                    const key = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                    const hour = Math.floor(i / 4).toString().padStart(2, '0');
+                    const minute = ((i % 4) * 15).toString().padStart(2, '0');
+                    const key = `${hour}:${minute}`;
                     
                     const s = parseInt(dayData.success[key] || 0);
                     const f = parseInt(dayData.fail[key] || 0);
