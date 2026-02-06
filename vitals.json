@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-06T19:59:23Z",
+  "updated": "2026-02-06T20:00:00Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
@@ -127,15 +127,6 @@
       "hash": "73028d7",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/73028d7",
       "summary": "feat: retrieve deployment URL from wrangler-action",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-06",
-      "time": "07:33",
-      "project": "benfoxsb.github.io",
-      "hash": "0327fc5",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/0327fc5",
-      "summary": "feat: pulse include all repos (staging)",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
