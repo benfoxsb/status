@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-06T16:00:40Z",
+  "updated": "2026-02-06T16:26:26Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
-      "success": 69,
+      "success": 71,
       "fail": 0,
-      "ag_flash": 70,
+      "ag_flash": 72,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
@@ -17,7 +17,7 @@
       "cooldowns": 4,
       "quotas": 0,
       "timers": {
-        "ag_flash_cd": "4.3",
+        "ag_flash_cd": "3.9",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "5.0",
@@ -27,11 +27,11 @@
       }
     },
     "7d": {
-      "success": 472,
+      "success": 474,
       "fail": 198,
       "days": 4,
       "usage": {
-        "ag_flash": 342,
+        "ag_flash": 344,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -41,14 +41,14 @@
         "ag_opus": 1,
         "ag_sonnet": 8
       },
-      "reliability": "70.4"
+      "reliability": "70.5"
     },
     "30d": {
-      "success": 472,
+      "success": 474,
       "fail": 198,
       "days": 4,
       "usage": {
-        "ag_flash": 342,
+        "ag_flash": 344,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -58,7 +58,7 @@
         "ag_opus": 1,
         "ag_sonnet": 8
       },
-      "reliability": "70.4"
+      "reliability": "70.5"
     }
   },
   "history": [
@@ -106,9 +106,9 @@
     },
     {
       "date": "2026-02-06",
-      "success": 69,
+      "success": 71,
       "fail": 0,
-      "ag_flash": 70,
+      "ag_flash": 72,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
@@ -262,15 +262,6 @@
       "hash": "00379d4",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/00379d4",
       "summary": "feat: setup GitHub Action for staging automation",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-06",
-      "time": "00:36",
-      "project": "benfoxsb.github.io",
-      "hash": "29affdb",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/29affdb",
-      "summary": "feat: complete centralized data collection and resilience migration",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -606,7 +597,9 @@
         "11:15": "4",
         "15:15": "2",
         "15:30": "3",
-        "15:45": "1"
+        "15:45": "1",
+        "16:00": "1",
+        "16:15": "1"
       },
       "fail": {}
     }
