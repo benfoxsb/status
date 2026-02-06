@@ -51,7 +51,7 @@
                                 <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-red-500"></span> Fail</div>
                             </div>
                         </div>
-                        <div id="heatmap-container" class="flex flex-row gap-2 h-64 overflow-hidden">
+                        <div id="heatmap-container" class="flex flex-row gap-2 h-48 overflow-hidden">
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@
                 <h3 class="text-xs font-bold uppercase mb-4 tracking-widest text-blue-400">Model Distribution</h3>
                 <div id="dynamic-legend" class="flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-bold mb-6">
                 </div>
-                <div class="h-64 w-full relative">
+                <div class="h-48 w-full relative">
                     <canvas id="modelChart"></canvas>
                 </div>
             </div>
@@ -337,33 +337,45 @@
 
         function renderHeatmap(heatmap) {
             const container = document.getElementById('heatmap-container');
-            container.innerHTML = ''; const last7 = getLast7Dates(); const dateToHeatmap = {}; (heatmap || []).forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
+            container.innerHTML = ''; 
+            const last7 = getLast7Dates(); 
+            const dateToHeatmap = {}; 
+            (heatmap || []).forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
+
             last7.forEach(date => {
                 const dayData = dateToHeatmap[date] || { success: {}, fail: {} };
-                // Each day is a grid: 24 columns (hours) x 4 rows (15m segments)
-                const dayCol = document.createElement('div'); 
-                dayCol.className = 'flex-1 grid grid-rows-4 grid-flow-col gap-[2px] h-full';
                 
-                for (let i = 0; i < 96; i++) {
-                    const hour = Math.floor(i / 4).toString().padStart(2, '0');
-                    const minute = ((i % 4) * 15).toString().padStart(2, '0');
-                    const key = `${hour}:${minute}`;
+                // Day Column (Container for 24 hours)
+                const dayCol = document.createElement('div'); 
+                dayCol.className = 'flex-1 flex flex-col gap-[2px] h-full';
+                
+                for (let hour = 0; hour < 24; hour++) {
+                    // Hour Row (Container for 4 intervals)
+                    const hourRow = document.createElement('div');
+                    hourRow.className = 'flex-1 flex flex-row gap-[1px]';
                     
-                    const s = parseInt(dayData.success[key] || 0);
-                    const f = parseInt(dayData.fail[key] || 0);
-                    const cell = document.createElement('div');
-                    let color = 'bg-slate-800/20';
-                    
-                    if (f > 0) {
-                        color = 'bg-red-500';
-                        if (s > 0) color = 'bg-orange-500'; 
-                    } else if (s > 0) {
-                        color = 'bg-emerald-400';
+                    for (let min = 0; min < 60; min += 15) {
+                        const hStr = hour.toString().padStart(2, '0');
+                        const mStr = min.toString().padStart(2, '0');
+                        const key = `${hStr}:${mStr}`;
+                        
+                        const s = parseInt(dayData.success[key] || 0);
+                        const f = parseInt(dayData.fail[key] || 0);
+                        const cell = document.createElement('div');
+                        
+                        let color = 'bg-slate-800/20';
+                        if (f > 0) {
+                            color = 'bg-red-500';
+                            if (s > 0) color = 'bg-orange-500'; 
+                        } else if (s > 0) {
+                            color = 'bg-emerald-400';
+                        }
+                        
+                        cell.className = `flex-1 h-full rounded-[1px] ${color}`;
+                        cell.title = `${date} ${key} - Success: ${s}, Fail: ${f}`;
+                        hourRow.appendChild(cell);
                     }
-                    
-                    cell.className = `w-full h-full rounded-[1px] ${color}`;
-                    cell.title = `${date} ${key} - Success: ${s}, Fail: ${f}`;
-                    dayCol.appendChild(cell);
+                    dayCol.appendChild(hourRow);
                 }
                 container.appendChild(dayCol);
             });
