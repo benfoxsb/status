@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-06T16:00:06Z",
+  "updated": "2026-02-06T16:00:40Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
@@ -271,15 +271,6 @@
       "hash": "29affdb",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/29affdb",
       "summary": "feat: complete centralized data collection and resilience migration",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-06",
-      "time": "00:34",
-      "project": "benfoxsb.github.io",
-      "hash": "aa76d65",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/aa76d65",
-      "summary": "feat: phase 1 - infrastructure and safety rails complete",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
