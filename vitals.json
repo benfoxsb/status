@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-06T16:29:58Z",
+  "updated": "2026-02-06T16:34:39Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
-      "success": 72,
+      "success": 73,
       "fail": 0,
-      "ag_flash": 73,
+      "ag_flash": 74,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
@@ -27,11 +27,11 @@
       }
     },
     "7d": {
-      "success": 475,
+      "success": 476,
       "fail": 198,
       "days": 4,
       "usage": {
-        "ag_flash": 345,
+        "ag_flash": 346,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -41,14 +41,14 @@
         "ag_opus": 1,
         "ag_sonnet": 8
       },
-      "reliability": "70.5"
+      "reliability": "70.6"
     },
     "30d": {
-      "success": 475,
+      "success": 476,
       "fail": 198,
       "days": 4,
       "usage": {
-        "ag_flash": 345,
+        "ag_flash": 346,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -58,7 +58,7 @@
         "ag_opus": 1,
         "ag_sonnet": 8
       },
-      "reliability": "70.5"
+      "reliability": "70.6"
     }
   },
   "history": [
@@ -106,9 +106,9 @@
     },
     {
       "date": "2026-02-06",
-      "success": 72,
+      "success": 73,
       "fail": 0,
-      "ag_flash": 73,
+      "ag_flash": 74,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
@@ -253,15 +253,6 @@
       "hash": "5b636c5",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/5b636c5",
       "summary": "docs: standardize structure and update README (fixes #7)",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-06",
-      "time": "01:34",
-      "project": "benfoxsb.github.io",
-      "hash": "00379d4",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/00379d4",
-      "summary": "feat: setup GitHub Action for staging automation",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -599,7 +590,8 @@
         "15:30": "3",
         "15:45": "1",
         "16:00": "1",
-        "16:15": "2"
+        "16:15": "2",
+        "16:30": "1"
       },
       "fail": {}
     }
