@@ -23,8 +23,13 @@ jobs:
         run: node scripts/validate.js
 
       - name: Deploy to Cloudflare Pages
+        id: cf_deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy . --project-name=benfoxsb-status --branch=${{ github.ref_name }}
+
+      - name: Output Deployment URL
+        run: echo "DEPLOYMENT_URL=${{ steps.cf_deploy.outputs.deployment-url }}" >> $GITHUB_ENV
+
