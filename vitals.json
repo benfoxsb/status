@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-06T20:00:00Z",
+  "updated": "2026-02-06T22:37:58Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
-      "success": 79,
+      "success": 85,
       "fail": 0,
-      "ag_flash": 80,
+      "ag_flash": 86,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
@@ -17,7 +17,7 @@
       "cooldowns": 4,
       "quotas": 0,
       "timers": {
-        "ag_flash_cd": "0.3",
+        "ag_flash_cd": "2.7",
         "gc_flash_cd": "0.0",
         "sonnet_cd": "0.0",
         "ag_pro_cd": "5.0",
@@ -27,11 +27,11 @@
       }
     },
     "7d": {
-      "success": 482,
+      "success": 488,
       "fail": 198,
       "days": 4,
       "usage": {
-        "ag_flash": 352,
+        "ag_flash": 358,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -41,14 +41,14 @@
         "ag_opus": 1,
         "ag_sonnet": 8
       },
-      "reliability": "70.8"
+      "reliability": "71.1"
     },
     "30d": {
-      "success": 482,
+      "success": 488,
       "fail": 198,
       "days": 4,
       "usage": {
-        "ag_flash": 352,
+        "ag_flash": 358,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -58,7 +58,7 @@
         "ag_opus": 1,
         "ag_sonnet": 8
       },
-      "reliability": "70.8"
+      "reliability": "71.1"
     }
   },
   "history": [
@@ -106,9 +106,9 @@
     },
     {
       "date": "2026-02-06",
-      "success": 79,
+      "success": 85,
       "fail": 0,
-      "ag_flash": 80,
+      "ag_flash": 86,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
@@ -122,11 +122,29 @@
   "pulse": [
     {
       "date": "2026-02-06",
-      "time": "07:37",
-      "project": "benfoxsb.github.io",
-      "hash": "73028d7",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/73028d7",
-      "summary": "feat: retrieve deployment URL from wrangler-action",
+      "time": "12:45",
+      "project": "gh-pm",
+      "hash": "13eb5ab",
+      "url": "https://github.com/benfoxsb/gh-pm/commit/13eb5ab",
+      "summary": "docs: add usage guidelines and best practices for agents",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-06",
+      "time": "12:18",
+      "project": "gh-pm",
+      "hash": "45625e4",
+      "url": "https://github.com/benfoxsb/gh-pm/commit/45625e4",
+      "summary": "docs: finalize SKILL.md metadata and command syntax (fixes #4)",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-06",
+      "time": "12:17",
+      "project": "gh-pm",
+      "hash": "03dceca",
+      "url": "https://github.com/benfoxsb/gh-pm/commit/03dceca",
+      "summary": "test: functional sweep results complete (fixes #3)",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -577,7 +595,10 @@
         "18:30": "1",
         "19:00": "1",
         "19:30": "1",
-        "19:45": "1"
+        "19:45": "1",
+        "20:00": "3",
+        "20:15": "2",
+        "20:45": "1"
       },
       "fail": {}
     }
