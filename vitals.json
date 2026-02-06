@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-06T06:09:39Z",
+  "updated": "2026-02-06T06:49:06Z",
   "windows": {
     "24h": {
       "date": "2026-02-05",
-      "success": 31,
+      "success": 38,
       "fail": 8,
-      "ag_flash": 30,
+      "ag_flash": 37,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
@@ -27,11 +27,11 @@
       }
     },
     "7d": {
-      "success": 393,
+      "success": 400,
       "fail": 198,
       "days": 3,
       "usage": {
-        "ag_flash": 262,
+        "ag_flash": 269,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -41,14 +41,14 @@
         "ag_opus": 1,
         "ag_sonnet": 8
       },
-      "reliability": "66.4"
+      "reliability": "66.8"
     },
     "30d": {
-      "success": 393,
+      "success": 400,
       "fail": 198,
       "days": 3,
       "usage": {
-        "ag_flash": 262,
+        "ag_flash": 269,
         "ag_pro": 22,
         "gc_flash": 58,
         "gc_pro": 0,
@@ -58,7 +58,7 @@
         "ag_opus": 1,
         "ag_sonnet": 8
       },
-      "reliability": "66.4"
+      "reliability": "66.8"
     }
   },
   "history": [
@@ -92,9 +92,9 @@
     },
     {
       "date": "2026-02-05",
-      "success": 31,
+      "success": 38,
       "fail": 8,
-      "ag_flash": 30,
+      "ag_flash": 37,
       "ag_pro": 0,
       "gc_flash": 0,
       "gc_pro": 0,
@@ -108,11 +108,74 @@
   "pulse": [
     {
       "date": "2026-02-05",
+      "time": "22:48",
+      "project": "benfoxsb.github.io",
+      "hash": "9dee49b",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/9dee49b",
+      "summary": "fix: stabilize model distribution chart and animation",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "22:32",
+      "project": "benfoxsb.github.io",
+      "hash": "c756d3c",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/c756d3c",
+      "summary": "Delete AUDIT_FEEDBACK.md",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "22:27",
+      "project": "benfoxsb.github.io",
+      "hash": "cd07fa1",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/cd07fa1",
+      "summary": "Merge branch 'develop'",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "22:27",
+      "project": "benfoxsb.github.io",
+      "hash": "313888b",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/313888b",
+      "summary": "feat: align top row charts and heatmap heights, fix empty space",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "22:08",
+      "project": "benfoxsb.github.io",
+      "hash": "d4133d0",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/d4133d0",
+      "summary": "Merge branch 'develop'",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
       "time": "22:08",
       "project": "benfoxsb.github.io",
       "hash": "2bb5276",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/2bb5276",
       "summary": "fix: mobile-locked layout with text truncation",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "21:52",
+      "project": "benfoxsb.github.io",
+      "hash": "93e059d",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/93e059d",
+      "summary": "Merge branch 'develop'",
+      "model": "AG-GEMINI-3-FLASH"
+    },
+    {
+      "date": "2026-02-05",
+      "time": "19:50",
+      "project": "benfoxsb.github.io",
+      "hash": "a6266c7",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/a6266c7",
+      "summary": "Merge branch 'develop'",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -128,36 +191,9 @@
       "date": "2026-02-05",
       "time": "19:41",
       "project": "benfoxsb.github.io",
-      "hash": "12d5b1d",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/12d5b1d",
-      "summary": "feat: align top row heights, improve heatmap grid, and redact project IDs",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-05",
-      "time": "19:30",
-      "project": "benfoxsb.github.io",
-      "hash": "d53df13",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/d53df13",
-      "summary": "style: restructure heatmap as 15m vertical blocks",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-05",
-      "time": "19:23",
-      "project": "benfoxsb.github.io",
-      "hash": "46e14bf",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/46e14bf",
-      "summary": "fix: heatmap key mapping for 15m intervals",
-      "model": "AG-GEMINI-3-FLASH"
-    },
-    {
-      "date": "2026-02-05",
-      "time": "19:02",
-      "project": "benfoxsb.github.io",
-      "hash": "a2af0ea",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/a2af0ea",
-      "summary": "feat: fix pulse layout, heatmap transparency, and terminology",
+      "hash": "6dc40d1",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/6dc40d1",
+      "summary": "Merge branch 'develop'",
       "model": "AG-GEMINI-3-FLASH"
     },
     {
@@ -524,7 +560,9 @@
         "03:45": "1",
         "04:00": "1",
         "05:45": "1",
-        "06:00": "1",
+        "06:00": "4",
+        "06:15": "2",
+        "06:30": "2",
         "19:15": "7",
         "19:30": "4",
         "20:00": "1",
