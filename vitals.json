@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-07T02:24:30Z",
+  "updated": "2026-02-07T02:26:00Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
@@ -32,14 +32,14 @@
       "days": 4,
       "usage": {
         "ag_flash": 238,
-        "ag_pro": 4,
-        "gc_flash": 58,
+        "ag_pro": 0,
+        "gc_flash": 0,
         "gc_pro": 0,
         "gh_gpt5": 0,
         "gh_gpt4": 0,
         "lc_qwen": 0,
         "ag_opus": 0,
-        "ag_sonnet": 2
+        "ag_sonnet": 0
       },
       "reliability": "88.8"
     },
@@ -49,14 +49,14 @@
       "days": 4,
       "usage": {
         "ag_flash": 238,
-        "ag_pro": 4,
-        "gc_flash": 58,
+        "ag_pro": 0,
+        "gc_flash": 0,
         "gc_pro": 0,
         "gh_gpt5": 0,
         "gh_gpt4": 0,
         "lc_qwen": 0,
         "ag_opus": 0,
-        "ag_sonnet": 2
+        "ag_sonnet": 0
       },
       "reliability": "88.8"
     }
@@ -81,8 +81,8 @@
       "success": 170,
       "fail": 30,
       "ag_flash": 108,
-      "ag_pro": 4,
-      "gc_flash": 58,
+      "ag_pro": 0,
+      "gc_flash": 0,
       "gc_pro": 0,
       "gh_gpt5": 0,
       "gh_gpt4": 0,
@@ -102,7 +102,7 @@
       "gh_gpt4": 0,
       "lc_qwen": 0,
       "ag_opus": 0,
-      "ag_sonnet": 2
+      "ag_sonnet": 0
     },
     {
       "date": "2026-02-06",
