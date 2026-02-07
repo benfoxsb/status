@@ -44,7 +44,7 @@
                         <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400">Operational Hub</h3>
                         <div class="flex items-center gap-2">
                             <span class="text-[9px] font-bold text-slate-500 uppercase">Timezone:</span>
-                            <button id="tz-toggle" onclick="toggleTimezone()" class="px-2 py-1 rounded bg-slate-800 text-[9px] font-black text-slate-400 border border-slate-700 hover:text-white transition-colors uppercase">System (PST)</button>
+                            <button id="tz-toggle" onclick="toggleTimezone()" class="px-2 py-1 rounded bg-slate-800 text-[9px] font-black text-slate-400 border border-slate-700 hover:text-white transition-colors uppercase">UTC</button>
                         </div>
                     </div>
                     
@@ -191,7 +191,7 @@
 
         function toggleTimezone() {
             useLocalTime = !useLocalTime;
-            document.getElementById('tz-toggle').innerText = useLocalTime ? 'Local (' + Intl.DateTimeFormat().resolvedOptions().timeZone + ')' : 'System (PST)';
+            document.getElementById('tz-toggle').innerText = useLocalTime ? 'Local (' + Intl.DateTimeFormat().resolvedOptions().timeZone + ')' : 'UTC';
             updateDashboard();
         }
 
@@ -371,11 +371,9 @@
             const dateToHeatmap = {}; 
             (heatmap || []).forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
 
-            // Calculate timezone offset relative to PST (UTC-8)
-            // PST is -08:00 (480 minutes). 
-            const pstOffset = 480; 
+            // UTC offset math
             const localOffset = new Date().getTimezoneOffset();
-            const hourShift = useLocalTime ? Math.round((pstOffset - localOffset) / 60) : 0;
+            const hourShift = useLocalTime ? Math.round(-localOffset / 60) : -8; // PST is -8
 
             last7.forEach(date => {
                 const dayData = dateToHeatmap[date] || { success: {}, fail: {} };
@@ -387,7 +385,7 @@
                     hourRow.className = 'flex-1 flex flex-row gap-[1px]';
                     
                     for (let min = 0; min < 60; min += 15) {
-                        // Apply shift
+                        // Apply shift relative to UTC
                         let sourceHour = (hour - hourShift + 24) % 24;
                         const hStr = sourceHour.toString().padStart(2, '0');
                         const mStr = min.toString().padStart(2, '0');
