@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-07T00:14:00Z",
+  "updated": "2026-02-07T01:34:45Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
@@ -17,9 +17,9 @@
       "cooldowns": 4,
       "quotas": 0,
       "timers": {
-        "ag_flash_cd": "1.1",
-        "gc_flash_cd": "0.0",
+        "ag_flash_cd": "4.8",
         "sonnet_cd": "0.0",
+        "gc_flash_cd": "0.0",
         "ag_pro_cd": "5.0",
         "gh_gpt5_cd": "0.0",
         "gh_gpt4_cd": "0.0",
@@ -271,7 +271,7 @@
       "hash": "4f20ff7",
       "url": "https://github.com/benfoxsb/gh-pm/commit/4f20ff7",
       "summary": "Add files via upload",
-      "model": "GH-GPT-5-MINI"
+      "model": "AG-GEMINI-3-FLASH"
     },
     {
       "date": "2026-02-04",
@@ -619,20 +619,20 @@
       "quota_id": "ag_flash_cd"
     },
     {
-      "id": "gc_flash",
-      "name": "GC Gemini 3 Flash",
-      "display": "GC FLASH",
-      "role": "Reliable Backup",
-      "icon": "🛡️",
-      "quota_id": "gc_flash_cd"
-    },
-    {
       "id": "ag_sonnet",
       "name": "AG Claude Sonnet 4.5",
       "display": "AG SONNET",
       "role": "Complex Reasoning",
       "icon": "🔬",
       "quota_id": "sonnet_cd"
+    },
+    {
+      "id": "gc_flash",
+      "name": "GC Gemini 3 Flash",
+      "display": "GC FLASH",
+      "role": "Reliable Backup",
+      "icon": "🛡️",
+      "quota_id": "gc_flash_cd"
     },
     {
       "id": "ag_pro",
