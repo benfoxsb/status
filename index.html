@@ -163,10 +163,10 @@
 
         function getModelKey(id) {
             if (!id) return 'lc_qwen';
-            const s = id.toLowerCase().replace(/-/g, '_');
+            const s = id.toLowerCase().replace(/[- ]/g, '_');
             if (s.includes('ag_flash') || s.includes('gemini_3_flash')) return 'ag_flash';
             if (s.includes('ag_pro') || s.includes('gemini_3_pro')) return 'ag_pro';
-            if (s.includes('gc_flash')) return 'gc_flash';
+            if (s.includes('gc_flash') || s.includes('gemini_flash')) return 'gc_flash';
             if (s.includes('gc_pro')) return 'gc_pro';
             if (s.includes('gh_gpt5') || s.includes('gpt_5_mini')) return 'gh_gpt5';
             if (s.includes('gh_gpt4') || s.includes('gpt_4o')) return 'gh_gpt4';
