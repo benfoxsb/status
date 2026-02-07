@@ -40,7 +40,13 @@
             <!-- Unified Performance Hub -->
             <div class="lg:col-span-2 card p-6 rounded-3xl flex flex-col" style="border-left-color: #64748b">
                 <div class="h-full flex flex-col">
-                    <h3 class="text-xs font-bold uppercase mb-6 tracking-widest text-emerald-400">Operational Hub</h3>
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400">Operational Hub</h3>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[9px] font-bold text-slate-500 uppercase">Timezone:</span>
+                            <button id="tz-toggle" onclick="toggleTimezone()" class="px-2 py-1 rounded bg-slate-800 text-[9px] font-black text-slate-400 border border-slate-700 hover:text-white transition-colors uppercase">System (PST)</button>
+                        </div>
+                    </div>
                     
                     <div class="mb-6">
                         <div class="flex justify-between items-center mb-3">
@@ -135,6 +141,8 @@
 
     <script>
         let chartInstance = null;
+        let useLocalTime = false;
+        
         const modelConfig = [
             { key: 'ag_flash', label: 'AG FLASH', color: '#3b82f6', tw: 'blue' },
             { key: 'ag_pro', label: 'AG PRO', color: '#a855f7', tw: 'purple' },
@@ -179,6 +187,12 @@
             const icon = document.getElementById('icon-' + id);
             if (el.style.display === 'none') { el.style.display = 'block'; icon.style.transform = 'rotate(0deg)'; }
             else { el.style.display = 'none'; icon.style.transform = 'rotate(-90deg)'; }
+        }
+
+        function toggleTimezone() {
+            useLocalTime = !useLocalTime;
+            document.getElementById('tz-toggle').innerText = useLocalTime ? 'Local (' + Intl.DateTimeFormat().resolvedOptions().timeZone + ')' : 'System (PST)';
+            updateDashboard();
         }
 
         async function updateDashboard() {
@@ -357,20 +371,25 @@
             const dateToHeatmap = {}; 
             (heatmap || []).forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
 
+            // Calculate timezone offset relative to PST (UTC-8)
+            // PST is -08:00 (480 minutes). 
+            const pstOffset = 480; 
+            const localOffset = new Date().getTimezoneOffset();
+            const hourShift = useLocalTime ? Math.round((pstOffset - localOffset) / 60) : 0;
+
             last7.forEach(date => {
                 const dayData = dateToHeatmap[date] || { success: {}, fail: {} };
-                
-                // Day Column (Container for 24 hours)
                 const dayCol = document.createElement('div'); 
                 dayCol.className = 'flex-1 flex flex-col gap-[2px] h-full';
                 
                 for (let hour = 0; hour < 24; hour++) {
-                    // Hour Row (Container for 4 intervals)
                     const hourRow = document.createElement('div');
                     hourRow.className = 'flex-1 flex flex-row gap-[1px]';
                     
                     for (let min = 0; min < 60; min += 15) {
-                        const hStr = hour.toString().padStart(2, '0');
+                        // Apply shift
+                        let sourceHour = (hour - hourShift + 24) % 24;
+                        const hStr = sourceHour.toString().padStart(2, '0');
                         const mStr = min.toString().padStart(2, '0');
                         const key = `${hStr}:${mStr}`;
                         
@@ -379,15 +398,12 @@
                         const cell = document.createElement('div');
                         
                         let color = 'bg-slate-800/20';
-                        if (f > 0) {
-                            color = 'bg-red-500';
-                            if (s > 0) color = 'bg-orange-500'; 
-                        } else if (s > 0) {
-                            color = 'bg-emerald-400';
-                        }
+                        if (f > 0) { color = 'bg-red-500'; if (s > 0) color = 'bg-orange-500'; }
+                        else if (s > 0) { color = 'bg-emerald-400'; }
                         
                         cell.className = `flex-1 h-full rounded-[1px] ${color}`;
-                        cell.title = `${date} ${key} - Success: ${s}, Fail: ${f}`;
+                        const displayHour = hour.toString().padStart(2, '0');
+                        cell.title = `${date} ${displayHour}:${mStr} - Success: ${s}, Fail: ${f}`;
                         hourRow.appendChild(cell);
                     }
                     dayCol.appendChild(hourRow);
