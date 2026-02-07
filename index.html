@@ -44,7 +44,7 @@
                         <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400">Operational Hub</h3>
                         <div class="flex items-center gap-2">
                             <span class="text-[9px] font-bold text-slate-500 uppercase">Timezone:</span>
-                            <button id="tz-toggle" onclick="toggleTimezone()" class="px-2 py-1 rounded bg-slate-800 text-[9px] font-black text-slate-400 border border-slate-700 hover:text-white transition-colors uppercase">UTC</button>
+                            <span class="px-2 py-1 rounded bg-slate-800 text-[9px] font-black text-slate-400 border border-slate-700 uppercase">PST</span>
                         </div>
                     </div>
                     
@@ -141,7 +141,6 @@
 
     <script>
         let chartInstance = null;
-        let useLocalTime = false;
         
         const modelConfig = [
             { key: 'ag_flash', label: 'AG FLASH', color: '#3b82f6', tw: 'blue' },
@@ -187,12 +186,6 @@
             const icon = document.getElementById('icon-' + id);
             if (el.style.display === 'none') { el.style.display = 'block'; icon.style.transform = 'rotate(0deg)'; }
             else { el.style.display = 'none'; icon.style.transform = 'rotate(-90deg)'; }
-        }
-
-        function toggleTimezone() {
-            useLocalTime = !useLocalTime;
-            document.getElementById('tz-toggle').innerText = useLocalTime ? 'Local (' + Intl.DateTimeFormat().resolvedOptions().timeZone + ')' : 'UTC';
-            updateDashboard();
         }
 
         async function updateDashboard() {
@@ -371,14 +364,6 @@
             const dateToHeatmap = {}; 
             (heatmap || []).forEach(h => { if (h.date) dateToHeatmap[h.date] = h; });
 
-            // UTC offset math
-            const localOffset = new Date().getTimezoneOffset();
-            // PST is UTC-8 (480 mins). hourShift is used to convert PST back to UTC (0) then to local.
-            // Source data is PST.
-            // UTC = PST + 8.
-            // Local = UTC - (localOffset/60).
-            const hourShift = useLocalTime ? (8 - (localOffset / 60)) : 8; 
-
             last7.forEach(date => {
                 const dayData = dateToHeatmap[date] || { success: {}, fail: {} };
                 const dayCol = document.createElement('div'); 
@@ -389,10 +374,7 @@
                     hourRow.className = 'flex-1 flex flex-row gap-[1px]';
                     
                     for (let min = 0; min < 60; min += 15) {
-                        // hour is the display hour. key is the PST hour.
-                        // key = (hour - hourShift + 24) % 24
-                        let sourceHour = (hour - hourShift + 24) % 24;
-                        const hStr = sourceHour.toString().padStart(2, '0');
+                        const hStr = hour.toString().padStart(2, '0');
                         const mStr = min.toString().padStart(2, '0');
                         const key = `${hStr}:${mStr}`;
                         
@@ -405,8 +387,7 @@
                         else if (s > 0) { color = 'bg-emerald-400'; }
                         
                         cell.className = `flex-1 h-full rounded-[1px] ${color}`;
-                        const displayHour = hour.toString().padStart(2, '0');
-                        cell.title = `${date} ${displayHour}:${mStr} - Success: ${s}, Fail: ${f}`;
+                        cell.title = `${date} ${hStr}:${mStr} - Success: ${s}, Fail: ${f}`;
                         hourRow.appendChild(cell);
                     }
                     dayCol.appendChild(hourRow);
