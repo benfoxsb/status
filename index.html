@@ -164,15 +164,41 @@
         function getModelKey(id) {
             if (!id) return 'lc_qwen';
             const s = id.toLowerCase().replace(/[- ]/g, '_');
-            if (s.includes('ag_flash') || s.includes('flash')) return 'ag_flash';
-            if (s.includes('ag_pro') || s.includes('pro')) return 'ag_pro';
-            if (s.includes('gc_flash') || s.includes('latest')) return 'gc_flash';
-            if (s.includes('gc_pro')) return 'gc_pro';
-            if (s.includes('gh_gpt5') || s.includes('gpt_5')) return 'gh_gpt5';
-            if (s.includes('gh_gpt4') || s.includes('gpt_4')) return 'gh_gpt4';
+            
+            // 1. Exact matches for IDs in vitals-config.json
+            if (s === 'ag_flash') return 'ag_flash';
+            if (s === 'ag_pro') return 'ag_pro';
+            if (s === 'gc_flash') return 'gc_flash';
+            if (s === 'gc_pro') return 'gc_pro';
+            if (s === 'gh_gpt5') return 'gh_gpt5';
+            if (s === 'gh_gpt4') return 'gh_gpt4';
+            if (s === 'ag_sonnet') return 'ag_sonnet';
+            if (s === 'ag_opus') return 'ag_opus';
+            if (s === 'lc_qwen') return 'lc_qwen';
+
+            // 2. Provider-specific keyword matches
+            if (s.includes('gc_') || s.includes('gemini_flash')) return 'gc_flash';
+            if (s.includes('gh_')) {
+                if (s.includes('gpt_5')) return 'gh_gpt5';
+                if (s.includes('gpt_4')) return 'gh_gpt4';
+                return 'gh_gpt5';
+            }
+            if (s.includes('ag_')) {
+                if (s.includes('flash')) return 'ag_flash';
+                if (s.includes('pro')) return 'ag_pro';
+                if (s.includes('sonnet')) return 'ag_sonnet';
+                if (s.includes('opus')) return 'ag_opus';
+            }
+
+            // 3. General keyword fallbacks (Legacy/Third-party)
             if (s.includes('sonnet')) return 'ag_sonnet';
             if (s.includes('opus')) return 'ag_opus';
-            if (s.includes('lc_') || s.includes('ollama') || s.includes('qwen')) return 'lc_qwen';
+            if (s.includes('flash')) return 'ag_flash';
+            if (s.includes('pro')) return 'ag_pro';
+            if (s.includes('gpt_5')) return 'gh_gpt5';
+            if (s.includes('gpt_4')) return 'gh_gpt4';
+            if (s.includes('ollama') || s.includes('qwen')) return 'lc_qwen';
+            
             return 'lc_qwen';
         }
 
