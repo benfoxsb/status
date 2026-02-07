@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-07T06:22:38Z",
+  "updated": "2026-02-07T06:23:51Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
@@ -33,13 +33,13 @@
       "usage": {
         "ag_flash": 238,
         "ag_pro": 4,
-        "gc_flash": 0,
+        "gc_flash": 58,
         "gc_pro": 0,
         "gh_gpt5": 0,
         "gh_gpt4": 0,
         "lc_qwen": 0,
         "ag_opus": 0,
-        "ag_sonnet": 0
+        "ag_sonnet": 2
       },
       "reliability": "88.8"
     },
@@ -50,13 +50,13 @@
       "usage": {
         "ag_flash": 238,
         "ag_pro": 4,
-        "gc_flash": 0,
+        "gc_flash": 58,
         "gc_pro": 0,
         "gh_gpt5": 0,
         "gh_gpt4": 0,
         "lc_qwen": 0,
         "ag_opus": 0,
-        "ag_sonnet": 0
+        "ag_sonnet": 2
       },
       "reliability": "88.8"
     }
@@ -82,7 +82,7 @@
       "fail": 30,
       "ag_flash": 108,
       "ag_pro": 4,
-      "gc_flash": 0,
+      "gc_flash": 58,
       "gc_pro": 0,
       "gh_gpt5": 0,
       "gh_gpt4": 0,
@@ -102,7 +102,7 @@
       "gh_gpt4": 0,
       "lc_qwen": 0,
       "ag_opus": 0,
-      "ag_sonnet": 0
+      "ag_sonnet": 2
     },
     {
       "date": "2026-02-06",
