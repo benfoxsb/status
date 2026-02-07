@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-07T01:35:22Z",
+  "updated": "2026-02-07T02:03:49Z",
   "windows": {
     "24h": {
       "date": "2026-02-06",
@@ -17,7 +17,7 @@
       "cooldowns": 4,
       "quotas": 0,
       "timers": {
-        "ag_flash_cd": "4.7",
+        "ag_flash_cd": "4.3",
         "sonnet_cd": "0.0",
         "gc_flash_cd": "0.0",
         "ag_pro_cd": "5.0",
@@ -120,6 +120,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-06",
+      "time": "18:03",
+      "project": "gh-pm",
+      "hash": "24b3d18",
+      "url": "https://github.com/benfoxsb/gh-pm/commit/24b3d18",
+      "summary": "docs: align SDLC terminology with latest standards (Design & Plan)",
+      "model": "AG-GEMINI-3-FLASH"
+    },
     {
       "date": "2026-02-06",
       "time": "12:45",
