@@ -51,10 +51,12 @@
                     <div class="mb-6">
                         <div class="flex justify-between items-center mb-3">
                             <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-500">7D Activity Pattern (15m Intervals)</h3>
-                            <div class="flex gap-2 text-[8px] font-bold uppercase tracking-tighter">
-                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-emerald-400"></span> Success</div>
-                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-orange-500"></span> Partial</div>
-                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-red-500"></span> Fail</div>
+                            <div class="flex gap-2 text-[7px] font-bold uppercase tracking-tighter">
+                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-emerald-400"></span> 100%</div>
+                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-amber-400"></span> >80%</div>
+                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-orange-500"></span> >40%</div>
+                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-orange-700"></span> <40%</div>
+                                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-sm bg-red-500"></span> 0%</div>
                             </div>
                         </div>
                         <div id="heatmap-container" class="flex flex-row gap-2 h-64 overflow-hidden">
@@ -406,11 +408,18 @@
                         
                         const s = parseInt(dayData.success[key] || 0);
                         const f = parseInt(dayData.fail[key] || 0);
+                        const total = s + f;
                         const cell = document.createElement('div');
                         
                         let color = 'bg-slate-800/20';
-                        if (f > 0) { color = 'bg-red-500'; if (s > 0) color = 'bg-orange-500'; }
-                        else if (s > 0) { color = 'bg-emerald-400'; }
+                        if (total > 0) {
+                            const ratio = s / total;
+                            if (f === 0) color = 'bg-emerald-400';
+                            else if (s === 0) color = 'bg-red-500';
+                            else if (ratio > 0.8) color = 'bg-amber-400'; // Mostly success
+                            else if (ratio > 0.4) color = 'bg-orange-500'; // Mixed
+                            else color = 'bg-orange-700'; // Mostly fail
+                        }
                         
                         cell.className = `flex-1 h-full rounded-[1px] ${color}`;
                         cell.title = `${date} ${hStr}:${mStr} - Success: ${s}, Fail: ${f}`;
