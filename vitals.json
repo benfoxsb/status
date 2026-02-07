@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-07T08:21:53Z",
+  "updated": "2026-02-07T08:28:05Z",
   "windows": {
     "24h": {
       "date": "2026-02-07",
-      "success": 24,
+      "success": 25,
       "fail": 28,
-      "ag_flash": 24,
+      "ag_flash": 25,
       "ag_sonnet": 0,
       "gc_flash": 0,
       "ag_pro": 0,
@@ -25,11 +25,11 @@
       }
     },
     "7d": {
-      "success": 328,
+      "success": 329,
       "fail": 66,
       "days": 5,
       "usage": {
-        "ag_flash": 262,
+        "ag_flash": 263,
         "ag_sonnet": 2,
         "gc_flash": 58,
         "ag_pro": 4,
@@ -40,11 +40,11 @@
       "reliability": "83.2"
     },
     "30d": {
-      "success": 328,
+      "success": 329,
       "fail": 66,
       "days": 5,
       "usage": {
-        "ag_flash": 262,
+        "ag_flash": 263,
         "ag_sonnet": 2,
         "gc_flash": 58,
         "ag_pro": 4,
@@ -112,9 +112,9 @@
     },
     {
       "date": "2026-02-07",
-      "success": 24,
+      "success": 25,
       "fail": 28,
-      "ag_flash": 24,
+      "ag_flash": 25,
       "ag_sonnet": 0,
       "gc_flash": 0,
       "ag_pro": 0,
@@ -124,6 +124,15 @@
     }
   ],
   "pulse": [
+    {
+      "date": "2026-02-07",
+      "time": "00:27",
+      "project": "benfoxsb.github.io",
+      "hash": "16318a7",
+      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/16318a7",
+      "summary": "fix: resolve duplicate model colors (GH GPT-4 -> Pink, GC Flash/Pro refined)",
+      "model": "ag_flash"
+    },
     {
       "date": "2026-02-07",
       "time": "00:21",
@@ -176,15 +185,6 @@
       "hash": "d71543f",
       "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/d71543f",
       "summary": "fix: improve frontend model matching flexibility",
-      "model": "ag_flash"
-    },
-    {
-      "date": "2026-02-06",
-      "time": "23:17",
-      "project": "benfoxsb.github.io",
-      "hash": "abc405c",
-      "url": "https://github.com/benfoxsb/benfoxsb.github.io/commit/abc405c",
-      "summary": "fix: frontend model matching and color logic",
       "model": "ag_flash"
     },
     {
@@ -626,7 +626,8 @@
         "06:45": "1",
         "07:00": "1",
         "07:15": "2",
-        "07:30": "1"
+        "07:30": "1",
+        "08:15": "1"
       },
       "fail": {
         "06:30": "12",
